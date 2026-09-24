@@ -1,7 +1,10 @@
 # ✨ AegisX
 
 <div align="center">
-    <img height="350" src="" alt="AegisX" />
+    <br/>
+    <img height="200" src="https://github.com/user-attachments/assets/428655be-128a-4c24-b5a2-236a07ee6969"/>
+    <br/>
+    <br/>
 </div>
 
 [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)

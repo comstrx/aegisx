@@ -1,0 +1,84 @@
+*           text=auto eol=lf
+*.sh        text eol=lf
+*.bash      text eol=lf
+*.zsh       text eol=lf
+*.rs        text eol=lf
+*.toml      text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.json      text eol=lf
+*.md        text eol=lf
+*.txt       text eol=lf
+*.ini       text eol=lf
+*.cfg       text eol=lf
+*.conf      text eol=lf
+*.env       text eol=lf
+*.mk        text eol=lf
+*.js        text eol=lf
+*.mjs       text eol=lf
+*.cjs       text eol=lf
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.jsx       text eol=lf
+*.css       text eol=lf
+*.scss      text eol=lf
+*.sass      text eol=lf
+*.html      text eol=lf
+*.svg       text eol=lf
+*.ps1       text eol=lf
+*.rb        text eol=lf
+*.py        text eol=lf
+*.go        text eol=lf
+*.frag      text eol=lf
+*.vert      text eol=lf
+*.wgsl      text eol=lf
+*.sln       text eol=crlf
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.webp      binary
+*.ico       binary
+*.pdf       binary
+*.ttf       binary
+*.otf       binary
+*.woff      binary
+*.woff2     binary
+*.zip       binary
+*.tar       binary
+*.gz        binary
+*.tgz       binary
+*.7z        binary
+*.rar       binary
+*.wasm      binary
+*.exe       binary
+*.dll       binary
+*.so        binary
+*.dylib     binary
+*.a         binary
+*.lib       binary
+*.pdb       binary
+*.mp3       binary
+*.mp4       binary
+*.mov       binary
+*.mkv       binary
+*.wav       binary
+*.pem       binary
+*.key       binary
+*.p12       binary
+*.pfx       binary
+*.min.js    -diff
+*.min.css   -diff
+*.map       -diff
+Cargo.lock          text eol=lf
+package-lock.json   text eol=lf
+pnpm-lock.yaml      text eol=lf
+yarn.lock           text eol=lf
+Dockerfile          text eol=lf
+Makefile            text eol=lf
+*.isle              linguist-language=Lisp
+dist/**             linguist-generated=true
+build/**            linguist-generated=true
+generated/**        linguist-generated=true

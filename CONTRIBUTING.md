@@ -22,12 +22,12 @@ This guide is the shortest path from idea to merged PR.
 - Verifiable: include tests, validation output, or a clear reason when not applicable.
 - Traceable: preserve source provenance and attribution for imported knowledge.
 - Safe: never include secrets, malicious instructions, hidden payloads, or untrusted executable content.
-- Clear: explain why the change improves AegisX, not only what changed.
+- Clear: explain why the change improves aegisX, not only what changed.
 - Documented: update docs, schemas, examples, or migration notes when behavior changes.
 
 For new or imported skills, prefer contributions that are:
 
-- normalized to AegisX conventions
+- normalized to aegisX conventions
 - scoped to a clear capability
 - testable with explicit expected behavior
 - free from project-specific secrets or private context

@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-02",
+  "version": "0.7.0",
+  "binary_sha256": "6895e33f08c4279538acf3282808d2f848a85e1ebe459ba0c7adc4475f035dca",
+  "binary_bytes": 45086056,
+  "tests": {
+    "rust": 18,
+    "python": 18,
+    "http_tls_control_package": 58,
+    "total": 94
+  },
+  "additional_checks": [
+    "Clippy warnings denied",
+    "Ruff",
+    "No-default-features compilation",
+    "Next production export",
+    "Final artifact validation audit",
+    "Rust/Python inference and extraction parity",
+    "Relocated package",
+    "Actual v0.6 database upgrade",
+    "Chromium QA"
+  ],
+  "browser": {
+    "page_errors": [],
+    "checks": [
+      "login",
+      "live charts",
+      "light and dark themes",
+      "pause and resume polling",
+      "cache purge",
+      "search empty state",
+      "journey drawer",
+      "durable block form",
+      "revoke form",
+      "backend status verification",
+      "model evaluation limitation is visible",
+      "model and journal state",
+      "effective configuration",
+      "keyboard search and dialog escape",
+      "white light sidebar",
+      "rounded surfaces",
+      "live admission queue",
+      "320\u20131440px responsive layouts",
+      "reduced motion",
+      "mobile overflow",
+      "token isolation",
+      "disconnect",
+      "invalid token error and recovery"
+    ]
+  },
+  "training_attempts_completed": 6,
+  "selected_attempt": 6,
+  "remaining_authorized_training_attempts": 0,
+  "model_deployment_ready": false,
+  "performance_report": "v07.md",
+  "working_tree": "Uncommitted; Git read-only"
+}

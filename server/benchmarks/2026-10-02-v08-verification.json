@@ -1,0 +1,29 @@
+{
+  "binary_sha256": "858e873ac139671cf4f86f5c452745efdeb0bd2acd39919e4d65995e66e40e4d",
+  "checks": [
+    {
+      "check": "final integration",
+      "exit_code": 0
+    },
+    {
+      "check": "browser",
+      "exit_code": 0
+    },
+    {
+      "check": "upgrade",
+      "exit_code": 0
+    },
+    {
+      "check": "model timing",
+      "exit_code": 0
+    },
+    {
+      "check": "pipeline",
+      "exit_code": 0
+    },
+    {
+      "check": "proxy timing",
+      "exit_code": 0
+    }
+  ]
+}

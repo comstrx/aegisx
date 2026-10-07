@@ -1,0 +1,32 @@
+Warning:
+Processed 16978 events and lost 71 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+Processed 19377 samples and lost 16.88%!
+
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 3271
+#
+# Samples: 16K of event 'cpu-clock:u'
+# Event count (approx.): 32406431632
+#
+# Overhead  Command         Shared Object       Symbol                  
+# ........  ..............  ..................  ........................
+#
+     1.66%  aegisx-proxy-0  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.55%  aegisx-proxy-1  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.48%  aegisx-proxy-2  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.29%  aegisx-proxy-3  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.20%  aegisx-proxy-5  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.13%  aegisx-proxy-4  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.09%  aegisx-proxy-6  aegisx-v09-profile  [.] _mi_page_malloc_zero
+     1.03%  aegisx-proxy-7  aegisx-v09-profile  [.] _mi_page_malloc_zero
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

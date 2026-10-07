@@ -1,457 +1,112 @@
 # ✨ AegisX
 
-<div align="center">
-   <br/>
-   <img height="180" src="https://github.com/user-attachments/assets/428655be-128a-4c24-b5a2-236a07ee6969"/>
-   <br/>
-   <br/>
-</div>
+A local reverse proxy that connects request lifecycles, behavioral context and explicit security policies to actual traffic decisions.
 
-[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
-[![CI](https://github.com/comstrx/aegisx/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/comstrx/aegisx/actions/workflows/ci.yaml)
-[![Release](https://img.shields.io/github/v/release/comstrx/aegisx?sort=semver)](https://github.com/comstrx/aegisx/releases/latest)
+**One Linux executable. One Lua configuration. Optional analysis.** Rust forwards traffic and serves an embedded Next.js control panel; an embedded ONNX model runs locally. No Redis, database server, Python service, Node service or cloud account is required in production.
 
-## Overview
+## Implemented · 0.10
 
-`AegisX` is an intelligent API security, observability, threat detection, and automated response platform.
+- HTTP/1.1 streaming, TLS termination and verified upstream TLS.
+- Host/wildcard/path/method/header routing, rewrites, headers and route-specific policy.
+- Weighted, least-active, adaptive-latency and ordered-failover balancing; capacity limits; passive and TCP/HTTP/HTTPS active health checks.
+- Post-completion background inference, bounded sharded numeric context and global/route rate limits; no inline ML wait.
+- SQLite-backed expiring decisions with coherent positive/negative caching; independent exact-score and public-response caches.
+- Configurable correlation headers, trusted actor integration and backend signals affecting future requests.
+- Signed, queued webhooks with bounded retries and visible delivery/drop counters.
+- SQLite lifecycle capture, bounded backend operation reports, safe cancellation intents/acknowledgements and an embedded operational dashboard.
+- Python training with group-separated evaluation, mini-batches, class balancing, gradient clipping, resumable checkpoints, early stopping and ONNX parity checks.
 
-It operates between clients and upstream APIs to observe traffic, discover endpoints, measure performance, detect suspicious behavior, correlate security events, calculate risk, and trigger automated responses.
+Version 0.7 adds a **bounded traffic waiting room** for global/upstream capacity and required storage/analysis reservations. Lua controls its capacity and shared per-request deadline. Wakeups are driven by resource release, health recovery and passive cooldown expiry. Waiting requests recheck committed bans before forwarding; an already-forwarded request is never retroactively cut off by a model verdict.
 
-```text
-Client
-  ↓
-AegisX
-  ↓
-Upstream API
+The hot path reuses compiled headers, request-ID values and model input buffers, with fewer unnecessary allocations and clock reads. The panel gains a white light-mode sidebar, rounded layered surfaces, real queue metrics and visible model evaluation limitations. Configuration, transport correctness and measured outcomes take priority over speculative optimization.
+
+Version 0.9 selects a **895,178-parameter compact student** after three real training candidates, including a **125.64M-parameter transfer teacher** (124.65M frozen pretrained parameters plus a trained classification head). The selected model remains byte/text + ordered journey + numeric context; its UINT8 artifact is **1.22 MB**. Three thousand additional executed SQLite transactions teach distinctions between authorization, unsafe commits and safe rollbacks.
+
+**Research/observe only.** At a 0.1% validation FPR budget, internal content recall improves from 81.22% to 98.39%, with zero observed false positives among 975 benign test rows. External CRS recall remains only 9.25% and external benign FPR is 0.093%; broader production detection is unproven. See [model evidence](model/README.md) and [0.9 verification](server/benchmarks/v09.md).
+
+Rust now coalesces concurrent durable-decision lookups, validates stored decision integrity, avoids copying complete cached verdicts, maintains rolling totals without per-request bucket scans, and preserves normalization parity with faster extraction. Lua supports separate content/journey thresholds. All inference stays after request completion.
+
+## Version 0.10
+
+Admission uses exact atomic capacity accounting with cancellation-safe wakeups; unused upstream counters are skipped when the control plane and adaptive balancing do not need them. Small downstream write batches can be coalesced without waiting for later streaming chunks. A narrow timer patch removes a redundant allocation. Transport patches are pinned under server/vendor, licensed and tested.
+
+The new [395M-parameter experiment](model/research/unified-v2.md) includes actual full-backbone fine-tuning, expanded execution oracles and resumable training. It fails its quality prerequisite and remains a research artifact; the embedded compact model is unchanged. Server changes and performance evidence are documented separately from model parameter count.
+
+Measured forwarding medians improve 2.7–5.7% in this local run, while the policy-profile median regresses 2.5%. Memory does not consistently fall, and throughput remains below half of the installed Nginx build. See [0.10 verification and all trials](server/benchmarks/v010.md).
+
+## Current research direction
+
+A subsequent [unified-model research pilot](model/research/unified-v1.md) downloaded ModernBERT, jointly trained text/numeric/journey inputs through one backbone and reached full-network fine-tuning. Its short training run did not pass the validation prerequisite, so it does not replace the embedded v0.9 model. The new executable SQLite fixtures, split/calibration controls and checkpoints are reproducible.
+
+An [actual local Nginx comparison](server/benchmarks/nginx-comparison.md) puts AegisX at 39.5–41.8% of the installed Nginx build's forwarding throughput in the measured eight-worker profiles. This establishes a gap to investigate, not competitive parity.
+
+## Build and run
+
+Use Ubuntu/Linux, the repository's Rust/Python pins and Node from `panel/.nvmrc`.
+
+```sh
+python3 scripts/build.py
+./dist/aegisx --config server/Aegisx.lua --check
+./dist/aegisx --config server/Aegisx.lua
 ```
 
-AegisX combines API observability and security intelligence into a single runtime.
+The supplied configuration forwards port 8080 to your application on 3000. Enable the local panel using `set_control` and an admin token supplied through the service environment. The binary embeds panel assets, model, ONNX CPU runtime, Lua, SQLite and OpenSSL. Standard Linux C/C++ runtime libraries are still required; this is not a fully static executable.
 
-## Core Capabilities
+## Workspace cleanup · 2026-10-02
 
-### API Observability
+The workspace was reduced from 36.75 GiB to about 1.91 GiB. See [cleanup-report.json](cleanup-report.json) for the exact removal inventory. Source, lockfiles, licenses, the current dist executable, embedded ONNX, final Word/PDF presentation, measured reports and recorded SQLite oracle examples remain.
 
-Monitor API behavior in real time:
+Only the latest unified-v2 selected research checkpoint and its prepared data are retained from the large research binaries/tensors. Older checkpoints, duplicate exports, downloaded pretrained weight files, bulk WCP downloads, profiler recordings, temporary binaries, Node runtime, node_modules, panel build output, Rust target and Python virtual environment/caches were removed. Historical reports describe the artifacts measured at that time; removed checkpoints and old benchmark executables are no longer available locally.
 
-* Request volume
-* Response latency
-* Throughput
-* Error rate
-* Status codes
-* Endpoint health
-* Availability
-* Performance degradation
-* Traffic anomalies
+The current dist/aegisx runs independently; relocation/model/panel/API checks passed after cleanup. To develop again, provide the Node version in panel/.nvmrc and run python3 scripts/build.py to regenerate panel dependencies/export and Rust output. Recreate the Python environment with uv sync --project model --locked. Research training may also need the pinned downloads restored with the existing fetch scripts. The retained 395M research checkpoint still has not passed deployment quality gates.
 
-### API Discovery
-
-Build an API inventory directly from observed traffic:
-
-* Endpoint discovery
-* Methods and routes
-* New endpoints
-* Shadow APIs
-* Deprecated APIs
-* Unused APIs
-* Sensitive endpoints
-
-### Security Analysis
-
-Analyze requests, responses, identities, and traffic patterns using multiple detection layers:
-
-* Security rules
-* Machine learning
-* Behavioral analysis
-* Request and response context
-* Historical activity
-* Authentication anomalies
-* Authorization anomalies
-* Injection patterns
-* Rate abuse
-* Suspicious payloads
-
-### Behavioral Intelligence
-
-AegisX builds behavioral context around APIs and identities instead of treating every request as an isolated event.
-
-```text
-Normal Journey
-
-login
-  ↓
-profile
-  ↓
-orders
-```
-
-```text
-Suspicious Journey
-
-login
-  ↓
-admin
-  ↓
-users/export
-  ↓
-payments/refund
-```
-
-This allows AegisX to detect unusual API sequences and correlate related events into meaningful attack journeys.
-
-### Attack Correlation
-
-Related security events can be grouped into a single attack timeline.
-
-```text
-Initial Access
-      ↓
-Privilege Discovery
-      ↓
-Sensitive Resource Access
-      ↓
-Exfiltration Attempt
-      ↓
-Sensitive Action
-```
-
-This provides context beyond individual alerts.
-
-### Risk Engine
-
-AegisX combines multiple signals to calculate explainable risk.
-
-```text
-Risk Score
-Confidence
-Severity
-Evidence
-Reasons
-```
-
-Example:
-
-```text
-Risk       92
-Confidence 96%
-Severity   Critical
-
-+ ML anomaly
-+ unusual endpoint sequence
-+ abnormal request rate
-+ sensitive resource access
-```
-
-The machine-learning model is a signal, not the final authority.
-
-### Policy Engine
-
-Responses are controlled by configurable policies instead of hardcoded application logic.
-
-Conceptually:
-
-```yaml
-conditions:
-  risk:
-    gte: 90
-
-  confidence:
-    gte: 0.90
-
-actions:
-  - alert
-  - rate_limit
-  - webhook
-```
-
-Policies can combine:
-
-* Risk
-* Confidence
-* Severity
-* Endpoint sensitivity
-* Identity
-* Traffic behavior
-* Security findings
-
-### Automated Response
-
-AegisX can trigger external actions through integrations and webhooks.
-
-Possible actions include:
-
-* Alert
-* Rate limit
-* Block
-* Revoke session
-* Revoke token
-* Disable API key
-* Lock account
-* Freeze operation
-* Create incident
-* Execute webhook
-
-The target system remains responsible for implementing application-specific actions.
+The legacy numeric compatibility fixture now lives under server/tests/fixtures/numeric-v4, so its test no longer depends on temporary files.
 
 ## Architecture
 
 ```text
-                         API Traffic
-                              │
-                              ▼
-                     ┌────────────────┐
-                     │ Proxy / Sensor │
-                     └───────┬────────┘
-                             │
-                 ┌───────────┴───────────┐
-                 │                       │
-                 ▼                       ▼
-            Fast Path               Event Pipeline
-                 │                       │
-                 ▼                       ▼
-           Forward Request        Telemetry Collector
-                                         │
-                         ┌───────────────┼───────────────┐
-                         ▼               ▼               ▼
-                    Discovery       Performance       Security
-                         │               │               │
-                         └───────────────┼───────────────┘
-                                         ▼
-                                  Behavior Engine
-                                         │
-                                         ▼
-                                Correlation Engine
-                                         │
-                                         ▼
-                                    Risk Engine
-                                         │
-                                         ▼
-                                   Policy Engine
-                                         │
-                                         ▼
-                               Response / Webhooks
+model/   Python: validated data → training → evaluation → ONNX
+panel/   Next.js static export → embedded assets
+server/  One Rust crate:
+         core    → shared errors, numeric facts and integration types
+         module  → config / runtime / identity / memory / decision / cache
+                   inference / lifecycle / verdict / upstream / queue / storage / telemetry / webhook / control / proxy
+         app     → startup, service lifecycle and CLI
 ```
 
-Heavy analysis is performed outside the critical request path whenever possible to minimize additional latency.
+`Services` owns shared dependencies once. HTTP adapters extract facts and apply decisions; the decision engine owns history and inference policy. Immutable configuration snapshots keep in-flight requests consistent across SIGHUP reload. Explicit Lua settings control automation.
 
-## Machine Learning
+## Documentation
 
-Model development and production inference are separated.
+- [Server, transport and Lua](server/README.md)
+- [Caching, context and new configuration](server/configuration.md)
+- [Backend, webhook and control contracts](server/contracts/README.md)
+- [Model pipeline and data](model/README.md)
+- [Embedded panel](panel/README.md)
+- [Measured local performance and limits](server/benchmarks/README.md)
 
-```text
-Dataset
-   ↓
-Preprocessing
-   ↓
-Feature Engineering
-   ↓
-Training
-   ↓
-Evaluation
-   ↓
-ONNX Export
-   ↓
-Rust Runtime
-```
+## Scope and direction
 
-Python is used for:
+The goal is an independent proxy competitive for a defined deployment scope, then broader NGINX/Caddy capabilities and Kubernetes integration. It is currently local and single-process; there is no Kubernetes Ingress/Gateway controller.
 
-* Dataset processing
-* Experimentation
-* Feature engineering
-* Training
-* Evaluation
-* Model export
+Future work includes automatic certificate management, broader protocols, durable webhook delivery, deeper labeled behavioral learning and broader infrastructure integration. A reverse proxy cannot see arbitrary backend code execution or undo completed operations. Backend job cancellation requires explicit route opt-in and a cooperating receiver; acknowledgement and actual cancellation are separate states.
 
-Production inference runs directly inside the Rust runtime through ONNX.
-
-Python is therefore not required for inference in production.
-
-## Runtime
-
-The runtime is implemented in Rust and is responsible for:
-
-* Reverse proxying
-* Traffic ingestion
-* Telemetry collection
-* API discovery
-* Rule evaluation
-* Feature extraction
-* ONNX inference
-* Behavioral analysis
-* Event correlation
-* Risk calculation
-* Policy execution
-* Control APIs
-* Dashboard delivery
-
-The runtime is designed around:
-
-* Rust
-* Actix Web
-* Tokio
-* ONNX Runtime
-
-## Dashboard
-
-The web panel provides a central view of the monitored API environment.
-
-It can expose:
-
-* Overview
-* API inventory
-* Endpoint health
-* Latency
-* Throughput
-* Error rates
-* Security findings
-* Risk scores
-* Attack journeys
-* Behavioral anomalies
-* Alerts
-* Policies
-* Webhooks
-* Historical reports
-
-The production frontend can be embedded into the Rust application so the platform can be distributed as a unified executable.
-
-## Repository
-
-```text
-aegisx/
-├── model/
-├── panel/
-└── server/
-```
-
-### `model`
-
-Machine-learning development:
-
-* Datasets
-* Preprocessing
-* Feature engineering
-* Training
-* Evaluation
-* ONNX export
-
-### `panel`
-
-Web control plane and visualization interface.
-
-### `server`
-
-Rust runtime containing the proxy, telemetry pipeline, security engines, inference runtime, APIs, and embedded panel delivery.
-
-## Build Model
-
-The release pipeline produces the frontend assets and trained model before compiling the final Rust runtime.
-
-```text
-Model Training
-      │
-      └──→ ONNX Model
-                │
-Panel Build     │
-      │         │
-      └────┬────┘
-           ▼
-      Rust Build
-           │
-           ▼
-        AegisX
-```
-
-The resulting runtime can contain:
-
-* Proxy
-* Security engine
-* Observability engine
-* ML model
-* Control API
-* Background workers
-* Dashboard assets
-
-External infrastructure such as persistent databases remains independent from the executable.
-
-## Deployment Model
-
-AegisX is designed to support both simple and distributed deployments.
-
-### Unified
-
-```text
-AegisX
-├── Proxy
-├── Analysis
-├── API
-├── Workers
-└── Dashboard
-```
-
-Suitable for development, demonstrations, and smaller deployments.
-
-### Distributed
-
-```text
-                  Load Balancer
-                       │
-          ┌────────────┼────────────┐
-          ▼            ▼            ▼
-       Gateway      Gateway      Gateway
-          │            │            │
-          └────────────┼────────────┘
-                       ▼
-                 Event Pipeline
-                       │
-                       ▼
-                 Analysis Plane
-                       │
-                 ┌─────┴─────┐
-                 ▼           ▼
-             Storage      Dashboard
-```
-
-The same architecture can evolve without changing the core security model.
-
-## Philosophy
-
-AegisX follows one pipeline:
-
-```text
-Discover
-   ↓
-Observe
-   ↓
-Understand
-   ↓
-Detect
-   ↓
-Correlate
-   ↓
-Score
-   ↓
-Respond
-```
-
-The goal is not to build another API dashboard or signature-only firewall.
-
-The goal is to build an intelligent security layer that understands how APIs behave, how attacks evolve across requests, and how systems should respond.
+Capture and analysis queues are bounded. The supplied Lua enables up to 256 waiting episodes with a 1,000 ms deadline; the library default leaves waiting disabled. When waiting is disabled, full or expired, required reservations reject before forwarding. This is a live HTTP waiting queue, not durable body spooling or unlimited capacity. Explicit best-effort/skip policies are available. Webhooks remain best effort. Committed decisions, cancellation intents and numeric analysis jobs survive restart; active/uncommitted work is volatile. Interrupted text-model jobs are explicitly unavailable because the numeric journal does not persist their text inputs. Model predictions are not training labels. Training and central upload never happen automatically.
 
 ## Community
 
-* [Issues](https://github.com/comstrx/aegisx/issues)
-* [Discussions](https://github.com/comstrx/aegisx/discussions)
-* [Contributing](https://github.com/comstrx/aegisx/blob/main/CONTRIBUTING.md)
-* [Security](https://github.com/comstrx/aegisx/blob/main/SECURITY.md)
-* [Support](https://github.com/comstrx/aegisx/blob/main/SUPPORT.md)
+- [Issues](https://github.com/comstrx/aegisx/issues)
+- [Discussions](https://github.com/comstrx/aegisx/discussions)
+- [Contributing](https://github.com/comstrx/aegisx/blob/main/CONTRIBUTING.md)
+- [Security](https://github.com/comstrx/aegisx/blob/main/SECURITY.md)
+- [Support](https://github.com/comstrx/aegisx/blob/main/SUPPORT.md)
 
 ## License
 
-`AegisX` is dual-licensed under either:
+<code>aegisx</code> is dual-licensed under either
+[MIT](https://github.com/comstrx/aegisx/blob/main/LICENSE-MIT) or
+[Apache-2.0](https://github.com/comstrx/aegisx/blob/main/LICENSE-APACHE), at your option.
 
-* [MIT](https://github.com/comstrx/aegisx/blob/main/LICENSE-MIT)
-* [Apache-2.0](https://github.com/comstrx/aegisx/blob/main/LICENSE-APACHE)
-
-at your option.
-
-Unless explicitly stated otherwise, contributions intentionally submitted for inclusion in this project, as defined by the Apache-2.0 license, are dual-licensed under the same terms.
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this work by you, as defined in the Apache-2.0 license, shall be
+dual-licensed as above, without any additional terms or conditions.

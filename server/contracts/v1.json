@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aegisx:integration:v1",
+  "title": "AegisX integration v1",
+  "description": "Webhook payload. Request ID is correlation, never authentication or idempotency.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "type",
+    "request_id",
+    "timestamp_ms",
+    "route"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "type": {
+      "enum": [
+        "blocked",
+        "risk_detected",
+        "backend_signal",
+        "cancellation_requested"
+      ]
+    },
+    "request_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "timestamp_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "route": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "action_id",
+        "request_id",
+        "route",
+        "state",
+        "expires_ms"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "requested",
+            "accepted",
+            "cancelled",
+            "too_late",
+            "unsupported"
+          ]
+        },
+        "action_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "request_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "route": {
+          "type": "string"
+        },
+        "expires_ms": {
+          "type": "integer"
+        },
+        "created_ms": {
+          "type": "integer"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "cancellation_requested"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "action",
+          "meaning"
+        ]
+      },
+      "else": {
+        "required": [
+          "actor",
+          "reason"
+        ]
+      }
+    }
+  ]
+}

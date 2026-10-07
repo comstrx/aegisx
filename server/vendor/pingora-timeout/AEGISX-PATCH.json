@@ -1,0 +1,15 @@
+{
+  "upstream": "https://github.com/cloudflare/pingora",
+  "version": "0.9.0",
+  "license": "Apache-2.0",
+  "original_files": {
+    "Cargo.toml": "6080ef22297d1a0f4d78f72865caffd7f91aae6972f9e5582bb6f4c0efa4b9d4",
+    "Cargo.toml.orig": "d3c3b5899fc342b96451dcc91127cddcc336e1dc54182e4930ff39888953096e",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "Cargo.lock": "4debf9fa2e5c0939294a07379d0fe030aeb834bd3a395737c319f14a1f66743b",
+    "benches/benchmark.rs": "0d882ecfd3de4faccd0fed1c02a83fc289a6f075b02ff98fe99724dafd8fc2a6",
+    "src/lib.rs": "8794177c89617133bb2166e3c177c04efb71517bf1c547f5b882d72c9f0f4f5c",
+    "src/timer.rs": "2fd7cd67e65709cb27ff8a03731c46118cf54f56bfa6ff3014648100d8e41eb6",
+    "src/fast_timeout.rs": "1bf0d4f3165e0c9aef766f7d6b9c18006dce62e173fe1d12d555cfe9cd4fee20"
+  }
+}

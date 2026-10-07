@@ -1,0 +1,95 @@
+{
+  "scope": "WSL Linux loopback; wrk + native epoll backend share host; HTTP/1.1 keepalive, fixed 128-byte body, no capture/model/cache; every request forwarded",
+  "host": {
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "logical_cpus": 8,
+    "cpu_model": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+  },
+  "settings": {
+    "binary": [
+      "tmp/aegisx-local-reuse",
+      "server/target/release/aegisx"
+    ],
+    "output": "server/benchmarks/2026-10-01-v06-allocator-comparison.json",
+    "trials": 3,
+    "seconds": 15,
+    "connections": 128,
+    "client_threads": 2,
+    "backend_workers": 2,
+    "proxy_threads": 8,
+    "write_buffer": 0
+  },
+  "artifacts": {
+    "/var/www/tools/aegisx/tmp/aegisx-local-reuse": "4e030c2e082223e598713222bf7ee828d6b90a680476ed288fe62fd34a6179b5",
+    "/var/www/tools/aegisx/server/target/release/aegisx": "c0923f1642e96570ae413fc4b060daa8f0f074bc5134d2dc79820ecccf6387ee"
+  },
+  "trials": [
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-local-reuse",
+      "trial": 1,
+      "requests_per_second": 27507.84,
+      "requests": 413594,
+      "raw": "Running 15s test @ http://127.0.0.1:45867/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.18ms    5.13ms 104.23ms   91.72%\n    Req/Sec    13.95k     3.20k   25.21k    73.06%\n  Latency Distribution\n     50%    3.92ms\n     75%    6.29ms\n     90%    9.54ms\n     99%   24.20ms\n  413594 requests in 15.04s, 121.09MB read\nRequests/sec:  27507.84\nTransfer/sec:      8.05MB\n",
+      "proxy_cpu_cores": 5.290933976610803,
+      "proxy_rss_bytes": 41025536
+    },
+    {
+      "binary": "/var/www/tools/aegisx/server/target/release/aegisx",
+      "trial": 1,
+      "requests_per_second": 28318.1,
+      "requests": 426301,
+      "raw": "Running 15s test @ http://127.0.0.1:47401/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.04ms    4.57ms 100.50ms   88.08%\n    Req/Sec    14.37k     2.54k   19.58k    73.74%\n  Latency Distribution\n     50%    3.88ms\n     75%    6.37ms\n     90%   10.13ms\n     99%   21.15ms\n  426301 requests in 15.05s, 124.81MB read\nRequests/sec:  28318.10\nTransfer/sec:      8.29MB\n",
+      "proxy_cpu_cores": 5.157262222606852,
+      "proxy_rss_bytes": 62300160
+    },
+    {
+      "binary": "/var/www/tools/aegisx/server/target/release/aegisx",
+      "trial": 2,
+      "requests_per_second": 21115.1,
+      "requests": 317708,
+      "raw": "Running 15s test @ http://127.0.0.1:57627/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     7.12ms    7.85ms 147.52ms   91.61%\n    Req/Sec    10.70k     3.11k   22.97k    74.07%\n  Latency Distribution\n     50%    5.10ms\n     75%    8.72ms\n     90%   13.89ms\n     99%   37.36ms\n  317708 requests in 15.05s, 93.02MB read\nRequests/sec:  21115.10\nTransfer/sec:      6.18MB\n",
+      "proxy_cpu_cores": 4.186005856806852,
+      "proxy_rss_bytes": 63893504
+    },
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-local-reuse",
+      "trial": 2,
+      "requests_per_second": 22640.92,
+      "requests": 341734,
+      "raw": "Running 15s test @ http://127.0.0.1:60149/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     6.68ms    7.43ms 123.84ms   92.00%\n    Req/Sec    11.49k     3.87k   18.97k    67.34%\n  Latency Distribution\n     50%    4.62ms\n     75%    7.66ms\n     90%   12.58ms\n     99%   38.54ms\n  341734 requests in 15.09s, 100.05MB read\nRequests/sec:  22640.92\nTransfer/sec:      6.63MB\n",
+      "proxy_cpu_cores": 4.834350234988481,
+      "proxy_rss_bytes": 40943616
+    },
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-local-reuse",
+      "trial": 3,
+      "requests_per_second": 19766.93,
+      "requests": 298356,
+      "raw": "Running 15s test @ http://127.0.0.1:51425/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     7.07ms    5.91ms  68.09ms   84.06%\n    Req/Sec    10.02k     3.04k   21.79k    65.10%\n  Latency Distribution\n     50%    5.41ms\n     75%    9.15ms\n     90%   14.19ms\n     99%   29.57ms\n  298356 requests in 15.09s, 87.35MB read\nRequests/sec:  19766.93\nTransfer/sec:      5.79MB\n",
+      "proxy_cpu_cores": 5.019121446780847,
+      "proxy_rss_bytes": 42647552
+    },
+    {
+      "binary": "/var/www/tools/aegisx/server/target/release/aegisx",
+      "trial": 3,
+      "requests_per_second": 25376.37,
+      "requests": 381969,
+      "raw": "Running 15s test @ http://127.0.0.1:44485/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.42ms    4.31ms  51.75ms   81.79%\n    Req/Sec    12.84k     2.64k   21.49k    68.46%\n  Latency Distribution\n     50%    4.25ms\n     75%    7.10ms\n     90%   10.82ms\n     99%   21.00ms\n  381969 requests in 15.05s, 111.83MB read\nRequests/sec:  25376.37\nTransfer/sec:      7.43MB\n",
+      "proxy_cpu_cores": 5.16972732923545,
+      "proxy_rss_bytes": 63246336
+    }
+  ],
+  "direct_backend": {
+    "requests_per_second": 184386.14,
+    "requests": 2777950,
+    "raw": "Running 15s test @ http://127.0.0.1:38157/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   495.81us  737.41us  29.51ms   98.03%\n    Req/Sec    93.33k    17.07k  135.47k    68.90%\n  Latency Distribution\n     50%  405.00us\n     75%  550.00us\n     90%  706.00us\n     99%    2.10ms\n  2777950 requests in 15.07s, 577.54MB read\nRequests/sec: 184386.14\nTransfer/sec:     38.33MB\n"
+  },
+  "summary": {
+    "/var/www/tools/aegisx/tmp/aegisx-local-reuse": {
+      "median_requests_per_second": 22640.92
+    },
+    "/var/www/tools/aegisx/server/target/release/aegisx": {
+      "median_requests_per_second": 25376.37
+    }
+  }
+}

@@ -1,0 +1,206 @@
+# profile lab-1w: binary=hyper-prof workers=1 connections=128 seconds=10 args=
+
+    Latency     1.17ms  142.74us   2.62ms   83.01%
+  Latency Distribution
+     99%    1.78ms
+Requests/sec: 108103.66
+
+## allocator calls per request
+probe_alloc:mi_malloc_aligned 2.36
+probe_alloc:mi_zalloc_aligned 0.20
+probe_alloc:mi_realloc_aligned 0.00
+probe_alloc:mi_free          2.56
+
+## by dso
+    54.14%  [kernel.kallsyms]
+    34.00%  hyper-prof       
+     6.26%  libc.so.6        
+     4.70%  [ena]            
+                                                                   0x7a3d3be9cb84
+                                                                   0x7a3d3bf29ecc
+     0.86%  [vdso]           
+     0.04%  [sch_fq_codel]   
+
+## top symbols (self)
+     7.44%  [kernel.kallsyms]  [k] __raw_callee_save___pv_queued_spin_unlock                                                                                                                            
+     2.33%  [kernel.kallsyms]  [k] do_syscall_64                                                                                                                                                        
+     2.26%  [kernel.kallsyms]  [k] _raw_spin_unlock_irqrestore                                                                                                                                          
+     2.08%  hyper-prof         [.] hyper_bare::connect::{closure#0}::{closure#0}                                                                                                                        
+     1.80%  [ena]              [k] ena_start_xmit                                                                                                                                                       
+     1.80%  hyper-prof         [.] hyper_bare::serve::{closure#0}::{closure#1}                                                                                                                          
+     1.63%  hyper-prof         [.] <tokio::runtime::io::registration::Registration>::poll_ready                                                                                                         
+     1.47%  hyper-prof         [.] bytes::bytes_mut::shared_v_drop                                                                                                                                      
+     1.37%  [kernel.kallsyms]  [k] __fget_files                                                                                                                                                         
+     1.29%  [kernel.kallsyms]  [k] __tcp_transmit_skb                                                                                                                                                   
+     1.29%  libc.so.6          [.] writev                                                                                                                                                               
+     1.24%  [kernel.kallsyms]  [k] vfs_writev                                                                                                                                                           
+     1.23%  hyper-prof         [.] <hyper::proto::h1::io::Buffered<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll
+     1.15%  [kernel.kallsyms]  [k] handle_softirqs                                                                                                                                                      
+     1.09%  [kernel.kallsyms]  [k] _raw_spin_lock_bh                                                                                                                                                    
+     1.07%  libc.so.6          [.] recv                                                                                                                                                                 
+     1.05%  [kernel.kallsyms]  [k] rep_movs_alternative                                                                                                                                                 
+     1.04%  [kernel.kallsyms]  [k] tcp_sendmsg_locked                                                                                                                                                   
+     1.03%  hyper-prof         [.] <hyper::client::conn::http1::SendRequest<hyper::body::incoming::Incoming>>::send_request                                                                             
+     0.97%  hyper-prof         [.] core::ptr::drop_glue::<hyper::body::incoming::Sender>                                                                                                                
+     0.90%  libc.so.6          [.] 0x00000000000986e1                                                                                                                                                   
+     0.87%  [kernel.kallsyms]  [k] read_tsc                                                                                                                                                             
+     0.86%  hyper-prof         [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{closure#0}::{closure#0}, hyper::body::
+     0.85%  hyper-prof         [.] core::ptr::drop_glue::<hyper::body::incoming::Incoming>                                                                                                              
+     0.84%  hyper-prof         [.] _mi_page_malloc_zero                                                                                                                                                 
+     0.79%  [kernel.kallsyms]  [k] aa_inet_msg_perm                                                                                                                                                     
+     0.74%  [kernel.kallsyms]  [k] memset_orig                                                                                                                                                          
+     0.70%  hyper-prof         [.] tokio::runtime::task::raw::poll::<hyper_bare::connect::{closure#0}::{closure#0}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle>>                
+     0.65%  [vdso]             [.] 0x000000000000099a                                                                                                                                                   
+     0.64%  hyper-prof         [.] <futures_channel::mpsc::BoundedSenderInner<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::try_send                                                
+     0.64%  hyper-prof         [.] tokio::runtime::task::raw::poll::<hyper_bare::serve::{closure#0}::{closure#1}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle>>                  
+     0.63%  libc.so.6          [.] 0x0000000000098659                                                                                                                                                   
+     0.60%  [kernel.kallsyms]  [k] _raw_spin_lock                                                                                                                                                       
+     0.60%  [kernel.kallsyms]  [k] __ip_queue_xmit                                                                                                                                                      
+     0.59%  hyper-prof         [.] tokio::runtime::task::waker::clone_waker                                                                                                                             
+     0.58%  [kernel.kallsyms]  [k] __inet_lookup_established                                                                                                                                            
+     0.58%  hyper-prof         [.] <hyper::body::incoming::Incoming>::new_channel                                                                                                                       
+     0.57%  hyper-prof         [.] <http::header::name::HeaderName>::from_bytes                                                                                                                         
+     0.56%  hyper-prof         [.] <tokio::sync::mpsc::chan::Rx<hyper::client::dispatch::Envelope<http::request::Request<hyper::body::incoming::Incoming>, http::response::Response<hyper::body::incomin
+     0.56%  [kernel.kallsyms]  [k] sock_write_iter                                                                                                                                                      
+     0.55%  hyper-prof         [.] httparse::parse_headers_iter_uninit                                                                                                                                  
+     0.55%  hyper-prof         [.] tokio::runtime::task::waker::wake_by_val                                                                                                                             
+     0.52%  hyper-prof         [.] <futures_channel::mpsc::Receiver<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::next_message                                                      
+     0.52%  [kernel.kallsyms]  [k] __sys_recvfrom                                                                                                                                                       
+     0.52%  hyper-prof         [.] <hyper::proto::h1::conn::Conn<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, bytes::bytes::Bytes, hyper::proto::h1::role::Client>>::write_head  
+     0.50%  [kernel.kallsyms]  [k] memcpy_orig                                                                                                                                                          
+     0.50%  hyper-prof         [.] bytes::bytes_mut::shared_v_clone                                                                                                                                     
+     0.50%  hyper-prof         [.] <hyper::proto::h1::conn::Conn<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, bytes::bytes::Bytes, hyper::proto::h1::role::Server>>::write_head  
+     0.49%  [kernel.kallsyms]  [k] fput                                                                                                                                                                 
+     0.47%  [kernel.kallsyms]  [k] ep_send_events                                                                                                                                                       
+     0.47%  hyper-prof         [.] mi_free                                                                                                                                                              
+     0.47%  hyper-prof         [.] <tokio::runtime::scheduler::current_thread::Context>::run_task                                                                                                       
+     0.46%  [kernel.kallsyms]  [k] apparmor_socket_sendmsg                                                                                                                                              
+     0.46%  hyper-prof         [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::
+     0.45%  libc.so.6          [.] 0x00000000001a1653                                                                                                                                                   
+     0.45%  [kernel.kallsyms]  [k] _copy_from_iter                                                                                                                                                      
+     0.45%  [kernel.kallsyms]  [k] kmem_cache_alloc_node_noprof                                                                                                                                         
+     0.45%  hyper-prof         [.] <tokio::runtime::io::scheduled_io::ScheduledIo>::wake                                                                                                                
+     0.44%  [kernel.kallsyms]  [k] tcp_recvmsg_locked                                                                                                                                                   
+     0.44%  [kernel.kallsyms]  [k] tcp_tso_segs                                                                                                                                                         
+     0.44%  hyper-prof         [.] <hyper::client::conn::http1::SendRequest<hyper::body::incoming::Incoming>>::send_request::{closure#0}                                                                
+     0.44%  [kernel.kallsyms]  [k] tcp_clean_rtx_queue                                                                                                                                                  
+     0.43%  hyper-prof         [.] <tokio::sync::mpsc::list::Rx<hyper::client::dispatch::Envelope<http::request::Request<hyper::body::incoming::Incoming>, http::response::Response<hyper::body::incomin
+     0.42%  [kernel.kallsyms]  [k] __dev_xmit_skb                                                                                                                                                       
+     0.40%  [kernel.kallsyms]  [k] aa_file_perm                                                                                                                                                         
+     0.39%  [kernel.kallsyms]  [k] tcp_established_options                                                                                                                                              
+     0.38%  [ena]              [k] ena_clean_rx_irq                                                                                                                                                     
+     0.38%  [kernel.kallsyms]  [k] check_heap_object                                                                                                                                                    
+     0.38%  [kernel.kallsyms]  [k] ip_finish_output2                                                                                                                                                    
+     0.36%  [kernel.kallsyms]  [k] _copy_to_iter                                                                                                                                                        
+     0.36%  hyper-prof         [.] <hyper::proto::h1::io::Buffered<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll
+     0.36%  [ena]              [k] ena_com_prepare_tx                                                                                                                                                   
+     0.36%  hyper-prof         [.] <tokio::net::tcp::stream::TcpStream as tokio::io::async_read::AsyncRead>::poll_read                                                                                  
+     0.36%  libc.so.6          [.] 0x00000000001a175d                                                                                                                                                   
+     0.36%  [kernel.kallsyms]  [k] __alloc_skb                                                                                                                                                          
+     0.35%  [kernel.kallsyms]  [k] mod_memcg_state                                                                                                                                                      
+     0.33%  [kernel.kallsyms]  [k] skb_clone                                                                                                                                                            
+     0.33%  [kernel.kallsyms]  [k] tcp_ack                                                                                                                                                              
+     0.33%  hyper-prof         [.] <http::header::map::HeaderMap>::try_append2::<http::header::name::HeaderName>                                                                                        
+     0.32%  [kernel.kallsyms]  [k] sock_rfree                                                                                                                                                           
+     0.32%  [kernel.kallsyms]  [k] ep_item_poll.isra.0                                                                                                                                                  
+     0.32%  [kernel.kallsyms]  [k] fib_table_lookup                                                                                                                                                     
+     0.31%  [kernel.kallsyms]  [k] tcp_rcv_established                                                                                                                                                  
+     0.31%  hyper-prof         [.] std::sys::backtrace::__rust_begin_short_backtrace::<hyper_bare::main::{closure#0}::{closure#0}, core::result::Result<(), alloc::boxed::Box<dyn core::error::Error + c
+     0.31%  hyper-prof         [.] bytes::bytes::promotable_even_clone                                                                                                                                  
+     0.30%  [kernel.kallsyms]  [k] begin_current_label_crit_section                                                                                                                                     
+     0.30%  [kernel.kallsyms]  [k] tcp_write_xmit                                                                                                                                                       
+     0.30%  hyper-prof         [.] <bytes::bytes_mut::BytesMut>::reserve_inner                                                                                                                          
+     0.30%  hyper-prof         [.] mi_page_queue_remove                                                                                                                                                 
+     0.30%  [kernel.kallsyms]  [k] __iowrite64_copy                                                                                                                                                     
+
+## inclusive (children), user space
+    34.00%     0.00%  [.] call_once<(), (dyn core::ops::function::FnOnce<(), Output=()> + core::marker::Send), alloc::alloc::Global> (inlined)                                                                              
+    34.00%     0.00%  [.] call_once<core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + core::marker::Send + core::marker::Sync), alloc::alloc::Global>>, std::thread::lifecycle::spawn_unchecked::{closure
+    34.00%     0.00%  [.] call_once<std::thread::lifecycle::spawn_unchecked::{closure_env#1}<hyper_bare::main::{closure#0}::{closure_env#0}, core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + core::mark
+    34.00%     0.00%  [.] catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::lifecycle::spawn_unchecked::{closure#1}::{closure_env#0}<hyper_bare::main::{closure#0}::{closure_env#0}, core::result::Result
+    34.00%     0.00%  [.] catch_unwind<core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + core::marker::Send + core::marker::Sync), alloc::alloc::Global>>, core::panic::unwind_safe::AssertUnwindSafe<std
+    34.00%     0.00%  [.] do_call<core::panic::unwind_safe::AssertUnwindSafe<std::thread::lifecycle::spawn_unchecked::{closure#1}::{closure_env#0}<hyper_bare::main::{closure#0}::{closure_env#0}, core::result::Result<(), 
+    34.00%     0.00%  [.] drop<(dyn core::ops::function::FnOnce<(), Output=()> + core::marker::Send), alloc::alloc::Global> (inlined)                                                                                       
+    34.00%     0.00%  [.] thread_start (inlined)                                                                                                                                                                            
+    34.00%     0.00%  [.] {closure#0}<hyper_bare::main::{closure#0}::{closure_env#0}, core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + core::marker::Send + core::marker::Sync), alloc::alloc::Global>>>
+    34.00%     0.00%  [.] {closure#1}<hyper_bare::main::{closure#0}::{closure_env#0}, core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + core::marker::Send + core::marker::Sync), alloc::alloc::Global>>>
+    34.00%     0.00%  [.] 0x00007a3d3be9cb84                                                                                                                                                                                
+    34.00%     0.00%  [.] 0x00007a3d3bf29ecc                                                                                                                                                                                
+    33.96%     0.00%  [.] __rust_begin_short_backtrace<hyper_bare::main::{closure#0}::{closure_env#0}, core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + core::marker::Send + core::marker::Sync), alloc:
+    33.96%     0.00%  [.] block_on<core::pin::Pin<&mut hyper_bare::serve::{async_fn_env#0}>> (inlined)                                                                                                                      
+    33.96%     0.00%  [.] block_on<hyper_bare::serve::{async_fn_env#0}> (inlined)                                                                                                                                           
+    33.96%     0.00%  [.] block_on_inner<hyper_bare::serve::{async_fn_env#0}> (inlined)                                                                                                                                     
+    33.96%     0.00%  [.] enter<tokio::runtime::scheduler::current_thread::{impl#9}::block_on::{closure_env#0}<core::pin::Pin<&mut hyper_bare::serve::{async_fn_env#0}>>, core::option::Option<core::result::Result<(), allo
+    33.96%     0.00%  [.] enter_runtime<tokio::runtime::scheduler::current_thread::{impl#0}::block_on::{closure_env#0}<hyper_bare::serve::{async_fn_env#0}>, core::result::Result<(), alloc::boxed::Box<(dyn core::error::Er
+    33.96%     0.00%  [.] set<tokio::runtime::scheduler::Context, tokio::runtime::scheduler::current_thread::{impl#9}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#9}::block_on::{closure_env#0}
+    33.96%     0.00%  [.] set_scheduler<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error +
+    33.96%     0.00%  [.] try_with<tokio::runtime::context::Context, tokio::runtime::context::set_scheduler::{closure_env#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core
+    33.96%     0.00%  [.] with<tokio::runtime::context::Context, tokio::runtime::context::set_scheduler::{closure_env#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::op
+    33.96%     0.00%  [.] work (inlined)                                                                                                                                                                                    
+    33.96%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    33.96%     0.00%  [.] {closure#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), alloc::boxed::Box<(dyn core::error::Error + c
+    33.96%     0.00%  [.] {closure#0}<core::pin::Pin<&mut hyper_bare::serve::{async_fn_env#0}>> (inlined)                                                                                                                   
+    33.96%     0.00%  [.] {closure#0}<hyper_bare::serve::{async_fn_env#0}> (inlined)                                                                                                                                        
+    33.96%     0.00%  [.] {closure#0}<tokio::runtime::scheduler::current_thread::{impl#9}::block_on::{closure_env#0}<core::pin::Pin<&mut hyper_bare::serve::{async_fn_env#0}>>, core::option::Option<core::result::Result<()
+    32.26%     0.00%  [.] run_task (inlined)                                                                                                                                                                                
+    32.23%     0.00%  [.] enter<(), tokio::runtime::scheduler::current_thread::{impl#3}::run_task::{closure_env#0}> (inlined)                                                                                               
+    32.18%     0.00%  [.] budget<(), tokio::runtime::scheduler::current_thread::{impl#3}::run_task::{closure#0}::{closure_env#0}> (inlined)                                                                                 
+    32.18%     0.00%  [.] with_budget<(), tokio::runtime::scheduler::current_thread::{impl#3}::run_task::{closure#0}::{closure_env#0}> (inlined)                                                                            
+    32.18%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    31.96%     0.00%  [.] drop_glue<core::result::Result<tokio::task::coop::with_budget::ResetGuard, std::thread::local::AccessError>> (inlined)                                                                            
+    16.46%     0.00%  [.] poll<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                                 
+    16.38%     0.00%  [.] poll_inner<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                           
+    15.91%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    15.86%     0.00%  [.] call_once<core::task::poll::Poll<()>, tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio::runtime::schedul
+    15.86%     0.00%  [.] catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio
+    15.86%     0.00%  [.] catch_unwind<core::task::poll::Poll<()>, core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::connect::{async_fn#0}::{async_block_en
+    15.86%     0.00%  [.] do_call<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio::run
+    15.86%     0.00%  [.] poll_future<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                          
+    15.86%     0.00%  [.] with_mut<tokio::runtime::task::core::Stage<hyper_bare::connect::{async_fn#0}::{async_block_env#0}>, core::task::poll::Poll<()>, tokio::runtime::task::core::{impl#6}::poll::{closure_env#0}<hyper_
+    15.86%     0.00%  [.] {closure#0}<hyper_bare::connect::{async_fn#0}::{async_block_env#0}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                          
+    15.85%     0.00%  [.] call_once<tokio::runtime::context::CONTEXT::{constant#0}::{closure_env#0}, (core::option::Option<&mut core::option::Option<tokio::runtime::context::Context>>)> (inlined)                         
+    15.85%     0.00%  [.] set_current_task_id (inlined)                                                                                                                                                                     
+    15.85%     0.00%  [.] try_with<tokio::runtime::context::Context, tokio::runtime::context::set_current_task_id::{closure_env#0}, core::option::Option<tokio::runtime::task::id::Id>> (inlined)                           
+    15.85%     0.00%  [.] drop (inlined)                                                                                                                                                                                    
+    15.85%     0.00%  [.] drop_glue<tokio::runtime::task::core::TaskIdGuard> (inlined)                                                                                                                                      
+    15.85%     0.00%  [.] get<std::sys::thread_local::native::eager::State> (inlined)                                                                                                                                       
+    15.85%     0.00%  [.] get<tokio::runtime::context::Context> (inlined)                                                                                                                                                   
+    15.45%     0.00%  [.] poll<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                                   
+    15.35%     0.00%  [.] {async_block#0} (inlined)                                                                                                                                                                         
+    15.34%     0.00%  [.] poll_inner<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                             
+    15.15%     0.00%  [.] poll<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::h1::r
+    15.15%     0.00%  [.] poll<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::body::incoming::Incoming> (inlined)                                                                               
+    15.15%     0.00%  [.] poll_catch<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto:
+    15.15%     0.00%  [.] poll_inner<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto:
+    15.15%     0.00%  [.] poll_loop<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::
+    14.96%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    14.92%     0.00%  [.] call_once<core::task::poll::Poll<()>, tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::runtime::scheduler
+    14.92%     0.00%  [.] catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::
+    14.92%     0.00%  [.] catch_unwind<core::task::poll::Poll<()>, core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::serve::{async_fn#0}::{async_block_env#
+    14.92%     0.00%  [.] do_call<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::runti
+    14.92%     0.00%  [.] poll_future<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                            
+    14.92%     0.00%  [.] with_mut<tokio::runtime::task::core::Stage<hyper_bare::serve::{async_fn#0}::{async_block_env#1}>, core::task::poll::Poll<()>, tokio::runtime::task::core::{impl#6}::poll::{closure_env#0}<hyper_ba
+    14.92%     0.00%  [.] {closure#0}<hyper_bare::serve::{async_fn#0}::{async_block_env#1}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)                            
+    14.92%     0.00%  [.] set_current_task_id (inlined)                                                                                                                                                                     
+    14.92%     0.00%  [.] try_with<tokio::runtime::context::Context, tokio::runtime::context::set_current_task_id::{closure_env#0}, core::option::Option<tokio::runtime::task::id::Id>> (inlined)                           
+    14.91%     0.00%  [.] call_once<tokio::runtime::context::CONTEXT::{constant#0}::{closure_env#0}, (core::option::Option<&mut core::option::Option<tokio::runtime::context::Context>>)> (inlined)                         
+    14.90%     0.00%  [.] drop (inlined)                                                                                                                                                                                    
+    14.90%     0.00%  [.] drop_glue<tokio::runtime::task::core::TaskIdGuard> (inlined)                                                                                                                                      
+    14.90%     0.00%  [.] get<std::sys::thread_local::native::eager::State> (inlined)                                                                                                                                       
+    14.90%     0.00%  [.] get<tokio::runtime::context::Context> (inlined)                                                                                                                                                   
+    14.47%     0.00%  [.] {async_block#1} (inlined)                                                                                                                                                                         
+    14.33%     0.00%  [.] poll<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming>, hype
+    14.33%     0.00%  [.] poll<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::body::incoming::Incoming, hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper:
+    14.33%     0.00%  [.] poll_catch<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming>
+    14.33%     0.00%  [.] poll_inner<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming>
+    14.26%     0.00%  [.] poll_loop<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming>,
+    10.83%     0.00%  [.] poll_read<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::
+     7.84%     0.00%  [.] poll_write<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming>
+     5.40%     0.00%  [.] poll_read_head<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::pr
+     4.71%     0.00%  [.] poll_read<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming>,
+     4.22%     0.00%  [.] poll_read_from_io<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>> (inlined)                                        
+     3.86%     0.00%  [.] poll_read_head<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, bytes::bytes::Bytes, hyper::proto::h1::role::Client> (inlined)                                                 
+     3.52%     0.00%  [.] poll_msg<hyper::service::util::ServiceFn<hyper_bare::serve::{async_fn#0}::{closure_env#0}, hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming> (inlined)                           
+     3.41%     0.00%  [.] {async_fn#0} (inlined)                                                                                                                                                                            
+     3.40%     0.00%  [.] parse<hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>, hyper::proto::h1::role::Client> (inlined)                    
+     3.20%     0.00%  [.] poll_write<hyper::proto::h1::dispatch::Client<hyper::body::incoming::Incoming>, hyper::body::incoming::Incoming, hyper_util::rt::tokio::TokioIo<tokio::net::tcp::stream::TcpStream>, hyper::proto:

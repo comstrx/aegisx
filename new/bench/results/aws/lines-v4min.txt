@@ -1,0 +1,162 @@
+Requests/sec:  87680.18
+## hottest source lines (self), aegisx-prof
+ 1.66% [.] bytes::bytes_mut::shared_v_drop bytes_mut.rs:1545 - - 
+ 0.91% [.] _mi_page_malloc_zero alloc.c:50 - - 
+ 0.69% [.] <tokio::runtime::scheduler::current_thread::Context>::run_task raw.rs:273 - - 
+ 0.56% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} atomic.rs:4124 - - 
+ 0.56% [.] tokio::runtime::task::waker::clone_waker state.rs:494 - - 
+ 0.53% [.] <tokio::runtime::io::registration::Registration>::poll_ready futex.rs:32 - - 
+ 0.53% [.] bytes::bytes_mut::shared_v_clone bytes_mut.rs:1538 - - 
+ 0.45% [.] <hyper::body::incoming::Incoming>::new_channel sync.rs:2428 - - 
+ 0.43% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.38% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} base.rs:420 - - 
+ 0.38% [.] mi_page_queue_remove internal.h:840 - - 
+ 0.36% [.] <hyper::proto::h1::role::Client as hyper::proto::h1::Http1Transaction>::parse role.rs:40 - - 
+ 0.35% [.] <aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2} base.rs:353 - - 
+ 0.34% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.34% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} base.rs:104 - - 
+ 0.32% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} base.rs:270 - - 
+ 0.32% [.] tokio::runtime::task::raw::poll::<<aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle>> state.rs:528 - - 
+ 0.31% [.] <tokio::runtime::io::registration::Registration>::poll_ready futex.rs:90 - - 
+ 0.31% [.] <hyper::proto::h1::conn::Conn<hyper_util::common::rewind::Rewind<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>>, bytes::bytes::Bytes, hyper::proto::h1::role::Server>>::write_head conn.rs:644 - - 
+ 0.30% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} mod.rs:823 - - 
+ 0.28% [.] <bytes::bytes_mut::BytesMut>::split_to bytes_mut.rs:1538 - - 
+ 0.27% [.] <hyper::proto::h1::role::Client as hyper::proto::h1::Http1Transaction>::parse role.rs:1169 - - 
+ 0.27% [.] <tokio::sync::oneshot::Sender<core::result::Result<http::response::Response<hyper::body::incoming::Incoming>, hyper::client::dispatch::TrySendError<http::request::Request<aegisx::http::body::arch::Body>>>>>::send onesho
+ 0.27% [.] core::ptr::drop_glue::<aegisx::app::gateway::arch::Ticket> atomic.rs:3875 - - 
+ 0.26% [.] tokio::runtime::task::raw::poll::<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run
+ 0.25% [.] <tokio::runtime::scheduler::current_thread::Context>::run_task cell.rs:555 - - 
+ 0.25% [.] core::ptr::drop_glue::<hyper::body::incoming::Sender> sync.rs:2834 - - 
+ 0.25% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.25% [.] <tokio::sync::mpsc::list::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Incoming>>>>::pop non_null.rs:1650 - - 
+ 0.25% [.] std::sys::backtrace::__rust_begin_short_backtrace::<<aegisx::core::rt::arch::Rt>::workers<<aegisx::app::boot::arch::Boot>::start::{closure#0}, <aegisx::app::boot::arch::Worker>::run::{closure#0}>::{closure#0}, core::res
+ 0.24% [.] tokio::runtime::task::raw::poll::<<aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle>> cell.rs:555 - - 
+ 0.24% [.] mi_free free.c:79 - - 
+ 0.24% [.] tokio::runtime::task::raw::poll::<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run
+ 0.24% [.] tokio::runtime::task::waker::drop_waker state.rs:624 - - 
+ 0.24% [.] tokio::runtime::task::waker::wake_by_val state.rs:528 - - 
+ 0.22% [.] std::sys::backtrace::__rust_begin_short_backtrace::<<aegisx::core::rt::arch::Rt>::workers<<aegisx::app::boot::arch::Boot>::start::{closure#0}, <aegisx::app::boot::arch::Worker>::run::{closure#0}>::{closure#0}, core::res
+ 0.22% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} mod.rs:968 - - 
+ 0.21% [.] <hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#7}, <aeg
+ 0.21% [.] core::ptr::drop_glue::<http::request::Parts> mod.rs:823 - - 
+ 0.21% [.] <tokio::runtime::io::registration::Registration>::poll_ready ready.rs:294 - - 
+ 0.21% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} base.rs:145 - - 
+ 0.20% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.20% [.] <aegisx::http::proxy::arch::Proxy>::forward::{closure#0} option.rs:634 - - 
+ 0.20% [.] mi_theap_malloc_aligned alloc-aligned.c:215 - - 
+ 0.20% [.] <aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2} http1.rs:643 - - 
+ 0.20% [.] <hyper::client::dispatch::Callback<http::request::Request<instant_acme::BodyWrapper<bytes::bytes::Bytes>>, http::response::Response<hyper::body::incoming::Incoming>>>::poll_canceled oneshot.rs:830 - - 
+ 0.20% [.] _mi_theap_malloc_zero alloc.c:50 - - 
+ 0.19% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} base.rs:439 - - 
+ 0.19% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.18% [.] core::ptr::drop_glue::<aegisx::http::body::arch::Body> mod.rs:823 - - 
+ 0.17% [.] <hyper::proto::h1::io::Buffered<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll_flush io.rs:0 - - 
+ 0.17% [.] tokio::runtime::task::waker::wake_by_val state.rs:624 - - 
+ 0.16% [.] <tokio::runtime::scheduler::current_thread::Core>::next_task mod.rs:338 - - 
+ 0.16% [.] <tokio::sync::mpsc::list::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Incoming>>>>::pop list.rs:365 - - 
+ 0.16% [.] <tokio::time::sleep::Sleep>::reset option.rs:765 - - 
+ 0.15% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} base.rs:289 - - 
+ 0.15% [.] <bytes::bytes_mut::BytesMut>::reserve_inner bytes_mut.rs:1545 - - 
+ 0.15% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} base.rs:407 - - 
+ 0.15% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worke
+ 0.14% [.] <aegisx::app::gateway::arch::Handler>::length non_null.rs:614 - - 
+ 0.14% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} base.rs:54 - - 
+ 0.14% [.] <futures_channel::mpsc::BoundedSenderInner<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::try_send atomic.rs:3876 - - 
+ 0.14% [.] <aegisx::http::body::arch::Body as http_body::Body>::size_hint base.rs:365 - - 
+ 0.14% [.] <hyper::proto::h1::role::Server as hyper::proto::h1::Http1Transaction>::encode mod.rs:549 - - 
+ 0.14% [.] <hyper_util::common::rewind::Rewind<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>> as hyper::rt::io::Read>::poll_read rewind.rs:52 - - 
+ 0.13% [.] <http::header::name::HeaderName>::from_bytes name.rs:1084 - - 
+ 0.13% [.] <hyper::proto::h1::role::Client as hyper::proto::h1::Http1Transaction>::encode role.rs:1205 - - 
+ 0.13% [.] <aegisx::http::proxy::arch::Proxy>::forward::{closure#0} base.rs:22 - - 
+ 0.13% [.] <hyper::proto::h1::conn::Conn<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, bytes::bytes::Bytes, hyper::proto::h1::role::Client>>::write_head conn.rs:644 - - 
+ 0.13% [.] <hyper::proto::h1::role::Server as hyper::proto::h1::Http1Transaction>::parse role.rs:372 - - 
+ 0.13% [.] core::ptr::drop_glue::<hyper::body::incoming::Incoming> lock.rs:53 - - 
+ 0.13% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.13% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.12% [.] <aegisx::http::proxy::arch::Proxy>::forward::{closure#0} base.rs:18 - - 
+ 0.12% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} unbounded.rs:573 - - 
+ 0.12% [.] <tokio::sync::mpsc::chan::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Incoming>>, tokio::sync::mpsc::unbounded::Semaphore>
+ 0.12% [.] <http::header::map::HeaderMap>::get2::<http::header::name::HeaderName> map.rs:1516 - - 
+ 0.12% [.] <tokio::runtime::io::scheduled_io::ScheduledIo>::wake futex.rs:32 - - 
+ 0.12% [.] core::ptr::drop_glue::<http::extensions::Extensions> mod.rs:823 - - 
+ 0.12% [.] core::ptr::drop_glue::<hyper::body::incoming::Sender> lock.rs:53 - - 
+ 0.12% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.12% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.12% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.12% [.] <tokio::sync::mpsc::chan::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Incoming>>, tokio::sync::mpsc::unbounded::Semaphore>
+ 0.11% [.] <aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2} option.rs:765 - - 
+ 0.11% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} base.rs:335 - - 
+ 0.11% [.] <hyper::proto::h1::role::Client as hyper::proto::h1::Http1Transaction>::parse bytes.rs:633 - - 
+ 0.11% [.] <hyper::proto::h1::role::Server as hyper::proto::h1::Http1Transaction>::parse option.rs:1096 - - 
+ 0.11% [.] <tokio::net::tcp::stream::TcpStream as tokio::io::async_write::AsyncWrite>::poll_write poll_evented.rs:265 - - 
+ 0.11% [.] <tokio::runtime::io::driver::Driver>::turn atomic.rs:3399 - - 
+ 0.11% [.] _mi_page_free_collect page.c:206 - - 
+ 0.11% [.] bytes::bytes_mut::shared_v_drop mod.rs:635 - - 
+ 0.11% [.] core::ptr::drop_glue::<hyper::body::incoming::Sender> non_null.rs:441 - - 
+ 0.11% [.] http::header::map::hash_elem_using::<http::header::name::HeaderName> name.rs:43 - - 
+ 0.11% [.] mi_malloc_aligned alloc-aligned.c:274 - - 
+ 0.11% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} sync.rs:2834 - - 
+ 0.11% [.] <alloc::sync::Arc<std::sync::poison::mutex::Mutex<futures_channel::mpsc::SenderTask>>>::drop_slow sync.rs:3508 - - 
+ 0.11% [.] <http::header::map::HeaderMap>::get_all::<http::header::name::HeaderName> name.rs:43 - - 
+ 0.11% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<<aegisx::http::server::arch::Server>::serve<core::net::socket_addr::SocketAddr, <aegisx::app::control::arch::Con
+ 0.11% [.] core::ptr::drop_glue::<hyper::body::incoming::Sender> atomic.rs:4124 - - 
+ 0.11% [.] std::sys::backtrace::__rust_begin_short_backtrace::<<aegisx::core::rt::arch::Rt>::workers<<aegisx::app::boot::arch::Boot>::start::{closure#0}, <aegisx::app::boot::arch::Worker>::run::{closure#0}>::{closure#0}, core::res
+ 0.11% [.] tokio::runtime::task::raw::poll::<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run
+ 0.10% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} oneshot.rs:1325 - - 
+ 0.10% [.] <hyper::proto::h1::conn::Conn<hyper_util::common::rewind::Rewind<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>>, bytes::bytes::Bytes, hyper::proto::h1::role::Server>>::poll_read_head io.rs:183 - - 
+ 0.10% [.] http::header::map::hash_elem_using::<http::header::name::HeaderName> name.rs:43 - - 
+ 0.10% [.] <tokio::runtime::io::scheduled_io::ScheduledIo>::wake futex.rs:90 - - 
+ 0.10% [.] _mi_theap_page_reclaim internal.h:871 - - 
+ 0.10% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.10% [.] <http::header::map::HeaderMap>::try_append2::<http::header::name::HeaderName> map.rs:3638 - - 
+ 0.10% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.10% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:
+ 0.10% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worke
+ 0.10% [.] httparse::parse_headers_iter_uninit swar.rs:99 - - 
+ 0.10% [.] mi_page_queue_find_free_ex page-queue.c:45 - - 
+ 0.09% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} atomic.rs:4008 - - 
+ 0.09% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} base.rs:21 - - 
+ 0.09% [.] <aegisx::app::gateway::arch::Handler>::admit base.rs:739 - - 
+ 0.09% [.] bytes::bytes::static_drop bytes.rs:1092 - - 
+ 0.09% [.] mi_free free.c:186 - - 
+ 0.09% [.] <aegisx::app::gateway::arch::Handler>::handle::{closure#0} base.rs:78 - - 
+ 0.09% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} cell.rs:2066 - - 
+ 0.09% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.09% [.] <futures_channel::mpsc::Receiver<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::next_message futex.rs:32 - - 
+ 0.09% [.] <http::header::map::HeaderMap>::try_append2::<http::header::name::HeaderName> map.rs:3715 - - 
+ 0.09% [.] <tokio::net::tcp::stream::TcpStream as tokio::io::async_read::AsyncRead>::poll_read stream.rs:1477 - - 
+ 0.09% [.] <tokio::runtime::io::registration::Registration>::poll_ready registration.rs:144 - - 
+ 0.09% [.] core::ptr::drop_glue::<hyper::body::incoming::Incoming> mod.rs:823 - - 
+ 0.09% [.] tokio::runtime::task::raw::poll::<<aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle>> raw.rs:341 - - 
+ 0.08% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} mod.rs:968 - - 
+ 0.08% [.] <futures_channel::mpsc::BoundedSenderInner<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::try_send atomic_waker.rs:365 - - 
+ 0.08% [.] <hyper::proto::h1::io::Buffered<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll_flush io.rs:286 - - 
+ 0.08% [.] <tokio::sync::mpsc::chan::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Incoming>>, tokio::sync::mpsc::unbounded::Semaphore>
+ 0.08% [.] core::ptr::drop_glue::<hyper::body::incoming::Incoming> atomic.rs:3910 - - 
+ 0.08% [.] mi_page_queue_find_free_ex page.c:763 - - 
+ 0.08% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} base.rs:122 - - 
+ 0.08% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} mod.rs:95 - - 
+ 0.08% [.] <hyper::body::incoming::Incoming>::new_channel incoming.rs:114 - - 
+ 0.08% [.] <hyper::proto::h1::conn::Conn<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, bytes::bytes::Bytes, hyper::proto::h1::role::Client>>::poll_read_body conn.rs:390 - - 
+ 0.08% [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worke
+ 0.08% [.] <tokio::runtime::scheduler::current_thread::Context>::run_task mod.rs:823 - - 
+ 0.08% [.] bytes::bytes_mut::shared_v_drop bytes_mut.rs:1960 - - 
+ 0.08% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} mod.rs:823 - - 
+ 0.08% [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#13}, <ae
+ 0.08% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} option.rs:1041 - - 
+ 0.08% [.] <http::header::name::StandardHeader>::from_bytes name.rs:98 - - 
+ 0.08% [.] <hyper::proto::h1::io::Buffered<hyper_util::common::rewind::Rewind<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll_read_from_io io.r
+ 0.08% [.] <hyper::proto::h1::role::Server as hyper::proto::h1::Http1Transaction>::parse role.rs:40 - - 
+ 0.08% [.] <tokio::time::sleep::Sleep>::reset entry.rs:259 - - 
+ 0.07% [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0} select.rs:76 - - 
+ 0.07% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} list.rs:80 - - 
+ 0.07% [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0} sync.rs:2428 - - 
+ 0.07% [.] <futures_channel::mpsc::Receiver<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::next_message mod.rs:1075 - - 
+ 0.07% [.] _mi_arenas_page_abandon arena.c:618 - - 
+ 0.07% [.] core::ptr::drop_glue::<aegisx::core::list::arch::Few<http::header::name::HeaderName, 8>> mod.rs:823 - - 
+ 0.07% [.] core::ptr::drop_glue::<hyper::body::incoming::Sender> atomic_waker.rs:365 - - 
+ 0.07% [.] mi_page_queue_find_free_ex internal.h:830 - - 
+ 0.07% [.] tokio::runtime::task::waker::wake_by_ref state.rs:528 - - 
+ 0.07% [.] <tokio::net::tcp::stream::TcpStream as tokio::io::async_read::AsyncRead>::poll_read atomic.rs:3399 - - 
+ 0.07% [.] _mi_page_abandon internal.h:871 - - 
+ 0.07% [.] core::ptr::drop_glue::<hyper::body::incoming::Incoming> lib.rs:386 - - 

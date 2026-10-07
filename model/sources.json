@@ -1,0 +1,806 @@
+{
+  "http_params": {
+    "repository": "https://github.com/Morzeux/HttpParamsDataset",
+    "commit": "926670a710283f87c05b554680facf3f9530548c",
+    "license": "MIT",
+    "files": {
+      "payload_full.csv": {
+        "url": "https://raw.githubusercontent.com/Morzeux/HttpParamsDataset/926670a710283f87c05b554680facf3f9530548c/payload_full.csv",
+        "sha256": "a4e62ba13435ad3dd583c5790db2175629020fc41c56e1b26baa02a9ae45f03d"
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/Morzeux/HttpParamsDataset/926670a710283f87c05b554680facf3f9530548c/LICENSE",
+        "sha256": "bf7e07e81bc00bfc421ec164c57bacf1ed15917c2d48843a5bf1a0c1a6de8b46"
+      },
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/Morzeux/HttpParamsDataset/926670a710283f87c05b554680facf3f9530548c/README.md",
+        "sha256": "a456b425b9b78449bccb5b5953b96ea1f6449763d7e16d8050b850cff9531cb8"
+      }
+    }
+  },
+  "crs": {
+    "version": "4.29.0",
+    "url": "https://api.github.com/repos/coreruleset/coreruleset/tarball/v4.29.0",
+    "sha256": "ab471f58e35467f883c897b9519dd87b36450f9991203ca7d91d61ee07044f75",
+    "files": 323
+  },
+  "fuzzdb": {
+    "repository": "https://github.com/fuzzdb-project/fuzzdb",
+    "commit": "5656ab25dc6bb43bae32236fab775658a90d7380",
+    "license": "BSD-3-Clause and CC-BY-3.0; additional notices preserved in _copyright.txt",
+    "files": {
+      "_copyright.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/_copyright.txt",
+        "sha256": "70ac4869dda1b9ef46fdbc02a4e88b12032fd239b89fb5e17442d736f2a3e160"
+      },
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/README.md",
+        "sha256": "1f39e7649d2217672a9abd6fcb38c6f44623e80e35216ced8f8fda82cb48f125"
+      },
+      "attack/README.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/README.md",
+        "sha256": "d6f7b99c463d74d107ecc6b11b9e2fdea333d402d5d60c6a089d1425c25f0711"
+      },
+      "attack/sql-injection/detect/README.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/sql-injection/detect/README.md",
+        "sha256": "88691650ad82500c1372620759ee90d6b30ebb801cf4000c46faa9d22599d5f4"
+      },
+      "attack/sql-injection/detect/Generic_SQLI.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/sql-injection/detect/Generic_SQLI.txt",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      "attack/sql-injection/detect/GenericBlind.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/sql-injection/detect/GenericBlind.txt",
+        "sha256": "224a67f0923dee5395c0b00b68d273ebf1ad1baeed8bef292409407a5e27ae3c"
+      },
+      "attack/xss/README.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/xss/README.md",
+        "sha256": "2ff9e3143540b89f442dde9e533b98f8e54fae9da2929d40d47d03a5bca280a2"
+      },
+      "attack/xss/xss-rsnake.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/xss/xss-rsnake.txt",
+        "sha256": "c147e2be6439cadf96c059eab005a47960114505f03ead0700645ccf152e6eb9"
+      },
+      "attack/xss/xss-other.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/xss/xss-other.txt",
+        "sha256": "b2757a3d36b822d64c86152be1ca7323677cc1f64aad4c603799258ccd9683c5"
+      },
+      "attack/os-cmd-execution/README.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/os-cmd-execution/README.md",
+        "sha256": "5cfa6c0d90304a1f4a9664283477840aeaaa7302cb8b267978ba82d3e36ffb7b"
+      },
+      "attack/os-cmd-execution/command-execution-unix.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/os-cmd-execution/command-execution-unix.txt",
+        "sha256": "2a331555079a8448876fb656a5be71b2ed628a84e47d12ce5a7faedb75546727"
+      },
+      "attack/path-traversal/README.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/path-traversal/README.md",
+        "sha256": "3c50e301bbfb1548db1ba4624a33a9b83b66993036f37c5fbb330a1bf1c37867"
+      },
+      "attack/path-traversal/traversals-8-deep-exotic-encoding.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/path-traversal/traversals-8-deep-exotic-encoding.txt",
+        "sha256": "fe313c4b0eb87eb6bc98e7e06d9918fb141c17248ad47e65a3f3b5c438f5853e"
+      },
+      "attack/xml/xml-attacks.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/xml/xml-attacks.txt",
+        "sha256": "19d019a4c5fc9d4994d40e5a0dfe91e14f4ceae42d51faaa759ca13b8f3c0d32"
+      },
+      "attack/no-sql-injection/Readme.md": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/no-sql-injection/Readme.md",
+        "sha256": "48deef18353a10d5cbc34d8a30c10b113ab8b8a7fa88b211b1e92a6f47267285"
+      },
+      "attack/no-sql-injection/mongodb.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/no-sql-injection/mongodb.txt",
+        "sha256": "bb300793b09b9b033c8fd8b4348c04931e700e333849c8ad9ec3a7d325ece402"
+      },
+      "attack/server-side-include/server-side-includes-generic.txt": {
+        "url": "https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/5656ab25dc6bb43bae32236fab775658a90d7380/attack/server-side-include/server-side-includes-generic.txt",
+        "sha256": "82105881b06ecf29d1a746049ccfd6d2dcd5fdc8dfcfedf3873199dd785750f6"
+      }
+    }
+  },
+  "wcp_benign": {
+    "repository": "https://github.com/openappsec/waf-comparison-project",
+    "commit": "8ec8263eebba76816601f7c7052f8ffb83e31312",
+    "url": "https://downloads.openappsec.io/waf-comparison-project/legitimate.zip",
+    "etag": "\"7f7b53e6e8d780e4d390c8070bffce88-71\"",
+    "license": "Apache-2.0 (publisher statement for legitimate requests)",
+    "selection": "First 64 SHA256-sorted capture names with decompressed size <=16MiB and compressed size <2MiB; first48 training, last16 external-only; max512 payloads/capture",
+    "members": [
+      {
+        "name": "Legitimate/browsing_2024_stickermule_mu.json",
+        "compressed": 152527,
+        "bytes": 4495942,
+        "offset": 890063706,
+        "method": 8,
+        "crc": 2296171287,
+        "sha256": "25d0e515be4e2ec38d7c7c61141448fbc16438d5fce826a678dd040e00bda4d8",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_withings_ni.json",
+        "compressed": 278652,
+        "bytes": 6898498,
+        "offset": 1093760666,
+        "method": 8,
+        "crc": 3514318844,
+        "sha256": "e0701618764142f1f2e39029a6eace25104833130416b5e245113b444255e266",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_lsrotel.json",
+        "compressed": 222348,
+        "bytes": 1435701,
+        "offset": 442168558,
+        "method": 8,
+        "crc": 99123359,
+        "sha256": "3208ef4b8c9b993cc49715fc8ac2775496e3069ee27608806cf0c46d91ea6a7b",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_epicgamesstore.json",
+        "compressed": 894929,
+        "bytes": 3309940,
+        "offset": 300680360,
+        "method": 8,
+        "crc": 3101073439,
+        "sha256": "d5edf0b16f5cf5612050e0b6dcd9d44e64fb2238e6b32e50f551099b3a560063",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_squarespace_hl.json",
+        "compressed": 283551,
+        "bytes": 4896833,
+        "offset": 883624436,
+        "method": 8,
+        "crc": 272301737,
+        "sha256": "bbc3b21f9c2d5bb6a6dd58084b122da217b7ec589d181b7f1e0f0d3ee5adef13",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_stickeryou_hl.json",
+        "compressed": 414783,
+        "bytes": 3055715,
+        "offset": 890216335,
+        "method": 8,
+        "crc": 2965053172,
+        "sha256": "3b7dc740de7de0b807ba87b350edd515ff53945a88434cf89f13bdc731466d21",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_twitch.json",
+        "compressed": 176857,
+        "bytes": 1112899,
+        "offset": 1198841187,
+        "method": 8,
+        "crc": 2423325416,
+        "sha256": "b115988731351dd61b96ccb206be1827f1cba3adc47c5368a5fd3c846b9ad726",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_reserved.json",
+        "compressed": 273570,
+        "bytes": 2873562,
+        "offset": 848665612,
+        "method": 8,
+        "crc": 509882503,
+        "sha256": "ca120da387a5cdd73acbd9f3bc7446943f4057ff7c1421160d616b062b03275b",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_coursera_mu.json",
+        "compressed": 693116,
+        "bytes": 8918044,
+        "offset": 206217203,
+        "method": 8,
+        "crc": 2148910497,
+        "sha256": "1c846b7f18a4ed63260bc71f77b55beb0e9555a62bf63ecfaf0b3536612e7388",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_getit.json",
+        "compressed": 158199,
+        "bytes": 1415521,
+        "offset": 1148916480,
+        "method": 8,
+        "crc": 1638792919,
+        "sha256": "06f63986d69a6e07fb7a1988218324509a41bdb030c7a26a74f975da10543db5",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_momondo_al.json",
+        "compressed": 317319,
+        "bytes": 5359886,
+        "offset": 471959593,
+        "method": 8,
+        "crc": 2388875468,
+        "sha256": "66fe3df7cf7dbb5e890505929b5f10dbca6f33e2f4f4e1726aaca962a0784711",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_justeat.json",
+        "compressed": 720630,
+        "bytes": 7523266,
+        "offset": 390434489,
+        "method": 8,
+        "crc": 975508919,
+        "sha256": "23de12eb3a30d459fc33c944860b114cb2780c965287992a96617b3d18613f75",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_theproteinworks_mu.json",
+        "compressed": 626985,
+        "bytes": 7797191,
+        "offset": 910283108,
+        "method": 8,
+        "crc": 596213082,
+        "sha256": "2eeb4d49157280dbed1c1a6b8647c55574565e8aa61a59e731bc78abed35532d",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_groceries_ni.json",
+        "compressed": 453400,
+        "bytes": 14857478,
+        "offset": 350783375,
+        "method": 8,
+        "crc": 347652124,
+        "sha256": "7b02f1e718a66576a2f3d5e75dd66d2b566e9296f8cea7cd4ae9457a814e5e6b",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_yelp.json",
+        "compressed": 708929,
+        "bytes": 8026326,
+        "offset": 1103343941,
+        "method": 8,
+        "crc": 2385755476,
+        "sha256": "efbb5e5f1bb809326bca20d20036c36ecbc6aa8c7215f5dd0a7ab9f4ebd0983e",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_all_jobs_-_searching.json",
+        "compressed": 808058,
+        "bytes": 4527828,
+        "offset": 1120295016,
+        "method": 8,
+        "crc": 3117269564,
+        "sha256": "a8e72bd2fb4f846b77b6482da7cfa32b9f05fe35735a3858a0ecdea3ce563a62",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_jumia_ni.json",
+        "compressed": 135735,
+        "bytes": 1000772,
+        "offset": 390298658,
+        "method": 8,
+        "crc": 564244181,
+        "sha256": "7c207ad77ecd20b73823f4cca2efd22a0840b1362383913df35283962d43e1d2",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_issta.json",
+        "compressed": 1640984,
+        "bytes": 6261253,
+        "offset": 380244748,
+        "method": 8,
+        "crc": 4082332009,
+        "sha256": "8c3926897fafd435c6f4034a967405ea06059cf7321a7da3755ac20c38cabb06",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_reserved.json",
+        "compressed": 222242,
+        "bytes": 2355820,
+        "offset": 1177662909,
+        "method": 8,
+        "crc": 4244935430,
+        "sha256": "3fd5f684e794fb66a01a87c532e36ab2c4cca1dbd0123b501663a77be2c5387b",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_pandora.json",
+        "compressed": 388023,
+        "bytes": 1882558,
+        "offset": 641949112,
+        "method": 8,
+        "crc": 3617297888,
+        "sha256": "1afb4d49cb752b1a32c606f9b35ffb9e6b6fe6fec22fc9afd2c18ecdf77ef762",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_hot_cinema.json",
+        "compressed": 55544,
+        "bytes": 545202,
+        "offset": 1151759450,
+        "method": 8,
+        "crc": 545091440,
+        "sha256": "ac5fcd10a713c29346715e2ad987e19dd19c91e24e1f778dc1127e7eb16b7602",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_frommer_s.json",
+        "compressed": 1230753,
+        "bytes": 6337842,
+        "offset": 338500283,
+        "method": 8,
+        "crc": 3368639820,
+        "sha256": "a6b71caea18363030d22e2d43400a9e590e76e271ce3965d62cf47e0b9dc93ca",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_trivago_al.json",
+        "compressed": 614396,
+        "bytes": 10743015,
+        "offset": 1053980311,
+        "method": 8,
+        "crc": 3831623702,
+        "sha256": "504cbf5fc2c5cbb793ec9f9652f856389f61f58765822f70dbc4574b122201c8",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_wolframalpha.json",
+        "compressed": 199238,
+        "bytes": 1081345,
+        "offset": 1094461001,
+        "method": 8,
+        "crc": 2433669696,
+        "sha256": "59de6c95043937b5846e040e30d22959d7a34f5b5bd0a79dd57c2832b2f2b826",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_pinterest.json",
+        "compressed": 545638,
+        "bytes": 4977232,
+        "offset": 835860496,
+        "method": 8,
+        "crc": 1702278463,
+        "sha256": "e9d6dbdc75669995df83ad6d8e9a28f7149a9e9cddd129d666055d1971706ff8",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_brooklinen_mu.json",
+        "compressed": 334386,
+        "bytes": 6463762,
+        "offset": 185682351,
+        "method": 8,
+        "crc": 3566625102,
+        "sha256": "ccd21625b264b11690123b17112cf195ae0352b6b9b2a2be04f9ae660c156ca6",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_aliexpress_hl.json",
+        "compressed": 1260801,
+        "bytes": 8906397,
+        "offset": 16782842,
+        "method": 8,
+        "crc": 3933079344,
+        "sha256": "6e4777ca0e9aadf43214a31dcd956e6a128c4fbdc8aef654108f9f5b62db2fc4",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_katespade_hl.json",
+        "compressed": 768862,
+        "bytes": 15723400,
+        "offset": 391155214,
+        "method": 8,
+        "crc": 138874197,
+        "sha256": "6d036de5d3ae1c71b67a71b38535ff744a9a8da3cb723fc2dda8f69c1c78cf76",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_qwant.json",
+        "compressed": 326871,
+        "bytes": 1687856,
+        "offset": 846339927,
+        "method": 8,
+        "crc": 4052036176,
+        "sha256": "1a6b28e5b4615f660f9a4900b70ed95aa73f3c2db13f6b01de0f983b4cf9cfdc",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_bestore_-_shopping.json",
+        "compressed": 35636,
+        "bytes": 524891,
+        "offset": 1130142161,
+        "method": 8,
+        "crc": 2019521736,
+        "sha256": "f162009dc77e5739f30ce20b7bc227da38d1a71c9a6e344b183b25027b406f0a",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_elal_-_searching.json",
+        "compressed": 107163,
+        "bytes": 1084320,
+        "offset": 1144401203,
+        "method": 8,
+        "crc": 60362241,
+        "sha256": "b37b18d042798d83ae64e82a945a6a63c1385e6797b09c53987a5d748fb91ac8",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_ynet_log_up.json",
+        "compressed": 53974,
+        "bytes": 750470,
+        "offset": 1202767560,
+        "method": 8,
+        "crc": 2643555715,
+        "sha256": "aae0019e2b7a592ee20f0e14d595823b31c8f56b85303948428c711d623b0167",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_optica_halperin.json",
+        "compressed": 100767,
+        "bytes": 863025,
+        "offset": 1171378041,
+        "method": 8,
+        "crc": 2700455133,
+        "sha256": "a5fb45381dbeeb4ecc3a3e1afc110f9a780d6e83c28b1f98aa6de893668dcf48",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_americanframe_mu.json",
+        "compressed": 216041,
+        "bytes": 14283548,
+        "offset": 28034554,
+        "method": 8,
+        "crc": 2057343986,
+        "sha256": "5ddc83b164d425f908ffb54021a455360f73e9d5ab0019c5c03effcc6b830e6f",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_nutrishop.json",
+        "compressed": 495750,
+        "bytes": 5038052,
+        "offset": 492262824,
+        "method": 8,
+        "crc": 2904666118,
+        "sha256": "1034173800278ec5054113ef3a03bfbbd2438c13fe71927a7ee2905c9705c225",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_amazonfresh.json",
+        "compressed": 768149,
+        "bytes": 5235747,
+        "offset": 21581554,
+        "method": 8,
+        "crc": 1087041276,
+        "sha256": "5d217b1da98a680c2d17f9b7478f0ca9369143f77fae95ee82dcac7cfbb30b46",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_hostelworld.json",
+        "compressed": 456151,
+        "bytes": 4264857,
+        "offset": 369463736,
+        "method": 8,
+        "crc": 223751432,
+        "sha256": "91c0ebb9c7706d7e1fd7d800d8f610590f03f314420c35af13bcad3ec8d7749d",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_b2wdigital.json",
+        "compressed": 207651,
+        "bytes": 1449166,
+        "offset": 44163214,
+        "method": 8,
+        "crc": 2495658917,
+        "sha256": "4ee3651a882204ed587d13e179802ec915e72de9163c80894817287b667fc46e",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_bollandbranch_mu.json",
+        "compressed": 221517,
+        "bytes": 5925510,
+        "offset": 52091769,
+        "method": 8,
+        "crc": 3509421630,
+        "sha256": "fa8d1d2240c91c810ab4686c3e603561a2e99a5fab248cad9113d3eb9f45c36f",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_ghost.json",
+        "compressed": 311909,
+        "bytes": 1567495,
+        "offset": 342826974,
+        "method": 8,
+        "crc": 3629909556,
+        "sha256": "f2e50cd2bfc596bc5ae91c2028a34b894e5040abdee5bfe1d9d487eb4e4c1ab5",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_moo_hl.json",
+        "compressed": 359205,
+        "bytes": 6449631,
+        "offset": 472942470,
+        "method": 8,
+        "crc": 3543419715,
+        "sha256": "136a07655ed6cea48d3bac6176861b4cba16f07cc43af7443909db9bd891759c",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_twitter.json",
+        "compressed": 280659,
+        "bytes": 1979400,
+        "offset": 1061731654,
+        "method": 8,
+        "crc": 203062281,
+        "sha256": "db61edd0e0fd4662891e8f1d36cb3f11a80b5500b45eb07f8d05a9c995affd98",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_rockglam.json",
+        "compressed": 57575,
+        "bytes": 964712,
+        "offset": 1177984006,
+        "method": 8,
+        "crc": 2729629838,
+        "sha256": "facd778e706c339e55a07da69087723d20d32f427df2aae26b6269b49d46b278",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_tasty.json",
+        "compressed": 1324516,
+        "bytes": 6980450,
+        "offset": 900759857,
+        "method": 8,
+        "crc": 1575322732,
+        "sha256": "8767f4af0d2a6ec551a80f4b786e9cea7e0477b793ac5a58de0fdfcebcc70cbb",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_fandom.json",
+        "compressed": 332632,
+        "bytes": 2416901,
+        "offset": 1147304190,
+        "method": 8,
+        "crc": 785449332,
+        "sha256": "2f932338b6f537a33d4654b031408847c7a82fa6e8e6c4f7e1325ede25727af6",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_exce_lsior.json",
+        "compressed": 1828280,
+        "bytes": 8790274,
+        "offset": 305305454,
+        "method": 8,
+        "crc": 2162997000,
+        "sha256": "3a0b9a0a1871d03605bb4cc7818e64fb670d15855e36e07ceae84239b869d74d",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_harrods_az.json",
+        "compressed": 254918,
+        "bytes": 2698841,
+        "offset": 355490982,
+        "method": 8,
+        "crc": 320525708,
+        "sha256": "eaf2e55331812e1fe0c4aca8617a625de7a28d80c8948c24d1f79ceaa591c862",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_topten.json",
+        "compressed": 101528,
+        "bytes": 1259558,
+        "offset": 1197049426,
+        "method": 8,
+        "crc": 3773913001,
+        "sha256": "89510fe17f849133b0e35fc353043506e696b4f53e96b69841522ece2073aa68",
+        "split": "train"
+      },
+      {
+        "name": "Legitimate/browsing_2024_zalando.json",
+        "compressed": 1245459,
+        "bytes": 8690371,
+        "offset": 1110782612,
+        "method": 8,
+        "crc": 66996352,
+        "sha256": "942e9d5d81b046abc0a76101b14cce3263d0cdbbd94ddfad39fdb9ccb964e83e",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_toysim.json",
+        "compressed": 56388,
+        "bytes": 747515,
+        "offset": 1197151043,
+        "method": 8,
+        "crc": 2321501526,
+        "sha256": "40e5072557fc3e65faef85573e38db47362a6d6a61b23bcf94f16cd5e9792bd1",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_extrastores.json",
+        "compressed": 717231,
+        "bytes": 6566906,
+        "offset": 309181344,
+        "method": 8,
+        "crc": 3359047839,
+        "sha256": "f735c38e683ccf32866976fc8c1b9e69bd681a656cea74369ff9ab5c3925ddd8",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_doron_home.json",
+        "compressed": 30824,
+        "bytes": 347062,
+        "offset": 1142839213,
+        "method": 8,
+        "crc": 307948482,
+        "sha256": "9e00d102989cf4987a9630ca35013874d7bdedf12235026ea66f29f566a5f5f6",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_prettylittlething_hl.json",
+        "compressed": 839825,
+        "bytes": 15619486,
+        "offset": 841336939,
+        "method": 8,
+        "crc": 1175650326,
+        "sha256": "b3ff430cf284d4c0f7d3c1285bc1c97c8cab25e99935db9b82a7334e0bc598d9",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_westmarine_al.json",
+        "compressed": 170705,
+        "bytes": 3635775,
+        "offset": 1093056002,
+        "method": 8,
+        "crc": 4062069920,
+        "sha256": "8077cbe0f206bb6e72b38eb51e0dc3ea198b93e21c032dffa46e6872d6177386",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_isrotel_-_searching.json",
+        "compressed": 44159,
+        "bytes": 596750,
+        "offset": 1153158754,
+        "method": 8,
+        "crc": 1151806751,
+        "sha256": "7634a4632efef739974aacb19769ed6f02a7a1c540cbb05757b92b6afb888078",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_microcenter.json",
+        "compressed": 369635,
+        "bytes": 2269711,
+        "offset": 469964515,
+        "method": 8,
+        "crc": 2154768456,
+        "sha256": "7f8af4fc1ea5d8fb102430644ffbd0e50b89d476c901f6339bc59aa1059b9371",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_zazzle_hl.json",
+        "compressed": 135567,
+        "bytes": 5245527,
+        "offset": 1114614382,
+        "method": 8,
+        "crc": 3702764437,
+        "sha256": "1194250e826d87c9c096e7ad8c58a1256698db463b9cc38aac8d5a6e00902656",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_lego.json",
+        "compressed": 455786,
+        "bytes": 3548110,
+        "offset": 422216904,
+        "method": 8,
+        "crc": 3157943984,
+        "sha256": "c4e4fe58e77b47275531c01f83439985ce23215fc17ebdab496185ead67ba9a9",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_caviar.json",
+        "compressed": 420930,
+        "bytes": 4615715,
+        "offset": 193533366,
+        "method": 8,
+        "crc": 2969176656,
+        "sha256": "42b4093d452179fa80698b4c45af427e70ebe7d60fb7789c0330ba8730afbd50",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_asos.json",
+        "compressed": 1456453,
+        "bytes": 6984850,
+        "offset": 41782330,
+        "method": 8,
+        "crc": 1205788970,
+        "sha256": "0d5832e1a0089449912da82e6de97131a4396c9e6481440abf69c85c31534cba",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_stackoverflow_ni.json",
+        "compressed": 65666,
+        "bytes": 729293,
+        "offset": 884914204,
+        "method": 8,
+        "crc": 1304065464,
+        "sha256": "b39e33476cf4f53034a9ee629261dac2e56c53b231ae4696977627240e46312e",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_ellesse.json",
+        "compressed": 494297,
+        "bytes": 4953269,
+        "offset": 1144508465,
+        "method": 8,
+        "crc": 3959949400,
+        "sha256": "30812bacfa35b762336325d6126bdc61f7c8bb66f41f4509c054057580b4a005",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_dermstore.json",
+        "compressed": 1196591,
+        "bytes": 6582824,
+        "offset": 219677408,
+        "method": 8,
+        "crc": 4155717103,
+        "sha256": "42a76ee4074bdbe10dcaf0cabe3778a5e2246eeaf1b5cb46e3ad3f67b2cec273",
+        "split": "external"
+      },
+      {
+        "name": "Legitimate/browsing_2024_kayak_al.json",
+        "compressed": 353562,
+        "bytes": 6583180,
+        "offset": 391924176,
+        "method": 8,
+        "crc": 2196623769,
+        "sha256": "40d621cf1f11d4c07593f23a550bae783123bd0af5b8e253b8d44170b34350c7",
+        "split": "external"
+      }
+    ],
+    "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "seclists": {
+    "repository": "https://github.com/danielmiessler/SecLists",
+    "commit": "bd8f9b5501f9257e9d39c733540e793602c3da6f",
+    "license": "MIT; preserve file attribution",
+    "files": {
+      "Fuzzing/Databases/SQLi/Generic-SQLi.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/Databases/SQLi/Generic-SQLi.txt",
+        "sha256": "09e5930609e4ce0663505168432796881f493ec0e63643300166d36ed57d40ec",
+        "bytes": 5383
+      },
+      "Fuzzing/Databases/SQLi/NoSQL.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/Databases/SQLi/NoSQL.txt",
+        "sha256": "f161a8cac3221bab78e89d96c8280c8aaea2d353835bc8777fb8fdf8611de0af",
+        "bytes": 605
+      },
+      "Fuzzing/LDAP.Fuzzing.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/LDAP.Fuzzing.txt",
+        "sha256": "558a7c3ef0faf7ab7bdcda3d2baecbe740011af135be8e077417d482dab4e6de",
+        "bytes": 247
+      },
+      "Fuzzing/XSS/robot-friendly/XSS-Fuzzing.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/XSS/robot-friendly/XSS-Fuzzing.txt",
+        "sha256": "7897685342bc26c0f2e717679beb582f2024637018e760fd1eed88957fae3634",
+        "bytes": 259913
+      },
+      "Fuzzing/XSS/robot-friendly/XSS-Jhaddix.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/XSS/robot-friendly/XSS-Jhaddix.txt",
+        "sha256": "1b7ec661af015daa7d8d67d3c9032099275e346b503ec8686f8b7df4dca3ca69",
+        "bytes": 19065
+      },
+      "Fuzzing/XSS/robot-friendly/XSS-OFJAAAH.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/XSS/robot-friendly/XSS-OFJAAAH.txt",
+        "sha256": "b83f95d4756d5c7767bbdcc6b1bb4296a6cd287b67944d004c36f1ba9712510c",
+        "bytes": 200607
+      },
+      "Fuzzing/XSS/Polyglots/XSS-Polyglots.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/XSS/Polyglots/XSS-Polyglots.txt",
+        "sha256": "6c834cacfcbf17699d91d383a3af500116237d17df83b4c3498caaec5832eafb",
+        "bytes": 1576
+      },
+      "Fuzzing/command-injection-commix.txt": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/Fuzzing/command-injection-commix.txt",
+        "sha256": "e8a3d8e9251ecea011d58994856fb7aae8c9ef9c074d97b3868afbe1240769af",
+        "bytes": 940100
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/danielmiessler/SecLists/bd8f9b5501f9257e9d39c733540e793602c3da6f/LICENSE",
+        "sha256": "3dbdc93d5f8829de0941744841730a09c106d0732e5ae0e98ca1d77be7ded66c",
+        "bytes": 1072
+      }
+    },
+    "scope": "Selected textual fuzzing payloads only; no credentials, shells or execution. Dictionary membership is not adjudicated ground truth."
+  }
+}

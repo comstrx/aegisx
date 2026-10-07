@@ -1,0 +1,193 @@
+{
+  "scope": "WSL Linux loopback, Python asyncio client and backend share host; 128-byte HTTP/1.1 responses; model off",
+  "concurrency": 16,
+  "requests_per_trial": 60000,
+  "artifacts": {
+    "baseline": {
+      "path": "/var/www/tools/aegisx/tmp/aegisx-v0.3-baseline",
+      "sha256": "afcaf0e54ff5a2ba76ec53b688a89e56c9edf61841c2fac4c9b74a525cb67f5e"
+    },
+    "current": {
+      "path": "/var/www/tools/aegisx/dist/aegisx",
+      "sha256": "0b8a7a3f81a3d249a14dad84c1559fbd9a0c011b7c617d27635ca0852bc3dd07"
+    }
+  },
+  "trials": [
+    {
+      "requests": 60000,
+      "duration_seconds": 4.2178973959817085,
+      "requests_per_second": 14225.09709628323,
+      "p50_ms": 1.0828429949469864,
+      "p95_ms": 1.3886549859307706,
+      "p99_ms": 1.6970550059340894,
+      "dropped_events": 0,
+      "binary": "baseline",
+      "capture": false,
+      "trial": 1
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 1.8872913559898734,
+      "requests_per_second": 31791.59370892702,
+      "p50_ms": 0.48861498362384737,
+      "p95_ms": 0.6588209944311529,
+      "p99_ms": 0.8684280037414283,
+      "dropped_events": 0,
+      "binary": "current",
+      "capture": false,
+      "trial": 1
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 1.9964294469973538,
+      "requests_per_second": 30053.654082412224,
+      "p50_ms": 0.5016209906898439,
+      "p95_ms": 0.8063330024015158,
+      "p99_ms": 1.0719429992605,
+      "dropped_events": 0,
+      "binary": "current",
+      "capture": false,
+      "trial": 2
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 1.9044230149884243,
+      "requests_per_second": 31505.605386923293,
+      "p50_ms": 0.4943200037814677,
+      "p95_ms": 0.6652269803453237,
+      "p99_ms": 0.8623350004199892,
+      "dropped_events": 0,
+      "binary": "baseline",
+      "capture": false,
+      "trial": 2
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 1.921162323007593,
+      "requests_per_second": 31231.093427893997,
+      "p50_ms": 0.49481599126011133,
+      "p95_ms": 0.6907220231369138,
+      "p99_ms": 0.9188300173263997,
+      "dropped_events": 0,
+      "binary": "baseline",
+      "capture": false,
+      "trial": 3
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 1.8981335680000484,
+      "requests_per_second": 31609.998901825686,
+      "p50_ms": 0.49371799104847014,
+      "p95_ms": 0.6542229966726154,
+      "p99_ms": 0.8577310072723776,
+      "dropped_events": 0,
+      "binary": "current",
+      "capture": false,
+      "trial": 3
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 3.6220313270168845,
+      "requests_per_second": 16565.290187430866,
+      "p50_ms": 0.9039310098160058,
+      "p95_ms": 1.4899529924150556,
+      "p99_ms": 2.5702849961817265,
+      "dropped_events": 233581,
+      "binary": "baseline",
+      "capture": true,
+      "trial": 1
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 3.820859945000848,
+      "requests_per_second": 15703.271217387342,
+      "p50_ms": 0.9567329834681004,
+      "p95_ms": 1.590753992786631,
+      "p99_ms": 2.6007890119217336,
+      "dropped_events": 226108,
+      "binary": "current",
+      "capture": true,
+      "trial": 1
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 4.508018336025998,
+      "requests_per_second": 13309.617558674894,
+      "p50_ms": 1.116437983000651,
+      "p95_ms": 1.9355660188011825,
+      "p99_ms": 2.9668009956367314,
+      "dropped_events": 216987,
+      "binary": "current",
+      "capture": true,
+      "trial": 2
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 4.844972680992214,
+      "requests_per_second": 12383.97075702653,
+      "p50_ms": 1.190588009194471,
+      "p95_ms": 2.161167998565361,
+      "p99_ms": 3.6227150121703744,
+      "dropped_events": 216165,
+      "binary": "baseline",
+      "capture": true,
+      "trial": 2
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 4.643490689981263,
+      "requests_per_second": 12921.313728367162,
+      "p50_ms": 1.1766375100705773,
+      "p95_ms": 1.9148639985360205,
+      "p99_ms": 2.61148699792102,
+      "dropped_events": 215755,
+      "binary": "baseline",
+      "capture": true,
+      "trial": 3
+    },
+    {
+      "requests": 60000,
+      "duration_seconds": 3.3004619929997716,
+      "requests_per_second": 18179.273122144434,
+      "p50_ms": 0.8428279834333807,
+      "p95_ms": 1.3336440024431795,
+      "p99_ms": 1.8154599820263684,
+      "dropped_events": 290012,
+      "binary": "current",
+      "capture": true,
+      "trial": 3
+    }
+  ],
+  "summary": {
+    "proxy_only": {
+      "baseline": {
+        "requests_per_second": 31231.093427893997,
+        "p50_ms": 0.49481599126011133,
+        "p95_ms": 0.6907220231369138,
+        "p99_ms": 0.9188300173263997
+      },
+      "current": {
+        "requests_per_second": 31609.998901825686,
+        "p50_ms": 0.49371799104847014,
+        "p95_ms": 0.6588209944311529,
+        "p99_ms": 0.8684280037414283
+      },
+      "throughput_change_percent": 1.213231534164838
+    },
+    "capture": {
+      "baseline": {
+        "requests_per_second": 12921.313728367162,
+        "p50_ms": 1.1766375100705773,
+        "p95_ms": 1.9148639985360205,
+        "p99_ms": 2.61148699792102
+      },
+      "current": {
+        "requests_per_second": 15703.271217387342,
+        "p50_ms": 0.9567329834681004,
+        "p95_ms": 1.590753992786631,
+        "p99_ms": 2.6007890119217336
+      },
+      "throughput_change_percent": 21.529989500314773
+    }
+  }
+}

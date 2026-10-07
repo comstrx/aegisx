@@ -1,0 +1,45 @@
+[project]
+name = "aegisx-model"
+version = "0.10.0"
+description = "Reproducible HTTP risk modeling and lifecycle feature pipeline for AegisX"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "numpy==2.5.3",
+    "torch==2.14.1",
+    "onnx==1.23.1",
+    "onnxscript==0.7.2",
+    "onnxruntime==1.30.0",
+]
+
+[project.scripts]
+aegisx-model = "aegisx_model.app.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pyyaml==6.0.3",
+    "ruff==0.16.9",
+    "transformers==5.18.0",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.ruff]
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
+ignore = ["E701"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

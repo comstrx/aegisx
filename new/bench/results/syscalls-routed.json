@@ -1,0 +1,42 @@
+{
+  "targets": {
+    "nginx": {
+      "requests": 14966,
+      "syscalls_per_request": 5.187,
+      "by_call": {
+        "recvfrom": 2.009,
+        "writev": 2.007,
+        "getsockopt": 1.006,
+        "epoll_wait": 0.136,
+        "epoll_ctl": 0.01,
+        "close": 0.007,
+        "accept4": 0.005,
+        "setsockopt": 0.004,
+        "ioctl": 0.001,
+        "socket": 0.001,
+        "connect": 0.001,
+        "brk": 0.0
+      }
+    },
+    "aegisx": {
+      "requests": 28867,
+      "syscalls_per_request": 4.182,
+      "by_call": {
+        "recvfrom": 2.006,
+        "writev": 1.002,
+        "sendto": 1.001,
+        "epoll_wait": 0.151,
+        "epoll_ctl": 0.006,
+        "write": 0.004,
+        "close": 0.003,
+        "setsockopt": 0.003,
+        "accept4": 0.003,
+        "shutdown": 0.002,
+        "madvise": 0.001,
+        "socket": 0.0,
+        "connect": 0.0,
+        "getsockopt": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# started on Sun Oct  4 15:59:35 2026
+
+399954,,probe_alloc:mi_malloc_aligned,4001436901,100.00,,
+28531,,probe_alloc:mi_zalloc_aligned,4001444637,100.00,,
+0,,probe_alloc:mi_realloc_aligned,4001453173,100.00,,
+428505,,probe_alloc:mi_free,4001453807,100.00,,

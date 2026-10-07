@@ -1,0 +1,99 @@
+{
+  "scope": "WSL Linux loopback; wrk + native epoll backend share host; HTTP/1.1 keepalive, fixed 128-byte body, no capture/model; every request forwarded; policy profile enables SQLite-backed decision cache and observed rolling rate context",
+  "host": {
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "logical_cpus": 8,
+    "cpu_model": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+  },
+  "settings": {
+    "binary": [
+      "tmp/aegisx-v0.8-baseline",
+      "dist/aegisx"
+    ],
+    "output": "server/benchmarks/2026-10-02-v09-final-policy.json",
+    "trials": 3,
+    "seconds": 10,
+    "connections": 128,
+    "client_threads": 2,
+    "backend_workers": 2,
+    "proxy_threads": 2,
+    "write_buffer": 0,
+    "profile": "policy",
+    "proxy_cpus": "0,2",
+    "backend_cpus": "4,5",
+    "client_cpus": "6,7"
+  },
+  "artifacts": {
+    "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline": "858e873ac139671cf4f86f5c452745efdeb0bd2acd39919e4d65995e66e40e4d",
+    "/var/www/tools/aegisx/dist/aegisx": "bcc62dc6e43e7560d0d305f3690e8ba2b8e4140596d9195c13e741d5bbbb6c94"
+  },
+  "trials": [
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline",
+      "trial": 1,
+      "requests_per_second": 5474.78,
+      "requests": 55011,
+      "raw": "Running 10s test @ http://127.0.0.1:48963/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    32.10ms   45.05ms 449.47ms   92.90%\n    Req/Sec     2.82k     1.47k    7.81k    69.59%\n  Latency Distribution\n     50%   22.06ms\n     75%   38.74ms\n     90%   65.00ms\n     99%  268.15ms\n  55011 requests in 10.05s, 16.11MB read\nRequests/sec:   5474.78\nTransfer/sec:      1.60MB\n",
+      "proxy_cpu_cores": 1.199000490900611,
+      "proxy_rss_bytes": 50946048
+    },
+    {
+      "binary": "/var/www/tools/aegisx/dist/aegisx",
+      "trial": 1,
+      "requests_per_second": 7350.32,
+      "requests": 73954,
+      "raw": "Running 10s test @ http://127.0.0.1:42331/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    17.64ms    8.45ms 122.01ms   85.25%\n    Req/Sec     3.73k   750.62     5.26k    66.16%\n  Latency Distribution\n     50%   15.88ms\n     75%   19.74ms\n     90%   26.07ms\n     99%   48.26ms\n  73954 requests in 10.06s, 21.65MB read\nRequests/sec:   7350.32\nTransfer/sec:      2.15MB\n",
+      "proxy_cpu_cores": 1.7975798222893016,
+      "proxy_rss_bytes": 52142080
+    },
+    {
+      "binary": "/var/www/tools/aegisx/dist/aegisx",
+      "trial": 2,
+      "requests_per_second": 10589.03,
+      "requests": 106453,
+      "raw": "Running 10s test @ http://127.0.0.1:57307/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    11.99ms    6.95ms  35.77ms   58.87%\n    Req/Sec     5.38k   660.74     9.27k    73.87%\n  Latency Distribution\n     50%   12.54ms\n     75%   18.17ms\n     90%   20.84ms\n     99%   25.32ms\n  106453 requests in 10.05s, 31.17MB read\nRequests/sec:  10589.03\nTransfer/sec:      3.10MB\n",
+      "proxy_cpu_cores": 1.9774921175072289,
+      "proxy_rss_bytes": 54648832
+    },
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline",
+      "trial": 2,
+      "requests_per_second": 11006.3,
+      "requests": 110996,
+      "raw": "Running 10s test @ http://127.0.0.1:53457/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    11.53ms    2.73ms  31.49ms   73.54%\n    Req/Sec     5.57k   846.21     8.48k    71.50%\n  Latency Distribution\n     50%   11.04ms\n     75%   12.88ms\n     90%   15.18ms\n     99%   19.86ms\n  110996 requests in 10.08s, 32.50MB read\nRequests/sec:  11006.30\nTransfer/sec:      3.22MB\n",
+      "proxy_cpu_cores": 1.974172270869797,
+      "proxy_rss_bytes": 53014528
+    },
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline",
+      "trial": 3,
+      "requests_per_second": 9782.79,
+      "requests": 98131,
+      "raw": "Running 10s test @ http://127.0.0.1:34427/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    13.35ms    7.23ms  83.39ms   84.01%\n    Req/Sec     4.98k     1.08k    6.89k    74.24%\n  Latency Distribution\n     50%   12.74ms\n     75%   16.38ms\n     90%   20.66ms\n     99%   42.88ms\n  98131 requests in 10.03s, 28.73MB read\nRequests/sec:   9782.79\nTransfer/sec:      2.86MB\n",
+      "proxy_cpu_cores": 1.9299764442030558,
+      "proxy_rss_bytes": 54788096
+    },
+    {
+      "binary": "/var/www/tools/aegisx/dist/aegisx",
+      "trial": 3,
+      "requests_per_second": 7374.83,
+      "requests": 74178,
+      "raw": "Running 10s test @ http://127.0.0.1:45405/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    17.76ms    8.85ms  88.24ms   86.62%\n    Req/Sec     3.74k     0.99k    5.75k    67.17%\n  Latency Distribution\n     50%   15.42ms\n     75%   19.15ms\n     90%   27.45ms\n     99%   56.39ms\n  74178 requests in 10.06s, 21.72MB read\nRequests/sec:   7374.83\nTransfer/sec:      2.16MB\n",
+      "proxy_cpu_cores": 1.6895886883085165,
+      "proxy_rss_bytes": 52854784
+    }
+  ],
+  "direct_backend": {
+    "requests_per_second": 119905.16,
+    "requests": 1210082,
+    "raw": "Running 10s test @ http://127.0.0.1:56511/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.39ms    2.89ms  43.32ms   92.78%\n    Req/Sec    61.48k    26.14k  115.54k    57.87%\n  Latency Distribution\n     50%  523.00us\n     75%    0.96ms\n     90%    2.97ms\n     99%   15.49ms\n  1210082 requests in 10.09s, 251.58MB read\nRequests/sec: 119905.16\nTransfer/sec:     24.93MB\n"
+  },
+  "summary": {
+    "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline": {
+      "median_requests_per_second": 9782.79
+    },
+    "/var/www/tools/aegisx/dist/aegisx": {
+      "median_requests_per_second": 7374.83
+    }
+  }
+}

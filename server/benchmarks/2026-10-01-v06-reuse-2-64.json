@@ -1,0 +1,45 @@
+{
+  "scope": "WSL Linux loopback; wrk + native epoll backend share host; HTTP/1.1 keepalive, fixed 128-byte body, no capture/model/cache; every request forwarded",
+  "host": {
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "logical_cpus": 8,
+    "cpu_model": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+  },
+  "settings": {
+    "binary": [
+      "server/target/release/aegisx"
+    ],
+    "output": "server/benchmarks/2026-10-01-v06-reuse-2-64.json",
+    "trials": 1,
+    "seconds": 8,
+    "connections": 64,
+    "client_threads": 2,
+    "backend_workers": 2,
+    "proxy_threads": 2,
+    "write_buffer": 0
+  },
+  "artifacts": {
+    "/var/www/tools/aegisx/server/target/release/aegisx": "4e030c2e082223e598713222bf7ee828d6b90a680476ed288fe62fd34a6179b5"
+  },
+  "trials": [
+    {
+      "binary": "/var/www/tools/aegisx/server/target/release/aegisx",
+      "trial": 1,
+      "requests_per_second": 12402.26,
+      "requests": 100457,
+      "raw": "Running 8s test @ http://127.0.0.1:46303/benchmark\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.14ms    2.38ms  18.47ms   65.71%\n    Req/Sec     6.27k   748.82    12.70k    84.47%\n  Latency Distribution\n     50%    4.86ms\n     75%    6.93ms\n     90%    8.39ms\n     99%   10.94ms\n  100457 requests in 8.10s, 29.41MB read\nRequests/sec:  12402.26\nTransfer/sec:      3.63MB\n",
+      "proxy_cpu_cores": 1.9817599634767076,
+      "proxy_rss_bytes": 29675520
+    }
+  ],
+  "direct_backend": {
+    "requests_per_second": 163184.4,
+    "requests": 1317489,
+    "raw": "Running 8s test @ http://127.0.0.1:54199/benchmark\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   440.98us    1.77ms  52.64ms   98.00%\n    Req/Sec    82.71k    14.93k  110.87k    76.25%\n  Latency Distribution\n     50%  224.00us\n     75%  306.00us\n     90%  436.00us\n     99%    6.66ms\n  1317489 requests in 8.07s, 273.91MB read\nRequests/sec: 163184.40\nTransfer/sec:     33.93MB\n"
+  },
+  "summary": {
+    "/var/www/tools/aegisx/server/target/release/aegisx": {
+      "median_requests_per_second": 12402.26
+    }
+  }
+}

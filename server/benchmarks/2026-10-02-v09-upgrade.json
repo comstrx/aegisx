@@ -1,0 +1,9 @@
+{
+  "baseline_version": "0.8.0",
+  "candidate_version": "0.9.0",
+  "baseline_sha256": "858e873ac139671cf4f86f5c452745efdeb0bd2acd39919e4d65995e66e40e4d",
+  "candidate_sha256": "bcc62dc6e43e7560d0d305f3690e8ba2b8e4140596d9195c13e741d5bbbb6c94",
+  "existing_ban_enforced": true,
+  "legacy_request_events": 7,
+  "new_queue_enabled": true
+}

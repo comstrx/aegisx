@@ -1,0 +1,8 @@
+{
+  "round": "v0.8 text and journey",
+  "authorized": "2026-10-02 user explicitly authorized a new >10M text/journey model",
+  "completed_candidates": 1,
+  "selected": "attempt-1",
+  "previous_round": "Six v0.7 attempts archived in tmp/model-v07",
+  "report": "report.json"
+}

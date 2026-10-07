@@ -1,0 +1,157 @@
+{
+  "scope": "Shared WSL loopback, native epoll backend with 2 workers, 128-byte body, HTTP/1.1 keepalive, GET only. No TLS, capture, policy or caching anywhere. Not isolated capacity.",
+  "host": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "logical_cpus": 8,
+  "settings": {
+    "aegisx": "/var/www/tools/aegisx/new/server/target/release/aegisx",
+    "aegisx_args": "",
+    "pingora": "/var/www/tools/aegisx/new/bench/pingora/target/release/pingora-bare",
+    "nginx": "/usr/sbin/nginx",
+    "targets": [
+      "direct",
+      "nginx",
+      "pingora",
+      "aegisx"
+    ],
+    "workers": 4,
+    "threads": 2,
+    "connections": [
+      64
+    ],
+    "seconds": 4,
+    "warmup": 1,
+    "rest": 0.5,
+    "trials": 1,
+    "output": "results/validate.json"
+  },
+  "trials": [
+    {
+      "target": "direct",
+      "connections": 64,
+      "trial": 1,
+      "requests_per_second": 24197.09,
+      "requests": 97115,
+      "p50_ms": 0.8300000000000001,
+      "p90_ms": 9.0,
+      "p99_ms": 25.55,
+      "socket_errors": null,
+      "non_2xx": 0,
+      "raw": "Running 4s test @ http://127.0.0.1:58607/\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     3.14ms    5.60ms  67.14ms   89.54%\n    Req/Sec    12.49k     5.27k   32.58k    73.68%\n  Latency Distribution\n     50%  830.00us\n     75%    3.59ms\n     90%    9.00ms\n     99%   25.55ms\n  97115 requests in 4.01s, 20.19MB read\nRequests/sec:  24197.09\nTransfer/sec:      5.03MB\n",
+      "cpu_cores": 0.5147811735572559,
+      "cpu_us_per_request": 22.035730834577564,
+      "switches_per_request": 0.4165267981259332,
+      "syscalls_per_request": 0.0,
+      "rss_bytes": 2465792,
+      "pss_bytes": 455680
+    },
+    {
+      "target": "nginx",
+      "connections": 64,
+      "trial": 1,
+      "requests_per_second": 12168.03,
+      "requests": 49389,
+      "p50_ms": 4.3,
+      "p90_ms": 21.63,
+      "p99_ms": 57.76,
+      "socket_errors": null,
+      "non_2xx": 0,
+      "raw": "Running 4s test @ http://127.0.0.1:39797/\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     8.45ms   12.12ms 126.21ms   89.21%\n    Req/Sec     6.31k     2.42k   13.95k    60.26%\n  Latency Distribution\n     50%    4.30ms\n     75%   10.47ms\n     90%   21.63ms\n     99%   57.76ms\n  49389 requests in 4.06s, 13.47MB read\nRequests/sec:  12168.03\nTransfer/sec:      3.32MB\n",
+      "cpu_cores": 0.7285551352796377,
+      "cpu_us_per_request": 65.80412642491244,
+      "switches_per_request": 0.7919374759561846,
+      "syscalls_per_request": 2.0027131547510577,
+      "rss_bytes": 46026752,
+      "pss_bytes": 32513024
+    },
+    {
+      "target": "pingora",
+      "connections": 64,
+      "trial": 1,
+      "requests_per_second": 3505.11,
+      "requests": 14251,
+      "p50_ms": 15.76,
+      "p90_ms": 40.53,
+      "p99_ms": 82.95,
+      "socket_errors": null,
+      "non_2xx": 0,
+      "raw": "Running 4s test @ http://127.0.0.1:38431/\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    20.20ms   16.89ms 134.48ms   83.38%\n    Req/Sec     1.80k   704.57     3.41k    67.95%\n  Latency Distribution\n     50%   15.76ms\n     75%   25.81ms\n     90%   40.53ms\n     99%   82.95ms\n  14251 requests in 4.07s, 3.47MB read\nRequests/sec:   3505.11\nTransfer/sec:      0.85MB\n",
+      "cpu_cores": 0.7544681302594617,
+      "cpu_us_per_request": 223.8439407760859,
+      "switches_per_request": 0.3422215984843169,
+      "syscalls_per_request": 0.004280401375342081,
+      "rss_bytes": 14561280,
+      "pss_bytes": 13052928
+    },
+    {
+      "target": "aegisx",
+      "connections": 64,
+      "trial": 1,
+      "requests_per_second": 26191.43,
+      "requests": 105938,
+      "p50_ms": 1.5,
+      "p90_ms": 13.5,
+      "p99_ms": 43.3,
+      "socket_errors": null,
+      "non_2xx": 0,
+      "raw": "Running 4s test @ http://127.0.0.1:38133/\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     4.98ms    8.45ms  97.34ms   89.94%\n    Req/Sec    13.39k     7.55k   32.36k    70.89%\n  Latency Distribution\n     50%    1.50ms\n     75%    5.60ms\n     90%   13.50ms\n     99%   43.30ms\n  105938 requests in 4.04s, 23.34MB read\nRequests/sec:  26191.43\nTransfer/sec:      5.77MB\n",
+      "cpu_cores": 1.6336910097186155,
+      "cpu_us_per_request": 63.52772376295569,
+      "switches_per_request": 0.3550567312956635,
+      "syscalls_per_request": 1.0508127395268931,
+      "rss_bytes": 10162176,
+      "pss_bytes": 10927104
+    }
+  ],
+  "nginx_build": "nginx version: nginx/1.24.0 (Ubuntu)\nbuilt with OpenSSL 3.0.13 30 Jan 2024\nTLS SNI support enabled\nconfigure arguments: --with-cc-opt='-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/nginx-PgwIQM/nginx-1.24.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/nginx-PgwIQM/nginx-1.24.0=/usr/src/nginx-1.24.0-2ubuntu7.18 -fPIC -Wdate-time -D_FORTIFY_SOURCE=3' --with-ld-opt='-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -fPIC' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=stderr --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-compat --with-debug --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_flv_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_mp4_module --with-http_random_index_module --with-http_secure_link_module --with-http_sub_module --with-mail_ssl_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-stream_realip_module --with-http_geoip_module=dynamic --with-http_image_filter_module=dynamic --with-http_perl_module=dynamic --with-http_xslt_module=dynamic --with-mail=dynamic --with-stream=dynamic --with-stream_geoip_module=dynamic\n",
+  "nginx_config": "\ndaemon off;\nmaster_process on;\nworker_processes 4;\npid /tmp/aegisx-bench-otxfsr8v/nginx.pid;\nerror_log /tmp/aegisx-bench-otxfsr8v/nginx-error.log crit;\nevents { worker_connections 16384; multi_accept on; }\nhttp {\n    access_log off;\n    client_body_temp_path /tmp/aegisx-bench-otxfsr8v/body;\n    proxy_temp_path /tmp/aegisx-bench-otxfsr8v/proxy;\n    keepalive_timeout 60s;\n    keepalive_requests 100000;\n    upstream origin { server 127.0.0.1:58607; keepalive 256; }\n    server {\n        listen 127.0.0.1:39797 reuseport;\n        location / {\n            proxy_http_version 1.1;\n            proxy_set_header Connection \"\";\n            proxy_set_header Host 127.0.0.1:58607;\n            proxy_request_buffering off;\n            proxy_buffering off;\n            proxy_pass http://origin;\n        }\n    }\n}\n",
+  "pingora_sha256": "c1ccc7071d47edc168bcc78e2f07ba8f6517477922fbe91cdcdeacd536312ff5",
+  "aegisx_sha256": "b68edd7ce5d99d45399b5ffbe28303ac7ca19c3e105be21f27bc1d65eeceaff1",
+  "summary": {
+    "64": {
+      "direct": {
+        "requests_per_second": 24197.1,
+        "p50_ms": 0.83,
+        "p99_ms": 25.55,
+        "cpu_us_per_request": 22.04,
+        "switches_per_request": 0.417,
+        "syscalls_per_request": 0.0,
+        "pss_mb": 0.4,
+        "errors": 0,
+        "trials": 1
+      },
+      "nginx": {
+        "requests_per_second": 12168.0,
+        "p50_ms": 4.3,
+        "p99_ms": 57.76,
+        "cpu_us_per_request": 65.8,
+        "switches_per_request": 0.792,
+        "syscalls_per_request": 2.003,
+        "pss_mb": 31.0,
+        "errors": 0,
+        "trials": 1
+      },
+      "pingora": {
+        "requests_per_second": 3505.1,
+        "p50_ms": 15.76,
+        "p99_ms": 82.95,
+        "cpu_us_per_request": 223.84,
+        "switches_per_request": 0.342,
+        "syscalls_per_request": 0.004,
+        "pss_mb": 12.4,
+        "errors": 0,
+        "trials": 1
+      },
+      "aegisx": {
+        "requests_per_second": 26191.4,
+        "p50_ms": 1.5,
+        "p99_ms": 43.3,
+        "cpu_us_per_request": 63.53,
+        "switches_per_request": 0.355,
+        "syscalls_per_request": 1.051,
+        "pss_mb": 10.4,
+        "errors": 0,
+        "trials": 1
+      }
+    }
+  }
+}

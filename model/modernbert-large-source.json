@@ -1,0 +1,37 @@
+{
+  "repository": "answerdotai/ModernBERT-large",
+  "revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
+  "license": "Apache-2.0",
+  "files": {
+    "README.md": {
+      "bytes": 8427,
+      "sha256": null,
+      "git_blob": "8b9d77d5a470f7ef31f7495da1593826849b6fd6"
+    },
+    "config.json": {
+      "bytes": 1194,
+      "sha256": null,
+      "git_blob": "f58291adedf9dc2fe5a5d80f8e2221bd1f135a23"
+    },
+    "model.safetensors": {
+      "bytes": 1583544840,
+      "sha256": "44510fec5d3a81a1877f225637b869495f18e55f6f23a09abb9be0acc030295f",
+      "git_blob": "d8bd5f89b81cec28f33b7ef75b0639d6c3dea277"
+    },
+    "special_tokens_map.json": {
+      "bytes": 694,
+      "sha256": null,
+      "git_blob": "6bf65ea14185a88eef7e24b41c86a953a58dcbad"
+    },
+    "tokenizer.json": {
+      "bytes": 2132967,
+      "sha256": null,
+      "git_blob": "de3f3e316b66f3885df49ab2c0fff3e477ff1680"
+    },
+    "tokenizer_config.json": {
+      "bytes": 20810,
+      "sha256": null,
+      "git_blob": "d78aa50c890c167d8700301e5580164466e51fa5"
+    }
+  }
+}

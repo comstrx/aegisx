@@ -1,0 +1,94 @@
+{
+  "scope": "Local WSL, same host load generator and origin, model/capture off, public GET, warmed single key",
+  "binary_sha256": "afcaf0e54ff5a2ba76ec53b688a89e56c9edf61841c2fac4c9b74a525cb67f5e",
+  "origin_delay_ms": 2,
+  "concurrency": 16,
+  "requests_per_trial": 10000,
+  "warmup_requests": 512,
+  "trials": [
+    {
+      "requests": 10000,
+      "duration_seconds": 2.317058343003737,
+      "requests_per_second": 4315.817092044571,
+      "p50_ms": 3.582128993002698,
+      "p95_ms": 4.754638997837901,
+      "p99_ms": 5.282342986902222,
+      "dropped_events": 0,
+      "trial": 1,
+      "cache": false,
+      "origin_calls_including_warmup": 10512
+    },
+    {
+      "requests": 10000,
+      "duration_seconds": 0.29044759602402337,
+      "requests_per_second": 34429.618757019714,
+      "p50_ms": 0.41360300383530557,
+      "p95_ms": 0.7570069865323603,
+      "p99_ms": 1.0292080114595592,
+      "dropped_events": 0,
+      "trial": 1,
+      "cache": true,
+      "origin_calls_including_warmup": 16
+    },
+    {
+      "requests": 10000,
+      "duration_seconds": 0.3011627809901256,
+      "requests_per_second": 33204.63427493677,
+      "p50_ms": 0.4312035016482696,
+      "p95_ms": 0.7732069934718311,
+      "p99_ms": 0.985507998848334,
+      "dropped_events": 0,
+      "trial": 2,
+      "cache": true,
+      "origin_calls_including_warmup": 16
+    },
+    {
+      "requests": 10000,
+      "duration_seconds": 2.6674939109943807,
+      "requests_per_second": 3748.8370484310603,
+      "p50_ms": 3.9946329925442114,
+      "p95_ms": 6.124450999777764,
+      "p99_ms": 7.617758994456381,
+      "dropped_events": 0,
+      "trial": 2,
+      "cache": false,
+      "origin_calls_including_warmup": 10512
+    },
+    {
+      "requests": 10000,
+      "duration_seconds": 2.7001798340061214,
+      "requests_per_second": 3703.4570342537154,
+      "p50_ms": 3.981679998105392,
+      "p95_ms": 6.434949027607217,
+      "p99_ms": 7.877160009229556,
+      "dropped_events": 0,
+      "trial": 3,
+      "cache": false,
+      "origin_calls_including_warmup": 10512
+    },
+    {
+      "requests": 10000,
+      "duration_seconds": 0.18940254897461273,
+      "requests_per_second": 52797.59989576691,
+      "p50_ms": 0.2890524920076132,
+      "p95_ms": 0.44390300172381103,
+      "p99_ms": 0.5777050100732595,
+      "dropped_events": 0,
+      "trial": 3,
+      "cache": true,
+      "origin_calls_including_warmup": 16
+    }
+  ],
+  "median": {
+    "False": {
+      "requests_per_second": 3748.8370484310603,
+      "p95_ms": 6.124450999777764,
+      "origin_calls_including_warmup": 10512
+    },
+    "True": {
+      "requests_per_second": 34429.618757019714,
+      "p95_ms": 0.7570069865323603,
+      "origin_calls_including_warmup": 16
+    }
+  }
+}

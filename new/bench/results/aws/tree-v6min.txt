@@ -1,0 +1,132 @@
+Requests/sec:  90527.32
+samples 17999
+
+## under `arch::Client>::exchange`: 9.56% of all samples
+  3.50%  (self)
+  1.04%  <http::header::map::HeaderMap>::clear
+  1.03%  <aegisx::http::proxy::arch::Proxy>::prepare
+  1.02%  core::ptr::drop_glue::<hyper::body::incoming::Incoming>
+  0.76%  <hyper::body::incoming::Incoming as http_body::Body>::poll_frame
+  0.32%  <tokio::time::sleep::Sleep>::reset
+  0.24%  <http::header::map::HeaderMap>::get_all::<http::header::name::HeaderName>
+  0.21%  tokio::runtime::task::waker::drop_waker
+  0.17%  <tokio::sync::mpsc::list::Tx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Inc
+  0.17%  <tokio::time::sleep::Sleep as core::future::future::Future>::poll
+  0.12%  tokio::runtime::task::waker::wake_by_val
+  0.12%  <http::header::map::HeaderMap>::try_append2::<&http::header::name::HeaderName>
+  0.11%  <aegisx::core::pool::arch::Pool<(aegisx::core::net::arch::Address, bool), aegisx::http::upstream::arch::Conn>>::put
+  0.09%  <alloc::sync::Arc<futures_channel::oneshot::Inner<http::header::map::HeaderMap>>>::drop_slow
+  0.08%  <aegisx::core::pool::arch::Pool<(aegisx::core::net::arch::Address, bool), aegisx::http::upstream::arch::Conn>>::stash
+  0.07%  mi_free
+  0.06%  <alloc::sync::Arc<tokio::sync::oneshot::Inner<core::result::Result<http::response::Response<hyper::body::incoming::Incoming>, hyper::client::dispatch::TrySendError<http::
+  0.06%  tokio::runtime::task::waker::clone_waker
+  0.04%  <foldhash::fast::RandomState as core::hash::BuildHasher>::hash_one::<&(aegisx::core::net::arch::Address, bool)>
+  0.04%  core::ptr::drop_glue::<core::option::Option<(http::method::Method, http::uri::Uri, http::version::Version, aegisx::http::body::arch::Body)>>
+  0.04%  <aegisx::core::net::arch::Address as core::cmp::PartialEq>::eq
+  0.03%  core::ptr::drop_glue::<aegisx::http::body::arch::Body>
+  0.03%  <aegisx::http::body::arch::Body>::replay
+  0.03%  <std::sys::pal::unix::time::Timespec>::sub_timespec
+  0.02%  bytes::bytes_mut::shared_v_drop
+  0.02%  <http::header::map::HeaderMap>::try_reserve_one
+  0.02%  core::ptr::drop_glue::<aegisx::core::list::arch::Few<http::header::name::HeaderName, 8>>
+  0.02%  bytes::bytes::static_drop
+  0.02%  bytes::bytes::static_clone
+  0.02%  <http::header::map::HeaderMap>::contains_key::<http::header::name::HeaderName>
+  0.02%  <http::header::map::HeaderMap>::try_insert2::<http::header::name::HeaderName>
+  0.01%  <http::header::map::HeaderMap>::try_reserve
+  0.01%  <aegisx::http::body::arch::Body as http_body::Body>::size_hint
+  0.01%  core::ptr::drop_glue::<<hyper::client::conn::http1::SendRequest<aegisx::http::body::arch::Body>>::try_send_request::{closure#0}>
+  0.01%  http::header::map::hash_elem_using::<http::header::name::HeaderName>
+  0.01%  mi_theap_malloc_zero_aligned_at_overalloc
+  0.01%  <futures_channel::mpsc::queue::Queue<alloc::sync::Arc<std::sync::poison::mutex::Mutex<futures_channel::mpsc::SenderTask>>>>::pop_spin
+  0.01%  bytes::bytes::static_clone.1466
+  0.01%  <futures_channel::mpsc::Receiver<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::next_message
+
+## under `arch::Handler>::serve`: 17.54% of all samples
+ 12.37%  <aegisx::http::proxy::arch::Proxy>::forward::{closure#0}
+  2.61%  (self)
+  0.49%  core::ptr::drop_glue::<aegisx::app::gateway::arch::Ticket>
+  0.46%  <std::sys::pal::unix::time::Timespec>::now
+  0.38%  <aegisx::app::gateway::arch::Handler>::length
+  0.28%  [unknown]
+  0.23%  <http::header::map::HeaderMap>::get2::<http::header::name::HeaderName>
+  0.21%  <aegisx::app::gateway::arch::Handler>::admit
+  0.08%  <aegisx::app::balancer::arch::Picker>::pick
+  0.07%  <aegisx::app::runtime::arch::Snapshot>::route
+  0.06%  <std::sys::pal::unix::time::Timespec>::sub_timespec
+  0.05%  core::ptr::drop_glue::<aegisx::http::body::arch::Body>
+  0.05%  bytes::bytes_mut::shared_v_drop
+  0.03%  core::ptr::drop_glue::<aegisx::core::list::arch::Few<(http::header::name::HeaderName, http::header::value::HeaderValue), 4>>
+  0.02%  memchr::arch::x86_64::memchr::memchr3_raw::find_avx2
+  0.02%  <u16 as core::slice::cmp::SliceContains>::slice_contains
+  0.02%  http::header::map::hash_elem_using::<http::header::name::HeaderName>
+  0.02%  core::ptr::drop_glue::<core::option::Option<alloc::boxed::Box<aegisx::app::cache::arch::Fill>>>
+  0.02%  core::ptr::drop_glue::<hyper::body::incoming::Incoming>
+  0.02%  <aegisx::app::identity::arch::Identity>::echo
+  0.01%  mi_theap_malloc_zero_aligned_at_overalloc
+  0.01%  <http::header::name::HeaderName>::from_bytes
+  0.01%  <aegisx::http::body::arch::Body as http_body::Body>::is_end_stream
+  0.01%  core::ptr::drop_glue::<aegisx::core::list::arch::Few<http::header::name::HeaderName, 8>>
+  0.01%  core::ptr::drop_glue::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}>
+  0.01%  <http::header::map::HeaderMap>::remove::<&http::header::name::HeaderName>
+  0.01%  <aegisx::app::identity::arch::Identity>::outgoing
+  0.01%  clock_gettime
+
+## under `arch::Proxy>::forward`: 12.41% of all samples
+  4.49%  (self)
+  1.04%  <aegisx::http::proxy::arch::Proxy>::prepare
+  1.04%  <http::header::map::HeaderMap>::clear
+  1.02%  core::ptr::drop_glue::<hyper::body::incoming::Incoming>
+  0.77%  <hyper::body::incoming::Incoming as http_body::Body>::poll_frame
+  0.60%  [unknown]
+  0.32%  <tokio::time::sleep::Sleep>::reset
+  0.32%  _mi_page_malloc_zero
+  0.31%  <http::header::map::HeaderMap>::get_all::<http::header::name::HeaderName>
+  0.21%  tokio::runtime::task::waker::drop_waker
+  0.17%  bytes::bytes_mut::shared_v_drop
+  0.17%  <tokio::sync::mpsc::list::Tx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming::Inc
+  0.17%  <tokio::time::sleep::Sleep as core::future::future::Future>::poll
+  0.16%  <http::header::map::HeaderMap>::remove::<&http::header::name::HeaderName>
+  0.14%  <http::header::name::HeaderName>::from_bytes
+  0.13%  <http::header::map::HeaderMap>::try_append2::<&http::header::name::HeaderName>
+  0.12%  tokio::runtime::task::waker::clone_waker
+  0.12%  tokio::runtime::task::waker::wake_by_val
+  0.11%  <aegisx::core::pool::arch::Pool<(aegisx::core::net::arch::Address, bool), aegisx::http::upstream::arch::Conn>>::put
+  0.11%  mi_free
+  0.09%  <alloc::sync::Arc<futures_channel::oneshot::Inner<http::header::map::HeaderMap>>>::drop_slow
+  0.09%  bytes::bytes_mut::shared_v_clone
+  0.08%  <aegisx::core::pool::arch::Pool<(aegisx::core::net::arch::Address, bool), aegisx::http::upstream::arch::Conn>>::stash
+  0.07%  <alloc::sync::Arc<tokio::sync::oneshot::Inner<core::result::Result<http::response::Response<hyper::body::incoming::Incoming>, hyper::client::dispatch::TrySendError<http::
+  0.06%  core::ptr::drop_glue::<aegisx::core::list::arch::Few<http::header::name::HeaderName, 8>>
+  0.05%  <foldhash::fast::RandomState as core::hash::BuildHasher>::hash_one::<&(aegisx::core::net::arch::Address, bool)>
+  0.05%  <aegisx::core::net::arch::Address as core::cmp::PartialEq>::eq
+  0.05%  core::ptr::drop_glue::<aegisx::http::body::arch::Body>
+  0.04%  core::ptr::drop_glue::<core::option::Option<(http::method::Method, http::uri::Uri, http::version::Version, aegisx::http::body::arch::Body)>>
+  0.04%  <aegisx::http::body::arch::Body>::replay
+  0.04%  bytes::bytes::static_clone.1466
+  0.03%  mi_theap_malloc_aligned
+  0.03%  <std::sys::pal::unix::time::Timespec>::sub_timespec
+  0.02%  <http::header::map::HeaderMap>::try_reserve_one
+  0.02%  core::ptr::drop_glue::<<hyper::client::conn::http1::SendRequest<aegisx::http::body::arch::Body>>::try_send_request::{closure#0}>
+  0.02%  bytes::bytes::static_drop
+  0.02%  bytes::bytes::static_clone
+  0.02%  mi_malloc_aligned
+  0.02%  <http::header::map::HeaderMap>::contains_key::<http::header::name::HeaderName>
+  0.02%  <http::header::map::HeaderMap>::try_insert2::<http::header::name::HeaderName>
+  0.01%  <http::header::map::HeaderMap>::try_reserve
+  0.01%  <aegisx::http::body::arch::Body as http_body::Body>::size_hint
+  0.01%  <http::header::map::HeaderMap>::remove_found
+  0.01%  http::header::map::hash_elem_using::<http::header::name::HeaderName>
+  0.01%  bytes::bytes::promotable_even_drop
+
+## under `arch::Client>::connect::{closure#0}::{closure#2}`: 40.01% of all samples
+ 38.35%  <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo
+  1.46%  (self)
+  0.06%  <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo
+  0.04%  <hyper::proto::h1::role::Client as hyper::proto::h1::Http1Transaction>::parse
+  0.04%  <hyper::proto::h1::io::Buffered<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll_read_f
+  0.03%  <hyper::body::incoming::Incoming>::new_channel
+  0.02%  <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo
+  0.01%  <hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body> as hyper::proto::h1::dispatch::Dispatch>::recv_msg
+  0.01%  <hyper::proto::h1::conn::Conn<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, bytes::bytes::Bytes, hyper::proto::h1::role::Client>>::poll_read_body
+  0.01%  <futures_channel::mpsc::BoundedSenderInner<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::try_send

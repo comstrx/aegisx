@@ -1,0 +1,23 @@
+[package]
+name         = "h3load"
+version      = "0.1.0"
+edition      = "2024"
+rust-version = "1.98"
+license      = "MIT OR Apache-2.0"
+description  = "Closed-loop HTTP/3 load generator for the AegisX bench harness"
+
+[dependencies]
+tokio  = { version = "1.53.1", features = ["rt-multi-thread", "macros", "time", "net"] }
+quinn  = { version = "0.11.12", default-features = false, features = ["rustls-aws-lc-rs", "runtime-tokio"] }
+h3     = "0.0.8"
+h3-quinn = "0.0.10"
+rustls = "0.23.45"
+http   = "1.5.0"
+bytes  = "1.12.1"
+
+[profile.release]
+opt-level     = 3
+codegen-units = 1
+lto           = "fat"
+panic         = "abort"
+strip         = "symbols"

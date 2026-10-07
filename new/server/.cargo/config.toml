@@ -1,0 +1,3 @@
+[env]
+AEGISX_TEST_ADMIN_TOKEN = "test-admin-token-0123456789abcdef0123456789abcdef"
+AEGISX_TEST_BACKEND_TOKEN = "test-backend-token-0123456789abcdef0123456789abcdef"

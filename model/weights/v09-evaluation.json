@@ -1,0 +1,555 @@
+{
+  "selection_basis": "Validation only, 0.1% and 1% FPR budgets; no test or external diagnostic tuning",
+  "notice": "Budgets constrain validation empirically, not future production. No zero-error guarantee.",
+  "candidates": {
+    "baseline_v08": {
+      "validation": {
+        "content": {
+          "0.001": {
+            "threshold": 0.999931812286377,
+            "rows": 9656,
+            "true_positives": 1385,
+            "false_positives": 7,
+            "false_negatives": 354,
+            "true_negatives": 7910,
+            "accuracy": 0.9626139188069595,
+            "precision": 0.9949712643678161,
+            "recall": 0.7964347326049454,
+            "false_positive_rate": 0.0008841732979664014,
+            "majority_baseline_accuracy": 0.8199047224523612,
+            "budget_feasible": true
+          },
+          "0.01": {
+            "threshold": 0.9978313446044922,
+            "rows": 9656,
+            "true_positives": 1616,
+            "false_positives": 78,
+            "false_negatives": 123,
+            "true_negatives": 7839,
+            "accuracy": 0.9791839270919636,
+            "precision": 0.9539551357733176,
+            "recall": 0.9292696952271421,
+            "false_positive_rate": 0.009852216748768473,
+            "majority_baseline_accuracy": 0.8199047224523612,
+            "budget_feasible": true
+          }
+        },
+        "journey": {
+          "0.001": {
+            "threshold": 1.0,
+            "rows": 1464,
+            "true_positives": 128,
+            "false_positives": 149,
+            "false_negatives": 262,
+            "true_negatives": 925,
+            "accuracy": 0.7192622950819673,
+            "precision": 0.4620938628158845,
+            "recall": 0.3282051282051282,
+            "false_positive_rate": 0.1387337057728119,
+            "majority_baseline_accuracy": 0.7336065573770492,
+            "budget_feasible": false
+          },
+          "0.01": {
+            "threshold": 1.0,
+            "rows": 1464,
+            "true_positives": 128,
+            "false_positives": 149,
+            "false_negatives": 262,
+            "true_negatives": 925,
+            "accuracy": 0.7192622950819673,
+            "precision": 0.4620938628158845,
+            "recall": 0.3282051282051282,
+            "false_positive_rate": 0.1387337057728119,
+            "majority_baseline_accuracy": 0.7336065573770492,
+            "budget_feasible": false
+          }
+        }
+      },
+      "test": {
+        "content": {
+          "0.001": {
+            "threshold": 0.999931812286377,
+            "rows": 2775,
+            "true_positives": 1462,
+            "false_positives": 0,
+            "false_negatives": 338,
+            "true_negatives": 975,
+            "accuracy": 0.8781981981981982,
+            "precision": 1.0,
+            "recall": 0.8122222222222222,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.6486486486486487
+          },
+          "0.01": {
+            "threshold": 0.9978313446044922,
+            "rows": 2775,
+            "true_positives": 1708,
+            "false_positives": 0,
+            "false_negatives": 92,
+            "true_negatives": 975,
+            "accuracy": 0.9668468468468469,
+            "precision": 1.0,
+            "recall": 0.9488888888888889,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.6486486486486487
+          }
+        },
+        "journey": {
+          "0.001": {
+            "threshold": 1.0,
+            "rows": 1424,
+            "true_positives": 71,
+            "false_positives": 109,
+            "false_negatives": 270,
+            "true_negatives": 974,
+            "accuracy": 0.7338483146067416,
+            "precision": 0.39444444444444443,
+            "recall": 0.20821114369501467,
+            "false_positive_rate": 0.10064635272391505,
+            "majority_baseline_accuracy": 0.7605337078651686
+          },
+          "0.01": {
+            "threshold": 1.0,
+            "rows": 1424,
+            "true_positives": 71,
+            "false_positives": 109,
+            "false_negatives": 270,
+            "true_negatives": 974,
+            "accuracy": 0.7338483146067416,
+            "precision": 0.39444444444444443,
+            "recall": 0.20821114369501467,
+            "false_positive_rate": 0.10064635272391505,
+            "majority_baseline_accuracy": 0.7605337078651686
+          },
+          "original": {
+            "threshold": 1.0,
+            "rows": 896,
+            "true_positives": 23,
+            "false_positives": 0,
+            "false_negatives": 208,
+            "true_negatives": 665,
+            "accuracy": 0.7678571428571429,
+            "precision": 1.0,
+            "recall": 0.09956709956709957,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7421875
+          },
+          "transactions": {
+            "threshold": 1.0,
+            "rows": 528,
+            "true_positives": 48,
+            "false_positives": 109,
+            "false_negatives": 62,
+            "true_negatives": 309,
+            "accuracy": 0.6761363636363636,
+            "precision": 0.3057324840764331,
+            "recall": 0.43636363636363634,
+            "false_positive_rate": 0.2607655502392344,
+            "majority_baseline_accuracy": 0.7916666666666666
+          }
+        }
+      }
+    },
+    "supervised": {
+      "validation": {
+        "content": {
+          "0.001": {
+            "threshold": 0.947843074798584,
+            "rows": 9656,
+            "true_positives": 1698,
+            "false_positives": 7,
+            "false_negatives": 41,
+            "true_negatives": 7910,
+            "accuracy": 0.9950289975144988,
+            "precision": 0.9958944281524926,
+            "recall": 0.9764232317423807,
+            "false_positive_rate": 0.0008841732979664014,
+            "majority_baseline_accuracy": 0.8199047224523612,
+            "budget_feasible": true
+          },
+          "0.01": {
+            "threshold": 0.7595547437667847,
+            "rows": 9656,
+            "true_positives": 1722,
+            "false_positives": 76,
+            "false_negatives": 17,
+            "true_negatives": 7841,
+            "accuracy": 0.9903686826843413,
+            "precision": 0.9577308120133482,
+            "recall": 0.9902242668200115,
+            "false_positive_rate": 0.009599595806492358,
+            "majority_baseline_accuracy": 0.8199047224523612,
+            "budget_feasible": true
+          }
+        },
+        "journey": {
+          "0.001": {
+            "threshold": 0.9952050447463989,
+            "rows": 1464,
+            "true_positives": 390,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 1074,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7336065573770492,
+            "budget_feasible": true
+          },
+          "0.01": {
+            "threshold": 0.9952050447463989,
+            "rows": 1464,
+            "true_positives": 390,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 1074,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7336065573770492,
+            "budget_feasible": true
+          }
+        }
+      },
+      "test": {
+        "content": {
+          "0.001": {
+            "threshold": 0.947843074798584,
+            "rows": 2775,
+            "true_positives": 1758,
+            "false_positives": 0,
+            "false_negatives": 42,
+            "true_negatives": 975,
+            "accuracy": 0.9848648648648649,
+            "precision": 1.0,
+            "recall": 0.9766666666666667,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.6486486486486487
+          },
+          "0.01": {
+            "threshold": 0.7595547437667847,
+            "rows": 2775,
+            "true_positives": 1786,
+            "false_positives": 0,
+            "false_negatives": 14,
+            "true_negatives": 975,
+            "accuracy": 0.994954954954955,
+            "precision": 1.0,
+            "recall": 0.9922222222222222,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.6486486486486487
+          }
+        },
+        "journey": {
+          "0.001": {
+            "threshold": 0.9952050447463989,
+            "rows": 1424,
+            "true_positives": 341,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 1083,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7605337078651686
+          },
+          "0.01": {
+            "threshold": 0.9952050447463989,
+            "rows": 1424,
+            "true_positives": 341,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 1083,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7605337078651686
+          },
+          "original": {
+            "threshold": 0.9952050447463989,
+            "rows": 896,
+            "true_positives": 231,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 665,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7421875
+          },
+          "transactions": {
+            "threshold": 0.9952050447463989,
+            "rows": 528,
+            "true_positives": 110,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 418,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7916666666666666
+          }
+        }
+      }
+    },
+    "distilled": {
+      "validation": {
+        "content": {
+          "0.001": {
+            "threshold": 0.9491480588912964,
+            "rows": 9656,
+            "true_positives": 1711,
+            "false_positives": 7,
+            "false_negatives": 28,
+            "true_negatives": 7910,
+            "accuracy": 0.9963753106876554,
+            "precision": 0.9959254947613504,
+            "recall": 0.9838987924094307,
+            "false_positive_rate": 0.0008841732979664014,
+            "majority_baseline_accuracy": 0.8199047224523612,
+            "budget_feasible": true
+          },
+          "0.01": {
+            "threshold": 0.723823070526123,
+            "rows": 9656,
+            "true_positives": 1723,
+            "false_positives": 67,
+            "false_negatives": 16,
+            "true_negatives": 7850,
+            "accuracy": 0.9914043082021541,
+            "precision": 0.9625698324022346,
+            "recall": 0.9907993099482462,
+            "false_positive_rate": 0.008462801566249843,
+            "majority_baseline_accuracy": 0.8199047224523612,
+            "budget_feasible": true
+          }
+        },
+        "journey": {
+          "0.001": {
+            "threshold": 0.9946383237838745,
+            "rows": 1464,
+            "true_positives": 390,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 1074,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7336065573770492,
+            "budget_feasible": true
+          },
+          "0.01": {
+            "threshold": 0.9946383237838745,
+            "rows": 1464,
+            "true_positives": 390,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 1074,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7336065573770492,
+            "budget_feasible": true
+          }
+        }
+      },
+      "test": {
+        "content": {
+          "0.001": {
+            "threshold": 0.9491480588912964,
+            "rows": 2775,
+            "true_positives": 1771,
+            "false_positives": 0,
+            "false_negatives": 29,
+            "true_negatives": 975,
+            "accuracy": 0.9895495495495495,
+            "precision": 1.0,
+            "recall": 0.9838888888888889,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.6486486486486487
+          },
+          "0.01": {
+            "threshold": 0.723823070526123,
+            "rows": 2775,
+            "true_positives": 1790,
+            "false_positives": 0,
+            "false_negatives": 10,
+            "true_negatives": 975,
+            "accuracy": 0.9963963963963964,
+            "precision": 1.0,
+            "recall": 0.9944444444444445,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.6486486486486487
+          }
+        },
+        "journey": {
+          "0.001": {
+            "threshold": 0.9946383237838745,
+            "rows": 1424,
+            "true_positives": 325,
+            "false_positives": 0,
+            "false_negatives": 16,
+            "true_negatives": 1083,
+            "accuracy": 0.9887640449438202,
+            "precision": 1.0,
+            "recall": 0.9530791788856305,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7605337078651686
+          },
+          "0.01": {
+            "threshold": 0.9946383237838745,
+            "rows": 1424,
+            "true_positives": 325,
+            "false_positives": 0,
+            "false_negatives": 16,
+            "true_negatives": 1083,
+            "accuracy": 0.9887640449438202,
+            "precision": 1.0,
+            "recall": 0.9530791788856305,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7605337078651686
+          },
+          "original": {
+            "threshold": 0.9946383237838745,
+            "rows": 896,
+            "true_positives": 215,
+            "false_positives": 0,
+            "false_negatives": 16,
+            "true_negatives": 665,
+            "accuracy": 0.9821428571428571,
+            "precision": 1.0,
+            "recall": 0.9307359307359307,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7421875
+          },
+          "transactions": {
+            "threshold": 0.9946383237838745,
+            "rows": 528,
+            "true_positives": 110,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "true_negatives": 418,
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "false_positive_rate": 0.0,
+            "majority_baseline_accuracy": 0.7916666666666666
+          }
+        }
+      }
+    }
+  },
+  "selected": "distilled",
+  "selected_path": "/var/www/tools/aegisx/model/runs/v09/attempt-3",
+  "validation_candidate": "distilled",
+  "selection_frozen_before_test": true,
+  "teacher": {
+    "frozen_pretrained_parameters": 124645632,
+    "newly_trained_parameters": 995617,
+    "validation": {
+      "0.01": {
+        "threshold": 0.6996052265167236,
+        "rows": 1500,
+        "true_positives": 747,
+        "false_positives": 3,
+        "false_negatives": 3,
+        "true_negatives": 747,
+        "accuracy": 0.996,
+        "precision": 0.996,
+        "recall": 0.996,
+        "false_positive_rate": 0.004,
+        "majority_baseline_accuracy": 0.5
+      },
+      "0.001": {
+        "threshold": 0.9547629952430725,
+        "rows": 1500,
+        "true_positives": 741,
+        "false_positives": 0,
+        "false_negatives": 9,
+        "true_negatives": 750,
+        "accuracy": 0.994,
+        "precision": 1.0,
+        "recall": 0.988,
+        "false_positive_rate": 0.0,
+        "majority_baseline_accuracy": 0.5
+      }
+    },
+    "test": {
+      "0.01": {
+        "threshold": 0.6996052265167236,
+        "rows": 1500,
+        "true_positives": 745,
+        "false_positives": 2,
+        "false_negatives": 5,
+        "true_negatives": 748,
+        "accuracy": 0.9953333333333333,
+        "precision": 0.9973226238286479,
+        "recall": 0.9933333333333333,
+        "false_positive_rate": 0.0026666666666666666,
+        "majority_baseline_accuracy": 0.5
+      },
+      "0.001": {
+        "threshold": 0.9547629952430725,
+        "rows": 1500,
+        "true_positives": 744,
+        "false_positives": 1,
+        "false_negatives": 6,
+        "true_negatives": 749,
+        "accuracy": 0.9953333333333333,
+        "precision": 0.9986577181208054,
+        "recall": 0.992,
+        "false_positive_rate": 0.0013333333333333333,
+        "majority_baseline_accuracy": 0.5
+      }
+    },
+    "matched_student_tests": {
+      "baseline_v08": {
+        "threshold": 0.999931812286377,
+        "rows": 1500,
+        "true_positives": 589,
+        "false_positives": 0,
+        "false_negatives": 161,
+        "true_negatives": 750,
+        "accuracy": 0.8926666666666667,
+        "precision": 1.0,
+        "recall": 0.7853333333333333,
+        "false_positive_rate": 0.0,
+        "majority_baseline_accuracy": 0.5
+      },
+      "supervised": {
+        "threshold": 0.947843074798584,
+        "rows": 1500,
+        "true_positives": 729,
+        "false_positives": 0,
+        "false_negatives": 21,
+        "true_negatives": 750,
+        "accuracy": 0.986,
+        "precision": 1.0,
+        "recall": 0.972,
+        "false_positive_rate": 0.0,
+        "majority_baseline_accuracy": 0.5
+      },
+      "distilled": {
+        "threshold": 0.9491480588912964,
+        "rows": 1500,
+        "true_positives": 733,
+        "false_positives": 0,
+        "false_negatives": 17,
+        "true_negatives": 750,
+        "accuracy": 0.9886666666666667,
+        "precision": 1.0,
+        "recall": 0.9773333333333334,
+        "false_positive_rate": 0.0,
+        "majority_baseline_accuracy": 0.5
+      }
+    }
+  }
+}

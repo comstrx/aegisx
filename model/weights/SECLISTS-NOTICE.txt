@@ -1,0 +1,4 @@
+Selected SecLists textual fuzzing dictionaries; MIT.
+https://github.com/danielmiessler/SecLists
+Pinned commit and individual file attribution/digests: model/sources.json.
+Dictionary membership is context-dependent, not adjudicated security ground truth.

@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-02",
+  "version": "0.9.0",
+  "binary_sha256": "bcc62dc6e43e7560d0d305f3690e8ba2b8e4140596d9195c13e741d5bbbb6c94",
+  "binary_bytes": 45081000,
+  "model_sha256": "e00573a8e59dc131e3ad63e226be53a0690d200c443adbfe85ee27e1c24eb17a",
+  "training_attempts_completed": 3,
+  "new_attempts_remaining": 0,
+  "tests": {
+    "rust": 26,
+    "python": 27,
+    "http_tls_storage_queue_package": 66,
+    "distinct_total": 119,
+    "final_source_rust_and_http_complete": true
+  },
+  "checks": {
+    "clippy_all_targets": true,
+    "ruff": true,
+    "system_allocator_compiles": true,
+    "artifact_audit": true,
+    "next_static_export": true,
+    "real_upgrade_preserves_bans_and_history": true,
+    "legacy_text_and_numeric_compatibility": true,
+    "relocated_single_executable": true,
+    "config_check": true,
+    "manifest_hash_verified": true,
+    "chromium": {
+      "page_errors": [],
+      "checks": [
+        "login",
+        "live charts",
+        "light and dark themes",
+        "pause and resume polling",
+        "cache purge",
+        "search empty state",
+        "journey drawer",
+        "durable block form",
+        "revoke form",
+        "backend status verification",
+        "model evaluation limitation is visible",
+        "model and journal state",
+        "effective configuration",
+        "keyboard search and dialog escape",
+        "white light sidebar",
+        "rounded surfaces",
+        "live admission queue",
+        "320\u20131440px responsive layouts",
+        "reduced motion",
+        "mobile overflow",
+        "token isolation",
+        "disconnect",
+        "invalid token error and recovery"
+      ]
+    }
+  },
+  "background": {
+    "trials": 3,
+    "forwarded_analyzed_persisted": 9000,
+    "drops_or_rejections": 0,
+    "median_requests_per_second": 615.8685010547944
+  },
+  "scope": {
+    "deployment_ready": false,
+    "teacher_frozen_parameters": 124645632,
+    "teacher_newly_trained_parameters": 995617,
+    "embedded_student_parameters": 895178,
+    "general_proxy_speedup_established": false,
+    "final_policy_median_change_percent": -24.61424,
+    "external_crs_strict_recall": 0.092487597448618,
+    "cloud_job_or_upload": false,
+    "git_writes": false
+  },
+  "logs": [
+    "tmp/integration-v09-final.log",
+    "tmp/v09-final-benchmarks.log",
+    "tmp/v09-final-additional-checks.log"
+  ]
+}

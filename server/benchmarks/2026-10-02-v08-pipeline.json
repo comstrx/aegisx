@@ -1,0 +1,195 @@
+{
+  "scope": "WSL loopback; 8 clients, 3000 requests each trial, fresh downstream connections, shared Python client/backend host. Cold uses distinct trusted test actors. Model disabled in cache trials. Background captures summary with a 64-job queue.",
+  "binary_sha256": "858e873ac139671cf4f86f5c452745efdeb0bd2acd39919e4d65995e66e40e4d",
+  "trials": [
+    {
+      "mode": "background",
+      "waiting_enabled": true,
+      "queue": {
+        "cancelled": 0,
+        "capacity": 256,
+        "completed": 728,
+        "entered": 728,
+        "full": 0,
+        "resumed": 728,
+        "timed_out": 0,
+        "timeout_ms": 1000,
+        "total_us": 48133706,
+        "unavailable": 0,
+        "waiting": 0
+      },
+      "requests": 3000,
+      "attempts_per_second": 407.80047950770006,
+      "forwarded_requests_per_second": 407.80047950770006,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.7534635117044672,
+      "p95_ms": 77.90090501657687,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 3000,
+        "journal_enabled": true,
+        "journal_failures": 0,
+        "journal_healthy": true,
+        "journal_us": 438346,
+        "last_us": 3465,
+        "pressure_rejections": 0,
+        "processing": 0,
+        "queued": 0,
+        "recovered": 0,
+        "submitted": 3000,
+        "total_us": 6638705
+      },
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 3000,
+        "committed_events": 9000,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "background",
+      "waiting_enabled": true,
+      "queue": {
+        "cancelled": 0,
+        "capacity": 256,
+        "completed": 730,
+        "entered": 730,
+        "full": 0,
+        "resumed": 730,
+        "timed_out": 0,
+        "timeout_ms": 1000,
+        "total_us": 52410899,
+        "unavailable": 0,
+        "waiting": 0
+      },
+      "requests": 3000,
+      "attempts_per_second": 379.1071763023754,
+      "forwarded_requests_per_second": 379.1071763023754,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.7849830037448555,
+      "p95_ms": 87.42310397792608,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 3000,
+        "journal_enabled": true,
+        "journal_failures": 0,
+        "journal_healthy": true,
+        "journal_us": 424082,
+        "last_us": 2127,
+        "pressure_rejections": 0,
+        "processing": 0,
+        "queued": 0,
+        "recovered": 0,
+        "submitted": 3000,
+        "total_us": 7196708
+      },
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 3000,
+        "committed_events": 9000,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "background",
+      "waiting_enabled": true,
+      "queue": {
+        "cancelled": 0,
+        "capacity": 256,
+        "completed": 727,
+        "entered": 727,
+        "full": 0,
+        "resumed": 727,
+        "timed_out": 0,
+        "timeout_ms": 1000,
+        "total_us": 52440273,
+        "unavailable": 0,
+        "waiting": 0
+      },
+      "requests": 3000,
+      "attempts_per_second": 385.2307097264453,
+      "forwarded_requests_per_second": 385.2307097264453,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.5753699990455061,
+      "p95_ms": 86.49139298358932,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 3000,
+        "journal_enabled": true,
+        "journal_failures": 0,
+        "journal_healthy": true,
+        "journal_us": 539030,
+        "last_us": 1785,
+        "pressure_rejections": 0,
+        "processing": 0,
+        "queued": 0,
+        "recovered": 0,
+        "submitted": 3000,
+        "total_us": 6011514
+      },
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 3000,
+        "committed_events": 9000,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    }
+  ]
+}

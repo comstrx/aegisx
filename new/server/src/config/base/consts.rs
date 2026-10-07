@@ -1,0 +1,173 @@
+pub const TOOL: &str                   = "aegisx";
+pub const VERSION: &str                = env!("CARGO_PKG_VERSION");
+pub const CONFIG_FILE: &str            = "Aegisx.lua";
+pub const CONFIG_SOURCE_BYTES: usize   = 1_048_576;
+pub const CONFIG_MEMORY_BYTES: usize   = 67_108_864;
+pub const CONFIG_INSTRUCTIONS: u32     = 20_000_000;
+pub const CONFIG_INCLUDE_DEPTH: usize  = 8;
+pub const CONFIG_LIBRARY: [&str; 12]   = ["ipairs", "pairs", "next", "type", "tostring", "tonumber", "select", "error", "assert", "string", "table", "math"];
+
+pub const LISTEN: &str                 = "127.0.0.1:8080";
+pub const UPSTREAM: &str               = "127.0.0.1:3000";
+pub const DEFAULT_POOL: &str           = "default";
+pub const WORKERS_AUTO: usize          = 0;
+pub const WORKERS_MAX: usize           = 1024;
+pub const PIN: bool                    = false;
+pub const BACKLOG: i32                 = 4096;
+
+pub const KEEPALIVE: bool              = true;
+pub const MAX_HEADERS: usize           = 100;
+pub const MAX_HEADERS_MAX: usize       = 1024;
+pub const HEADER_TIMEOUT_MS: u64       = 60_000;
+pub const KEEPALIVE_TIMEOUT_MS: u64    = 75_000;
+pub const KEEPALIVE_REQUESTS: u32      = 0;
+pub const MAX_CONNECTIONS: usize       = 0;
+pub const MAX_CONNECTIONS_MAX: usize   = 16_777_216;
+pub const SEND_TIMEOUT_MS: u64         = 60_000;
+pub const KEEPALIVE_TIME_MS: u64       = 3_600_000;
+pub const UNDERSCORES: bool            = false;
+pub const TLS_HANDSHAKE_TIMEOUT_MS: u64 = 5_000;
+pub const SERVER_BUF: usize            = 16_384;
+pub const DRAIN_MS: u64                = 5_000;
+pub const HTTP2: bool                  = true;
+pub const H2C: bool                    = false;
+pub const PROXY_PROTOCOL: bool         = false;
+pub const MAX_STREAMS: u32             = 256;
+pub const H2_STREAM_WINDOW: u32        = 1_048_576;
+pub const H2_CONNECTION_WINDOW: u32    = 4_194_304;
+pub const H2_MAX_FRAME: u32            = 16_384;
+pub const H2_MAX_HEADER_BYTES: u32     = 65_536;
+pub const MAX_STREAMS_MAX: u32         = 10_000;
+pub const BUF_MIN: usize               = 8_192;
+pub const BUF_MAX: usize               = 1_048_576;
+
+pub const CONNECT_TIMEOUT_MS: u64      = 3_000;
+pub const POOL_IDLE_MS: u64            = 30_000;
+pub const RESOLVE_MS: u64              = 30_000;
+pub const ZSTD_LEVEL: u32              = 3;
+pub const ACME_DIRECTORY: &str         = "https://acme-v02.api.letsencrypt.org/directory";
+pub const ACME_CACHE_DIR: &str         = "/var/lib/aegisx/acme";
+pub const ACME_RENEW_DAYS: u64         = 30;
+pub const STREAM_IDLE_MS: u64          = 600_000;
+pub const POOL_CAPACITY: usize         = 256;
+pub const CLIENT_BUF: usize            = 16_384;
+pub const CONNECT_ATTEMPTS: usize      = 2;
+pub const CONNECT_ATTEMPTS_MAX: usize  = 5;
+pub const ATTEMPTS: usize              = 2;
+pub const ATTEMPTS_MAX: usize          = 10;
+pub const RETRY_ON: [&str; 2]          = ["connect", "error"];
+
+pub const TIMEOUT_MS: u64              = 10_000;
+pub const CLIENT_TIMEOUT_MS: u64       = 30_000;
+pub const BUFFER_REQUESTS: bool        = false;
+pub const RESPONSE_BUFFER_BYTES: usize = 1_048_576;
+pub const TIMEOUT_MS_MIN: u64          = 100;
+pub const TIMEOUT_MS_MAX: u64          = 600_000;
+pub const MAX_BODY_BYTES: usize        = 1_048_576;
+pub const MAX_BODY_BYTES_MAX: usize    = 1_073_741_824;
+pub const MAX_IN_FLIGHT: usize         = 4_096;
+pub const MAX_IN_FLIGHT_MAX: usize     = 1_000_000;
+pub const RATE_LIMIT_10S: u32          = 0;
+pub const RATE_LIMIT_MAX: u32          = 1_000_000;
+pub const RATE_PER_SECOND: u32         = 0;
+pub const RATE_BURST: u32              = 0;
+pub const CONCURRENCY_MAX: u32         = 1_000_000;
+pub const BANDWIDTH_MAX: u64           = 1 << 40;
+pub const ACTORS_MAX: usize            = 100_000;
+pub const ACTOR_IDLE_MS: u64           = 60_000;
+
+pub const WEIGHT: u32                  = 1;
+pub const WEIGHT_MAX: u32              = 1_000;
+pub const MAX_FAILS: u32               = 2;
+pub const MAX_FAILS_MAX: u32           = 100;
+pub const COOLDOWN_MS: u64             = 5_000;
+pub const SLOW_START_MS_MAX: u64       = 3_600_000;
+pub const MAX_EJECTED: u32             = 100;
+pub const COOLDOWN_MS_MIN: u64         = 100;
+pub const COOLDOWN_MS_MAX: u64         = 600_000;
+pub const HEALTH_INTERVAL_MS: u64      = 1_000;
+pub const HEALTH_INTERVAL_MS_MIN: u64  = 100;
+pub const HEALTH_INTERVAL_MS_MAX: u64  = 60_000;
+pub const HEALTH_TIMEOUT_MS: u64       = 300;
+pub const HEALTH_STATUS: u16           = 200;
+pub const POOLS_MAX: usize             = 64;
+pub const BACKENDS_MAX: usize          = 256;
+pub const ROUTES_MAX: usize            = 1_024;
+pub const HEADERS_MAX: usize           = 32;
+pub const HEADER_VALUE_MAX: usize      = 4_096;
+
+pub const REQUEST_ID_HEADER: &str      = "x-request-id";
+pub const FORWARDED_FOR_HEADER: &str   = "x-forwarded-for";
+pub const FORWARDED_PROTO_HEADER: &str = "x-forwarded-proto";
+pub const PROPAGATE: bool              = true;
+pub const FORWARDING: bool             = true;
+
+pub const LOG_LEVEL: &str              = "info";
+pub const LOG_JSON: bool               = false;
+
+pub const CONTROL_LISTEN: &str         = "127.0.0.1:9090";
+pub const CONTROL_PREFIX: &str         = "/api/v1";
+pub const CONTROL_TOKEN_ENV: &str      = "AEGISX_ADMIN_TOKEN";
+pub const CONTROL_BODY_BYTES: usize    = 4_096;
+pub const CONTROL_BODY_BYTES_MAX: usize = 1_048_576;
+pub const TOKEN_BYTES_MIN: usize       = 32;
+pub const TOKEN_BYTES_MAX: usize       = 4_096;
+pub const PANEL_BYTES_MAX: u64         = 67_108_864;
+pub const RECENT_EVENTS: usize         = 100;
+pub const RECENT_EVENTS_MAX: usize     = 10_000;
+pub const JOURNEYS: usize              = 1_000;
+pub const JOURNEYS_MAX: usize          = 100_000;
+pub const JOURNEY_EVENTS_MAX: usize    = 64;
+pub const BACKEND_EVENTS_MAX: usize    = 32;
+pub const BACKEND_FIELD_MAX: usize     = 96;
+pub const SPAN_FIELD_MAX: usize        = 64;
+pub const DAY_MS: u64                  = 86_400_000;
+
+pub const COMPRESSION_MIN_BYTES: u64   = 1_024;
+pub const COMPRESSION_LEVEL: u32       = 4;
+pub const BROTLI_LEVEL: u32            = 4;
+pub const COMPRESSION_TYPES: [&str; 12] = ["text/html", "text/css", "text/plain", "text/xml", "text/javascript", "text/csv", "application/javascript", "application/json", "application/xml", "application/wasm", "application/manifest+json", "image/svg+xml"];
+
+pub const HTTP3_IDLE_MS: u64           = 30_000;
+pub const HTTP3_STREAM_WINDOW: u64     = 2_097_152;
+pub const HTTP3_SEND_WINDOW: u64       = 8_388_608;
+pub const TLS_SESSION_CACHE: usize     = 16_384;
+pub const HTTP3_ALT_SVC_MAX_AGE: u64   = 86_400;
+
+pub const CACHE_BYTES: u64             = 134_217_728;
+pub const CACHE_ITEMS: usize           = 16_384;
+pub const CACHE_OBJECT_BYTES: u64      = 1_048_576;
+pub const CACHE_LOCK_MS: u64           = 1_000;
+pub const CACHE_DISK_BYTES: u64        = 1_073_741_824;
+pub const CACHE_PASS_MS: u64           = 5_000;
+
+pub const FILES_CACHE_BYTES: u64       = 67_108_864;
+pub const FILES_CACHE_ITEMS: usize     = 4_096;
+pub const FILES_MAX_BYTES: u64         = 4_194_304;
+pub const FILES_VALID_MS: u64          = 1_000;
+pub const FILES_PRECOMPRESSED: bool    = false;
+
+pub const RESPOND_TYPE: &str           = "text/plain; charset=utf-8";
+pub const RESPOND_BYTES_MAX: usize     = 1_048_576;
+pub const LISTENERS_MAX: usize         = 16;
+pub const ACL_MAX: usize               = 65_536;
+
+pub const ACCESS_FORMAT: &str          = "combined";
+pub const STICKY_COOKIE: &str          = "aegisx_srv";
+pub const ACCESS_FLUSH_MS: u64         = 1_000;
+pub const ACCESS_BUFFER: usize         = 65_536;
+pub const ACCESS_BUFFER_MAX: usize     = 16_777_216;
+
+pub const ANALYSIS_MODEL: &str         = "lifecycle";
+pub const SCAN_BYTES: usize            = 1_024;
+pub const SCAN_BYTES_MAX: usize        = 65_536;
+pub const ANALYSIS_WORKERS: usize      = 1;
+pub const ANALYSIS_CAPACITY: usize     = 256;
+pub const ANALYSIS_CAPACITY_MAX: usize = 65_536;
+pub const ANALYSIS_DEADLINE_MS: u64    = 5_000;
+
+pub const DECISIONS_PATH: &str         = "aegisx.db";
+pub const DENY_TTL_MS: u64             = 600_000;
+pub const DENY_TTL_MS_MAX: u64         = 2_592_000_000;
+pub const DECISIONS_CAPACITY: usize    = 100_000;
+pub const DECISIONS_CAPACITY_MAX: usize = 10_000_000;

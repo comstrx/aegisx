@@ -1,0 +1,87 @@
+{
+  "notice": "Zero ablation changes input distribution; tests modality dependence, not causal value or production accuracy.",
+  "full": {
+    "0.01": {
+      "threshold": 0.6996052265167236,
+      "rows": 1500,
+      "true_positives": 745,
+      "false_positives": 2,
+      "false_negatives": 5,
+      "true_negatives": 748,
+      "accuracy": 0.9953333333333333,
+      "precision": 0.9973226238286479,
+      "recall": 0.9933333333333333,
+      "false_positive_rate": 0.0026666666666666666,
+      "majority_baseline_accuracy": 0.5
+    },
+    "0.001": {
+      "threshold": 0.9547629952430725,
+      "rows": 1500,
+      "true_positives": 744,
+      "false_positives": 1,
+      "false_negatives": 6,
+      "true_negatives": 749,
+      "accuracy": 0.9953333333333333,
+      "precision": 0.9986577181208054,
+      "recall": 0.992,
+      "false_positive_rate": 0.0013333333333333333,
+      "majority_baseline_accuracy": 0.5
+    }
+  },
+  "without_pretrained_embedding": {
+    "0.01": {
+      "threshold": 0.6996052265167236,
+      "rows": 1500,
+      "true_positives": 510,
+      "false_positives": 46,
+      "false_negatives": 240,
+      "true_negatives": 704,
+      "accuracy": 0.8093333333333333,
+      "precision": 0.9172661870503597,
+      "recall": 0.68,
+      "false_positive_rate": 0.06133333333333333,
+      "majority_baseline_accuracy": 0.5
+    },
+    "0.001": {
+      "threshold": 0.9547629952430725,
+      "rows": 1500,
+      "true_positives": 426,
+      "false_positives": 29,
+      "false_negatives": 324,
+      "true_negatives": 721,
+      "accuracy": 0.7646666666666667,
+      "precision": 0.9362637362637363,
+      "recall": 0.568,
+      "false_positive_rate": 0.03866666666666667,
+      "majority_baseline_accuracy": 0.5
+    }
+  },
+  "without_numeric_features": {
+    "0.01": {
+      "threshold": 0.6996052265167236,
+      "rows": 1500,
+      "true_positives": 745,
+      "false_positives": 4,
+      "false_negatives": 5,
+      "true_negatives": 746,
+      "accuracy": 0.994,
+      "precision": 0.9946595460614153,
+      "recall": 0.9933333333333333,
+      "false_positive_rate": 0.005333333333333333,
+      "majority_baseline_accuracy": 0.5
+    },
+    "0.001": {
+      "threshold": 0.9547629952430725,
+      "rows": 1500,
+      "true_positives": 742,
+      "false_positives": 1,
+      "false_negatives": 8,
+      "true_negatives": 749,
+      "accuracy": 0.994,
+      "precision": 0.9986541049798116,
+      "recall": 0.9893333333333333,
+      "false_positive_rate": 0.0013333333333333333,
+      "majority_baseline_accuracy": 0.5
+    }
+  }
+}

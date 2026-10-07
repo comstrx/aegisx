@@ -1,0 +1,37 @@
+{
+  "scope": "Shared WSL CPU; one intra/inter ORT thread; five alternating 256-call trials after 32 warmups; same 32 saved inputs. Python overhead included; extraction/journal/queue/transport excluded.",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "sha256": {
+    "baseline_v08": "a194a00393435b1b13090fdd11038898a1b5e21e47c44dda79e19e56082f5c64",
+    "fp32_v09": "1179973d16947972b6fbcbb2a3a77f65503f7f1c5a7c49502918a1063043f8ec",
+    "uint8_v09": "e00573a8e59dc131e3ad63e226be53a0690d200c443adbfe85ee27e1c24eb17a"
+  },
+  "timing_us": {
+    "baseline_v08": [
+      1815.0399921523785,
+      2981.259277362369,
+      2398.7721289131514,
+      2354.2215272982503,
+      2008.114140608086
+    ],
+    "fp32_v09": [
+      1479.1501562285703,
+      1439.0105781103557,
+      1559.8691953755406,
+      1100.3935351254768,
+      1453.2227304471235
+    ],
+    "uint8_v09": [
+      1154.9497655778396,
+      1334.9756054594764,
+      1186.4889219168617,
+      1086.4730780895115,
+      1251.3878593836125
+    ]
+  },
+  "median_us": {
+    "baseline_v08": 2354.2215272982503,
+    "fp32_v09": 1453.2227304471235,
+    "uint8_v09": 1186.4889219168617
+  }
+}

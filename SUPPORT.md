@@ -16,7 +16,7 @@ Welcome! This page is the fastest way to get help with `aegisx` with the least b
 ## Before you post
 
 - Search existing Issues and Discussions first.
-- Confirm you are testing against the latest supported AegisX version.
+- Confirm you are testing against the latest supported aegisX version.
 - Reduce the problem to the smallest reproducible input, skill, source, or pipeline step.
 - Remove secrets and private project context before sharing examples.
 
@@ -30,7 +30,7 @@ When opening an Issue, include:
 
 - What happened vs. what you expected
 - Minimal reproduction or smallest failing skill/source
-- AegisX commit, tag, or release
+- aegisX commit, tag, or release
 - Relevant pipeline stage: ingest, clean, normalize, validate, version, score, promote, or consume
 - Source type and trust level when relevant
 - Environment/runtime details when relevant
@@ -66,7 +66,7 @@ We are happy to help with:
 - ✅ Validation and compatibility issues
 - ✅ Skill quality regressions with reproducible evaluations
 - ✅ Documentation gaps and examples
-- ✅ Clarifying intended AegisX behavior
+- ✅ Clarifying intended aegisX behavior
 
 We usually cannot help with:
 
@@ -77,4 +77,4 @@ We usually cannot help with:
 
 `aegisx` is community-driven. There is no guaranteed SLA, but clear and reproducible reports get the fastest response.
 
-Thanks for helping AegisX get smarter without getting messier. 🧠
+Thanks for helping aegisX get smarter without getting messier. 🧠

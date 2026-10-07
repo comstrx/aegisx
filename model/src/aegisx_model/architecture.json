@@ -1,0 +1,12 @@
+{
+  "version": 6,
+  "layers": [
+    296,
+    1024,
+    768,
+    256,
+    1
+  ],
+  "activation": "relu",
+  "output": "sigmoid"
+}

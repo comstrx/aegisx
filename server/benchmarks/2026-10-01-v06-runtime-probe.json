@@ -1,0 +1,38 @@
+{
+  "scope": "WSL Linux loopback; wrk + native epoll backend share host; HTTP/1.1 keepalive, fixed 128-byte body, no capture/model/cache; every request forwarded",
+  "settings": {
+    "binary": [
+      "tmp/aegisx-runtime-probe"
+    ],
+    "output": "server/benchmarks/2026-10-01-v06-runtime-probe.json",
+    "trials": 1,
+    "seconds": 10,
+    "connections": 64,
+    "client_threads": 2,
+    "backend_workers": 2,
+    "proxy_threads": 4,
+    "write_buffer": 0
+  },
+  "artifacts": {
+    "/var/www/tools/aegisx/tmp/aegisx-runtime-probe": "fd4049a052bb2ce031f0abd8865d275d116c0500bedd2d41c0d1de2adb37d56c"
+  },
+  "trials": [
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-runtime-probe",
+      "trial": 1,
+      "requests_per_second": 23541.97,
+      "requests": 237461,
+      "raw": "Running 10s test @ http://127.0.0.1:60379/benchmark\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.77ms    1.64ms  40.47ms   91.06%\n    Req/Sec    11.93k     1.98k   23.82k    72.50%\n  Latency Distribution\n     50%    2.58ms\n     75%    3.27ms\n     90%    4.01ms\n     99%    6.33ms\n  237461 requests in 10.09s, 69.52MB read\nRequests/sec:  23541.97\nTransfer/sec:      6.89MB\n"
+    }
+  ],
+  "direct_backend": {
+    "requests_per_second": 251875.04,
+    "requests": 2530412,
+    "raw": "Running 10s test @ http://127.0.0.1:36153/benchmark\n  2 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   178.55us  330.50us  15.13ms   99.34%\n    Req/Sec   127.15k    16.15k  154.14k    65.50%\n  Latency Distribution\n     50%  151.00us\n     75%  207.00us\n     90%  266.00us\n     99%  467.00us\n  2530412 requests in 10.05s, 526.08MB read\nRequests/sec: 251875.04\nTransfer/sec:     52.37MB\n"
+  },
+  "summary": {
+    "/var/www/tools/aegisx/tmp/aegisx-runtime-probe": {
+      "median_requests_per_second": 23541.97
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "scope": "WSL loopback; 8 clients, 3000 requests each trial, fresh downstream connections, shared Python client/backend host. Cold uses distinct trusted test actors. Model disabled in cache trials. Background captures summary with a 64-job queue.",
+  "binary_sha256": "0b8a7a3f81a3d249a14dad84c1559fbd9a0c011b7c617d27635ca0852bc3dd07",
+  "trials": [
+    {
+      "mode": "warm",
+      "requests": 3000,
+      "requests_per_second": 3366.3648382578726,
+      "p50_ms": 1.0752849921118468,
+      "p95_ms": 1.3829450181219727,
+      "decisions": {
+        "cached_keys": 1,
+        "generation": 0,
+        "hits": 2992,
+        "misses": 8,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0
+    },
+    {
+      "mode": "warm",
+      "requests": 3000,
+      "requests_per_second": 4067.967420735375,
+      "p50_ms": 0.933829986024648,
+      "p95_ms": 1.2176400050520897,
+      "decisions": {
+        "cached_keys": 1,
+        "generation": 0,
+        "hits": 2992,
+        "misses": 8,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0
+    },
+    {
+      "mode": "warm",
+      "requests": 3000,
+      "requests_per_second": 4072.908942027812,
+      "p50_ms": 0.931479997234419,
+      "p95_ms": 1.2163399951532483,
+      "decisions": {
+        "cached_keys": 1,
+        "generation": 0,
+        "hits": 2995,
+        "misses": 5,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0
+    },
+    {
+      "mode": "cold",
+      "requests": 3000,
+      "requests_per_second": 4078.2790980358973,
+      "p50_ms": 1.000232994556427,
+      "p95_ms": 1.3068430125713348,
+      "decisions": {
+        "cached_keys": 2942,
+        "generation": 0,
+        "hits": 0,
+        "misses": 3000,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0
+    },
+    {
+      "mode": "cold",
+      "requests": 3000,
+      "requests_per_second": 4059.82878746908,
+      "p50_ms": 0.9899330034386367,
+      "p95_ms": 1.3681449927389622,
+      "decisions": {
+        "cached_keys": 2943,
+        "generation": 0,
+        "hits": 0,
+        "misses": 3000,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0
+    },
+    {
+      "mode": "cold",
+      "requests": 3000,
+      "requests_per_second": 4138.619255472322,
+      "p50_ms": 0.9973829874070361,
+      "p95_ms": 1.2605410011019558,
+      "decisions": {
+        "cached_keys": 2941,
+        "generation": 0,
+        "hits": 0,
+        "misses": 3000,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0
+    },
+    {
+      "mode": "background",
+      "requests": 3000,
+      "requests_per_second": 3632.3933511984424,
+      "p50_ms": 1.1328374966979027,
+      "p95_ms": 1.5750519814901054,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 3000,
+        "last_us": 15,
+        "queued": 0,
+        "submitted": 3000,
+        "total_us": 124550
+      },
+      "dropped_events": 0
+    },
+    {
+      "mode": "background",
+      "requests": 3000,
+      "requests_per_second": 3110.1379338307775,
+      "p50_ms": 1.3085425161989406,
+      "p95_ms": 1.8936630222015083,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 3000,
+        "last_us": 51,
+        "queued": 0,
+        "submitted": 3000,
+        "total_us": 147650
+      },
+      "dropped_events": 0
+    },
+    {
+      "mode": "background",
+      "requests": 3000,
+      "requests_per_second": 3536.0421057509047,
+      "p50_ms": 1.143636996857822,
+      "p95_ms": 1.66265299776569,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 3000,
+        "last_us": 27,
+        "queued": 0,
+        "submitted": 3000,
+        "total_us": 128303
+      },
+      "dropped_events": 0
+    }
+  ]
+}

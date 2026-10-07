@@ -1,0 +1,22 @@
+{
+  "nginx": {
+    "rps": 24380.03,
+    "statuses": {
+      "BYPASS": 38940,
+      "-": 58682,
+      "HIT": 387426,
+      "EXPIRED": 4554
+    }
+  },
+  "aegisx": {
+    "rps": 22509.66,
+    "statuses": {
+      "hits": 355508,
+      "misses": 6192,
+      "stale": 0,
+      "filled": 6190
+    },
+    "entries": 11558,
+    "bytes": 16636685
+  }
+}

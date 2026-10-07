@@ -1,0 +1,97 @@
+{
+  "notice": "Previously inspected development diagnostics, not pristine acceptance. WCP publisher benign; CRS expected rule triggers are positive-only proxies. Different artifacts use their own validation thresholds, not equal FPR. Canonical source-disjoint filtering cannot remove all near-duplicates.",
+  "digests": {
+    "WCP:Legitimate/browsing_2024_zalando.json": "942e9d5d81b046abc0a76101b14cce3263d0cdbbd94ddfad39fdb9ccb964e83e",
+    "WCP:Legitimate/browsing_toysim.json": "40e5072557fc3e65faef85573e38db47362a6d6a61b23bcf94f16cd5e9792bd1",
+    "WCP:Legitimate/browsing_2024_extrastores.json": "f735c38e683ccf32866976fc8c1b9e69bd681a656cea74369ff9ab5c3925ddd8",
+    "WCP:Legitimate/browsing_doron_home.json": "9e00d102989cf4987a9630ca35013874d7bdedf12235026ea66f29f566a5f5f6",
+    "WCP:Legitimate/browsing_2024_prettylittlething_hl.json": "b3ff430cf284d4c0f7d3c1285bc1c97c8cab25e99935db9b82a7334e0bc598d9",
+    "WCP:Legitimate/browsing_2024_westmarine_al.json": "8077cbe0f206bb6e72b38eb51e0dc3ea198b93e21c032dffa46e6872d6177386",
+    "WCP:Legitimate/browsing_isrotel_-_searching.json": "7634a4632efef739974aacb19769ed6f02a7a1c540cbb05757b92b6afb888078",
+    "WCP:Legitimate/browsing_2024_microcenter.json": "7f8af4fc1ea5d8fb102430644ffbd0e50b89d476c901f6339bc59aa1059b9371",
+    "WCP:Legitimate/browsing_2024_zazzle_hl.json": "1194250e826d87c9c096e7ad8c58a1256698db463b9cc38aac8d5a6e00902656",
+    "WCP:Legitimate/browsing_2024_lego.json": "c4e4fe58e77b47275531c01f83439985ce23215fc17ebdab496185ead67ba9a9",
+    "WCP:Legitimate/browsing_2024_caviar.json": "42b4093d452179fa80698b4c45af427e70ebe7d60fb7789c0330ba8730afbd50",
+    "WCP:Legitimate/browsing_2024_asos.json": "0d5832e1a0089449912da82e6de97131a4396c9e6481440abf69c85c31534cba",
+    "WCP:Legitimate/browsing_2024_stackoverflow_ni.json": "b39e33476cf4f53034a9ee629261dac2e56c53b231ae4696977627240e46312e",
+    "WCP:Legitimate/browsing_ellesse.json": "30812bacfa35b762336325d6126bdc61f7c8bb66f41f4509c054057580b4a005",
+    "WCP:Legitimate/browsing_2024_dermstore.json": "42a76ee4074bdbe10dcaf0cabe3778a5e2246eeaf1b5cb46e3ad3f67b2cec273",
+    "WCP:Legitimate/browsing_2024_kayak_al.json": "40d621cf1f11d4c07593f23a550bae783123bd0af5b8e253b8d44170b34350c7"
+  },
+  "artifacts": [
+    {
+      "sha256": "a194a00393435b1b13090fdd11038898a1b5e21e47c44dda79e19e56082f5c64",
+      "parameters": 10901802,
+      "threshold": 0.9978313446044922,
+      "sets": {
+        "wcp_benign": {
+          "rows": 7491,
+          "positive": 42,
+          "positive_rate": 0.005606728073688426,
+          "configured_0_95": {
+            "positive": 148,
+            "positive_rate": 0.0197570417834735
+          },
+          "source_disjoint": {
+            "rows": 7205,
+            "positive": 42,
+            "positive_rate": 0.005829285218598196,
+            "excluded": 286
+          }
+        },
+        "crs_positive": {
+          "rows": 2822,
+          "positive": 455,
+          "positive_rate": 0.16123316796598158,
+          "configured_0_95": {
+            "positive": 810,
+            "positive_rate": 0.2870304748405386
+          },
+          "source_disjoint": {
+            "rows": 2822,
+            "positive": 455,
+            "positive_rate": 0.16123316796598158,
+            "excluded": 0
+          }
+        }
+      }
+    },
+    {
+      "sha256": "fab829a599567b63df45b4cb7c60f7d4050c981e9f7981857daaef50cd801495",
+      "parameters": 1288449,
+      "threshold": 0.8083411455154419,
+      "sets": {
+        "wcp_benign": {
+          "rows": 7491,
+          "positive": 283,
+          "positive_rate": 0.03777866773461487,
+          "configured_0_95": {
+            "positive": 230,
+            "positive_rate": 0.030703510879722333
+          },
+          "source_disjoint": {
+            "rows": 7205,
+            "positive": 274,
+            "positive_rate": 0.038029146426092994,
+            "excluded": 286
+          }
+        },
+        "crs_positive": {
+          "rows": 2822,
+          "positive": 1010,
+          "positive_rate": 0.35790219702338766,
+          "configured_0_95": {
+            "positive": 932,
+            "positive_rate": 0.33026222537207656
+          },
+          "source_disjoint": {
+            "rows": 2822,
+            "positive": 1010,
+            "positive_rate": 0.35790219702338766,
+            "excluded": 0
+          }
+        }
+      }
+    }
+  ]
+}

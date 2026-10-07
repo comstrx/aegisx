@@ -1,0 +1,139 @@
+# profile r0b: workers=1 connections=128 seconds=10 args=
+
+    Latency     1.64ms  177.12us   6.79ms   85.92%
+  Latency Distribution
+     99%    2.41ms
+Requests/sec:  77522.24
+
+## by dso
+    44.52%  [kernel.kallsyms]
+    44.18%  aegisx           
+     6.62%  libc.so.6        
+     3.61%  [ena]            
+                                             0x613ae23e4136
+     1.05%  [vdso]           
+     0.02%  [sch_fq_codel]   
+
+## top symbols (self)
+     5.77%  [kernel.kallsyms]  [k] __raw_callee_save___pv_queued_spin_unlock    -      -            
+     1.87%  [kernel.kallsyms]  [k] rep_movs_alternative                         -      -            
+     1.75%  [kernel.kallsyms]  [k] _raw_spin_unlock_irqrestore                  -      -            
+     1.72%  [kernel.kallsyms]  [k] do_syscall_64                                -      -            
+                          0x613ae23e3a6c
+     1.71%  [kernel.kallsyms]  [k] __fget_files                                 -      -            
+                                     0x613ae23e3edc
+     1.46%  [ena]              [k] ena_start_xmit                               -      -            
+                                     0x613ae23e4136
+     1.25%  aegisx             [.] 0x0000000000a66186                           -      -            
+     1.13%  [kernel.kallsyms]  [k] handle_softirqs                              -      -            
+     1.07%  [kernel.kallsyms]  [k] __tcp_transmit_skb                           -      -            
+                                     0x613ae23e3edc
+     1.05%  libc.so.6          [.] 0x00000000001a1653                           -      -            
+     0.99%  libc.so.6          [.] 0x00000000000986e1                           -      -            
+     0.96%  [kernel.kallsyms]  [k] aa_inet_msg_perm                             -      -            
+                          0x613ae23e3a6c
+     0.87%  aegisx             [.] 0x0000000000d98a80                           -      -            
+     0.84%  aegisx             [.] 0x0000000000d4bc43                           -      -            
+     0.80%  [vdso]             [.] 0x000000000000099a                           -      -            
+     0.73%  [kernel.kallsyms]  [k] tcp_sendmsg_locked                           -      -            
+     0.73%  [kernel.kallsyms]  [k] memset_orig                                  -      -            
+     0.71%  libc.so.6          [.] recv                                         -      -            
+     0.64%  libc.so.6          [.] writev                                       -      -            
+     0.63%  [kernel.kallsyms]  [k] _raw_spin_lock_bh                            -      -            
+     0.60%  [kernel.kallsyms]  [k] read_tsc                                     -      -            
+     0.59%  [kernel.kallsyms]  [k] tcp_rcv_space_adjust                         -      -            
+                          0x613ae23e3a6c
+     0.58%  libc.so.6          [.] __send                                       -      -            
+     0.57%  aegisx             [.] 0x0000000000d469aa                           -      -            
+     0.56%  aegisx             [.] 0x00000000007aee54                           -      -            
+     0.56%  aegisx             [.] 0x0000000000a65c49                           -      -            
+     0.56%  [kernel.kallsyms]  [k] __sys_recvfrom                               -      -            
+               0x613ae23e3a6c
+     0.55%  aegisx             [.] 0x0000000000d521bd                           -      -            
+     0.54%  [kernel.kallsyms]  [k] __ip_queue_xmit                              -      -            
+     0.54%  aegisx             [.] 0x0000000000a65f18                           -      -            
+     0.50%  [kernel.kallsyms]  [k] tcp_tso_segs                                 -      -            
+     0.49%  [kernel.kallsyms]  [k] ep_send_events                               -      -            
+     0.48%  aegisx             [.] 0x0000000000b11332                           -      -            
+     0.47%  aegisx             [.] 0x0000000000862e5c                           -      -            
+     0.46%  [kernel.kallsyms]  [k] vfs_writev                                   -      -            
+     0.45%  [kernel.kallsyms]  [k] __dev_xmit_skb                               -      -            
+     0.43%  [kernel.kallsyms]  [k] ip_finish_output2                            -      -            
+     0.43%  [kernel.kallsyms]  [k] memcpy_orig                                  -      -            
+     0.41%  [kernel.kallsyms]  [k] fput                                         -      -            
+     0.41%  [kernel.kallsyms]  [k] __sys_sendto                                 -      -            
+     0.40%  [kernel.kallsyms]  [k] __inet_lookup_established                    -      -            
+     0.40%  [kernel.kallsyms]  [k] _raw_spin_lock                               -      -            
+     0.38%  [kernel.kallsyms]  [k] __tcp_cleanup_rbuf                           -      -            
+     0.38%  [kernel.kallsyms]  [k] check_heap_object                            -      -            
+     0.37%  [kernel.kallsyms]  [k] apparmor_socket_recvmsg                      -      -            
+     0.37%  aegisx             [.] 0x0000000000d46b9c                           -      -            
+     0.36%  [kernel.kallsyms]  [k] apparmor_socket_sendmsg                      -      -            
+     0.35%  [kernel.kallsyms]  [k] kmem_cache_alloc_node_noprof                 -      -            
+     0.35%  [kernel.kallsyms]  [k] mod_memcg_state                              -      -            
+     0.35%  [kernel.kallsyms]  [k] tcp_event_new_data_sent                      -      -            
+     0.34%  [ena]              [k] ena_clean_rx_irq                             -      -            
+     0.34%  aegisx             [.] 0x000000000080ff7c                           -      -            
+     0.34%  aegisx             [.] 0x0000000000861af4                           -      -            
+     0.33%  [kernel.kallsyms]  [k] kernel_init_pages                            -      -            
+     0.33%  aegisx             [.] 0x0000000000d4be03                           -      -            
+     0.33%  [kernel.kallsyms]  [k] __alloc_skb                                  -      -            
+     0.33%  aegisx             [.] 0x0000000000a65cc4                           -      -            
+     0.32%  [kernel.kallsyms]  [k] tcp_recvmsg_locked                           -      -            
+     0.31%  [kernel.kallsyms]  [k] tcp_established_options                      -      -            
+     0.30%  [kernel.kallsyms]  [k] tcp_clean_rtx_queue                          -      -            
+     0.30%  libc.so.6          [.] 0x00000000001a175d                           -      -            
+     0.29%  [kernel.kallsyms]  [k] aa_file_perm                                 -      -            
+     0.29%  aegisx             [.] 0x0000000000a66b36                           -      -            
+
+## inclusive (children)
+    42.65%     0.00%  [.] entry_SYSCALL_64_after_hwframe               -      -            
+    42.59%     1.72%  [.] do_syscall_64                                -      -            
+    40.59%     0.17%  [.] x64_sys_call                                 -      -            
+    26.11%     0.11%  [.] inet_sendmsg                                 -      -            
+    25.94%     0.10%  [.] tcp_sendmsg                                  -      -            
+    24.69%     0.73%  [.] tcp_sendmsg_locked                           -      -            
+    18.90%     0.12%  [.] tcp_push                                     -      -            
+    18.78%     0.09%  [.] __tcp_push_pending_frames                    -      -            
+    18.53%     0.28%  [.] tcp_write_xmit                               -      -            
+    17.05%     0.00%  [.] 0x0000613ae23e4136                           -      -            
+    16.72%     0.00%  [.] 0x0000613ae23e3edc                           -      -            
+    15.47%     1.07%  [.] __tcp_transmit_skb                           -      -            
+    15.34%     0.04%  [.] __x64_sys_writev                             -      -            
+    15.28%     0.08%  [.] do_writev                                    -      -            
+    15.15%     0.03%  [.] __x64_sys_sendto                             -      -            
+    14.98%     0.41%  [.] __sys_sendto                                 -      -            
+    14.79%     0.00%  [.] 0000000000000000                             -      -            
+    14.71%     0.46%  [.] vfs_writev                                   -      -            
+    13.57%     0.16%  [.] do_iter_readv_writev                         -      -            
+    13.40%     0.15%  [.] sock_write_iter                              -      -            
+    13.36%     0.07%  [.] ip_queue_xmit                                -      -            
+    13.24%     0.54%  [.] __ip_queue_xmit                              -      -            
+    12.61%     0.10%  [.] ip_local_out                                 -      -            
+    11.95%     0.21%  [.] ip_output                                    -      -            
+    11.65%     0.44%  [.] writev                                       -      -            
+    11.62%     0.42%  [.] __send                                       -      -            
+    11.56%     0.12%  [.] ip_finish_output                             -      -            
+    11.44%     0.05%  [.] __ip_finish_output                           -      -            
+    11.32%     0.43%  [.] ip_finish_output2                            -      -            
+    11.10%     0.00%  [.] 0x0000613ae23e3a6c                           -      -            
+    10.83%     0.04%  [.] neigh_hh_output                              -      -            
+    10.75%     0.16%  [.] __dev_queue_xmit                             -      -            
+     9.49%     0.45%  [.] __dev_xmit_skb                               -      -            
+     9.21%     1.13%  [.] handle_softirqs                              -      -            
+     8.57%     0.07%  [.] sch_direct_xmit                              -      -            
+     8.53%     0.08%  [.] __x64_sys_recvfrom                           -      -            
+     8.27%     0.56%  [.] __sys_recvfrom                               -      -            
+     8.18%     0.00%  [.] irq_exit_rcu                                 -      -            
+     8.18%     0.00%  [.] __irq_exit_rcu                               -      -            
+     8.12%     0.00%  [.] asm_common_interrupt                         -      -            
+     8.12%     0.00%  [.] common_interrupt                             -      -            
+     8.05%     0.04%  [.] net_rx_action                                -      -            
+     7.97%     0.02%  [.] __napi_poll                                  -      -            
+     7.94%     0.02%  [.] ena_io_poll                                  -      -            
+     7.30%     0.53%  [.] recv                                         -      -            
+     6.63%     0.01%  [.] sock_recvmsg                                 -      -            
+     5.77%     5.77%  [k] __raw_callee_save___pv_queued_spin_unlock    -      -            
+     5.63%     0.02%  [.] inet_recvmsg                                 -      -            
+     5.58%     0.07%  [.] tcp_recvmsg                                  -      -            
+     5.46%     0.05%  [.] netif_receive_skb_list_internal              -      -            

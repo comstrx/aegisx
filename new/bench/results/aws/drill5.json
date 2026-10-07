@@ -1,0 +1,366 @@
+{
+  "scenarios": {
+    "spread": {
+      "round_robin": {
+        "requests": 11258,
+        "rps": 1406.34,
+        "non_2xx": 0,
+        "socket_errors": {},
+        "p99": "101.75ms",
+        "share": {
+          "3800": 50.0,
+          "3801": 50.0
+        },
+        "failures": 0
+      },
+      "least_conn": {
+        "requests": 11429,
+        "rps": 1427.39,
+        "non_2xx": 0,
+        "socket_errors": {},
+        "p99": "81.43ms",
+        "share": {
+          "3800": 52.1,
+          "3801": 47.9
+        },
+        "failures": 0
+      },
+      "least_time": {
+        "requests": 11090,
+        "rps": 1385.43,
+        "non_2xx": 0,
+        "socket_errors": {},
+        "p99": "84.48ms",
+        "share": {
+          "3800": 49.0,
+          "3801": 51.0
+        },
+        "failures": 0
+      },
+      "random": {
+        "requests": 11303,
+        "rps": 1411.58,
+        "non_2xx": 0,
+        "socket_errors": {},
+        "p99": "79.82ms",
+        "share": {
+          "3800": 49.6,
+          "3801": 50.4
+        },
+        "failures": 0
+      },
+      "took_s": 33.2
+    },
+    "skew": {
+      "round_robin": {
+        "rps": 936.86,
+        "p99": "161.27ms",
+        "non_2xx": 0,
+        "share": {
+          "3800": 50.4,
+          "3801": 49.6
+        }
+      },
+      "least_conn": {
+        "rps": 978.0,
+        "p99": "165.37ms",
+        "non_2xx": 0,
+        "share": {
+          "3800": 74.9,
+          "3801": 25.1
+        }
+      },
+      "least_time": {
+        "rps": 897.91,
+        "p99": "143.58ms",
+        "non_2xx": 0,
+        "share": {
+          "3800": 78.3,
+          "3801": 21.7
+        }
+      },
+      "took_s": 27.9
+    },
+    "failover": {
+      "requests": 28578,
+      "rps": 1428.2,
+      "non_2xx": 0,
+      "socket_errors": {},
+      "p99": "104.86ms",
+      "marked_down_ms": 0,
+      "marked_up_ms": 0,
+      "backends": {
+        "3800": {
+          "responses": 19916,
+          "failures": 0,
+          "retries": 0
+        },
+        "3801": {
+          "responses": 8664,
+          "failures": 35,
+          "retries": 35
+        }
+      },
+      "took_s": 20.2
+    },
+    "blackout": {
+      "statuses_while_dark": {
+        "503": 20
+      },
+      "slowest_refusal_ms": 0.5,
+      "recovered_after_start_ms": 7,
+      "took_s": 1.8
+    },
+    "slow": {
+      "status": 504,
+      "total_ms": 547,
+      "journey": {
+        "id": "6c6bdaeb-52ed-437f-ac43-27014d3b7fd9",
+        "stages": [
+          {
+            "stage": "received",
+            "elapsed_ms": 0,
+            "actor": "",
+            "method": "GET",
+            "path": "/api/slow",
+            "peer": "10.42.1.79:12634",
+            "route": "slow"
+          },
+          {
+            "stage": "forwarded",
+            "elapsed_ms": 0,
+            "attempt": 1,
+            "backend": "10.42.1.170:3801"
+          },
+          {
+            "stage": "upstream_failed",
+            "elapsed_ms": 546,
+            "backend": "10.42.1.170:3801",
+            "reason": "upstream response timed out after 500ms"
+          },
+          {
+            "stage": "failed",
+            "elapsed_ms": 546,
+            "status": 504
+          }
+        ]
+      },
+      "within_budget": {
+        "status": 200,
+        "total_ms": 103
+      },
+      "took_s": 0.7
+    },
+    "flaky": {
+      "no_status_retry": {
+        "statuses": {
+          "502": 86,
+          "200": 214
+        },
+        "backends": {
+          "3800": {
+            "responses": 151,
+            "failures": 0,
+            "retries": 0
+          },
+          "3801": {
+            "responses": 149,
+            "failures": 0,
+            "retries": 0
+          }
+        }
+      },
+      "retry_5xx": {
+        "statuses": {
+          "200": 244,
+          "502": 56
+        },
+        "backends": {
+          "3800": {
+            "responses": 247,
+            "failures": 0,
+            "retries": 34
+          },
+          "3801": {
+            "responses": 122,
+            "failures": 0,
+            "retries": 35
+          }
+        }
+      },
+      "retried_journey": {
+        "status": 200,
+        "id": "06420006-8b15-4a06-a63c-2a34b4acdc75",
+        "stages": [
+          {
+            "stage": "received",
+            "elapsed_ms": 0,
+            "actor": "",
+            "method": "GET",
+            "path": "/api/flaky",
+            "peer": "10.42.1.79:18404",
+            "route": "flaky"
+          },
+          {
+            "stage": "forwarded",
+            "elapsed_ms": 0,
+            "attempt": 1,
+            "backend": "10.42.1.170:3801"
+          },
+          {
+            "stage": "retry",
+            "elapsed_ms": 0,
+            "backend": "10.42.1.170:3801",
+            "status": 502
+          },
+          {
+            "stage": "forwarded",
+            "elapsed_ms": 0,
+            "attempt": 2,
+            "backend": "10.42.1.170:3800"
+          },
+          {
+            "stage": "completed",
+            "elapsed_ms": 0,
+            "attempts": 2,
+            "backend": "10.42.1.170:3800",
+            "status": 200
+          }
+        ]
+      },
+      "took_s": 2.2
+    },
+    "journey": {
+      "status": 201,
+      "total_ms": 4.65,
+      "server_timing": "app;dur=3.51",
+      "journey": {
+        "id": "0da04a6f-5599-4cee-8c3b-74c5271d6fda",
+        "stages": [
+          {
+            "stage": "received",
+            "elapsed_ms": 0,
+            "actor": "",
+            "method": "POST",
+            "path": "/api/orders",
+            "peer": "10.42.1.79:18412",
+            "route": "orders"
+          },
+          {
+            "stage": "forwarded",
+            "elapsed_ms": 0,
+            "attempt": 1,
+            "backend": "10.42.1.170:3800"
+          },
+          {
+            "stage": "completed",
+            "elapsed_ms": 4,
+            "attempts": 1,
+            "backend": "10.42.1.170:3800",
+            "status": 201
+          }
+        ]
+      },
+      "took_s": 0.5
+    },
+    "stream": {
+      "status": 200,
+      "first_byte_ms": 1,
+      "total_ms": 807,
+      "events": 5,
+      "took_s": 0.8
+    },
+    "reloads": {
+      "requests": 13926,
+      "rps": 1390.97,
+      "non_2xx": 0,
+      "socket_errors": {},
+      "p99": "107.69ms",
+      "reloads": 5,
+      "config_versions_seen": 5,
+      "took_s": 10.2
+    },
+    "drain": {
+      "requests": 4032,
+      "rps": 497.81,
+      "non_2xx": 0,
+      "socket_errors": {
+        "connect": 0,
+        "read": 0,
+        "write": 773551,
+        "timeout": 0
+      },
+      "p99": "103.93ms",
+      "exit_code": 0,
+      "shutdown_ms": 114,
+      "took_s": 8.4
+    },
+    "upgrade": {
+      "requests": 14419,
+      "rps": 1440.32,
+      "non_2xx": 0,
+      "socket_errors": {},
+      "p99": "99.77ms",
+      "old_exit_code": 0,
+      "old_shutdown_ms": 164,
+      "took_s": 10.2
+    },
+    "soak": {
+      "requests": 85174,
+      "rps": 1418.87,
+      "non_2xx": 0,
+      "socket_errors": {},
+      "p99": "200.32ms",
+      "samples": [
+        {
+          "t": 0,
+          "rss_mb": 42.4,
+          "fds": 87,
+          "threads": 4
+        },
+        {
+          "t": 10,
+          "rss_mb": 51.0,
+          "fds": 380,
+          "threads": 4
+        },
+        {
+          "t": 20,
+          "rss_mb": 51.1,
+          "fds": 354,
+          "threads": 4
+        },
+        {
+          "t": 30,
+          "rss_mb": 50.9,
+          "fds": 357,
+          "threads": 4
+        },
+        {
+          "t": 40,
+          "rss_mb": 50.9,
+          "fds": 321,
+          "threads": 4
+        },
+        {
+          "t": 50,
+          "rss_mb": 50.6,
+          "fds": 330,
+          "threads": 4
+        },
+        {
+          "t": 60,
+          "rss_mb": 50.6,
+          "fds": 332,
+          "threads": 4
+        }
+      ],
+      "after_idle": {
+        "rss_mb": 44.2,
+        "fds": 24,
+        "threads": 4
+      },
+      "took_s": 73.0
+    }
+  }
+}

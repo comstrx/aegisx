@@ -1,0 +1,15 @@
+{
+  "legacy_text_model_loads": true,
+  "post_completion_analysis": true,
+  "model": {
+    "artifact_sha256": "a194a00393435b1b13090fdd11038898a1b5e21e47c44dda79e19e56082f5c64",
+    "deployment_ready": false,
+    "evaluation_notice": "Research model: public content labels and controlled SQLite lab journey outcomes are separate tasks. No production middleware, fraud or infrastructure intelligence is established.",
+    "feature_version": 4,
+    "input_schema": "byte-journey-v1",
+    "model_version": "lifecycle-v8",
+    "parameter_count": 10901802,
+    "precision": "uint8",
+    "source": "lifecycle_corpus"
+  }
+}

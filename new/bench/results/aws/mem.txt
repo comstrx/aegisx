@@ -1,0 +1,3 @@
+idle-start pss_kb=25114
+512-idle-connections pss_kb=27169
+512-after-one-request-each pss_kb=62003

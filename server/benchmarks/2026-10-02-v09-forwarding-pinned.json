@@ -1,0 +1,99 @@
+{
+  "scope": "WSL Linux loopback; wrk + native epoll backend share host; HTTP/1.1 keepalive, fixed 128-byte body, no capture/model; every request forwarded; policy profile enables SQLite-backed decision cache and observed rolling rate context",
+  "host": {
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "logical_cpus": 8,
+    "cpu_model": "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+  },
+  "settings": {
+    "binary": [
+      "tmp/aegisx-v0.8-baseline",
+      "dist/aegisx"
+    ],
+    "output": "server/benchmarks/2026-10-02-v09-forwarding-pinned.json",
+    "trials": 3,
+    "seconds": 15,
+    "connections": 128,
+    "client_threads": 2,
+    "backend_workers": 2,
+    "proxy_threads": 2,
+    "write_buffer": 0,
+    "profile": "forwarding",
+    "proxy_cpus": "0,2",
+    "backend_cpus": "4,5",
+    "client_cpus": "6,7"
+  },
+  "artifacts": {
+    "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline": "858e873ac139671cf4f86f5c452745efdeb0bd2acd39919e4d65995e66e40e4d",
+    "/var/www/tools/aegisx/dist/aegisx": "e45209c0add6f9d13ef3104977355da50b6248fb0e62254a37984f6a3356f38d"
+  },
+  "trials": [
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline",
+      "trial": 1,
+      "requests_per_second": 11109.53,
+      "requests": 167666,
+      "raw": "Running 15s test @ http://127.0.0.1:36859/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    12.02ms    9.10ms 131.62ms   81.13%\n    Req/Sec     5.65k     1.32k    9.15k    76.51%\n  Latency Distribution\n     50%   12.39ms\n     75%   17.30ms\n     90%   21.38ms\n     99%   40.51ms\n  167666 requests in 15.09s, 49.09MB read\nRequests/sec:  11109.53\nTransfer/sec:      3.25MB\n",
+      "proxy_cpu_cores": 1.9479399695675137,
+      "proxy_rss_bytes": 48508928
+    },
+    {
+      "binary": "/var/www/tools/aegisx/dist/aegisx",
+      "trial": 1,
+      "requests_per_second": 10023.72,
+      "requests": 151298,
+      "raw": "Running 15s test @ http://127.0.0.1:41675/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    13.03ms    7.44ms 117.40ms   83.24%\n    Req/Sec     5.10k     1.20k    7.75k    68.12%\n  Latency Distribution\n     50%   12.35ms\n     75%   16.43ms\n     90%   20.64ms\n     99%   38.66ms\n  151298 requests in 15.09s, 44.30MB read\nRequests/sec:  10023.72\nTransfer/sec:      2.93MB\n",
+      "proxy_cpu_cores": 1.97052235878583,
+      "proxy_rss_bytes": 48308224
+    },
+    {
+      "binary": "/var/www/tools/aegisx/dist/aegisx",
+      "trial": 2,
+      "requests_per_second": 9640.72,
+      "requests": 145254,
+      "raw": "Running 15s test @ http://127.0.0.1:47913/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    13.17ms    4.65ms  31.45ms   61.54%\n    Req/Sec     4.88k     0.87k   10.16k    75.92%\n  Latency Distribution\n     50%   12.49ms\n     75%   17.07ms\n     90%   19.47ms\n     99%   23.50ms\n  145254 requests in 15.07s, 42.53MB read\nRequests/sec:   9640.72\nTransfer/sec:      2.82MB\n",
+      "proxy_cpu_cores": 1.9874406151418447,
+      "proxy_rss_bytes": 48570368
+    },
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline",
+      "trial": 2,
+      "requests_per_second": 10259.23,
+      "requests": 154739,
+      "raw": "Running 15s test @ http://127.0.0.1:43913/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    12.87ms    7.61ms  81.90ms   82.67%\n    Req/Sec     5.20k     1.32k    8.89k    70.90%\n  Latency Distribution\n     50%   12.56ms\n     75%   16.40ms\n     90%   20.88ms\n     99%   41.61ms\n  154739 requests in 15.08s, 45.30MB read\nRequests/sec:  10259.23\nTransfer/sec:      3.00MB\n",
+      "proxy_cpu_cores": 1.960281530709076,
+      "proxy_rss_bytes": 49827840
+    },
+    {
+      "binary": "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline",
+      "trial": 3,
+      "requests_per_second": 10377.11,
+      "requests": 156681,
+      "raw": "Running 15s test @ http://127.0.0.1:38005/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    12.55ms    5.34ms  89.99ms   92.86%\n    Req/Sec     5.26k     1.24k   12.96k    76.25%\n  Latency Distribution\n     50%   11.55ms\n     75%   13.79ms\n     90%   16.22ms\n     99%   36.70ms\n  156681 requests in 15.10s, 45.87MB read\nRequests/sec:  10377.11\nTransfer/sec:      3.04MB\n",
+      "proxy_cpu_cores": 1.9900459151896628,
+      "proxy_rss_bytes": 52297728
+    },
+    {
+      "binary": "/var/www/tools/aegisx/dist/aegisx",
+      "trial": 3,
+      "requests_per_second": 10084.96,
+      "requests": 152054,
+      "raw": "Running 15s test @ http://127.0.0.1:56863/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    13.35ms    9.42ms 113.75ms   81.86%\n    Req/Sec     5.12k     1.34k    7.41k    72.48%\n  Latency Distribution\n     50%   13.34ms\n     75%   17.64ms\n     90%   22.87ms\n     99%   49.57ms\n  152054 requests in 15.08s, 44.52MB read\nRequests/sec:  10084.96\nTransfer/sec:      2.95MB\n",
+      "proxy_cpu_cores": 1.9365379010140904,
+      "proxy_rss_bytes": 52813824
+    }
+  ],
+  "direct_backend": {
+    "requests_per_second": 239298.69,
+    "requests": 3607892,
+    "raw": "Running 15s test @ http://127.0.0.1:35205/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   391.52us  843.05us  46.72ms   99.05%\n    Req/Sec   121.12k    18.35k  157.95k    72.58%\n  Latency Distribution\n     50%  326.00us\n     75%  420.00us\n     90%  519.00us\n     99%    1.16ms\n  3607892 requests in 15.08s, 750.08MB read\nRequests/sec: 239298.69\nTransfer/sec:     49.75MB\n"
+  },
+  "summary": {
+    "/var/www/tools/aegisx/tmp/aegisx-v0.8-baseline": {
+      "median_requests_per_second": 10377.11
+    },
+    "/var/www/tools/aegisx/dist/aegisx": {
+      "median_requests_per_second": 10023.72
+    }
+  }
+}

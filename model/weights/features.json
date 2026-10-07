@@ -1,0 +1,1262 @@
+{
+  "version": 4,
+  "features": [
+    {
+      "name": "read_method",
+      "scale": 1
+    },
+    {
+      "name": "write_method",
+      "scale": 1
+    },
+    {
+      "name": "path_length",
+      "scale": 2048
+    },
+    {
+      "name": "query_length",
+      "scale": 4096
+    },
+    {
+      "name": "header_count",
+      "scale": 100
+    },
+    {
+      "name": "declared_body_bytes",
+      "scale": 1048576
+    },
+    {
+      "name": "has_body",
+      "scale": 1
+    },
+    {
+      "name": "prior_requests_10s",
+      "scale": 100
+    },
+    {
+      "name": "prior_failures_10s",
+      "scale": 50
+    },
+    {
+      "name": "prior_blocks_10s",
+      "scale": 50
+    },
+    {
+      "name": "in_flight",
+      "scale": 32
+    },
+    {
+      "name": "seconds_since_last",
+      "scale": 60
+    },
+    {
+      "name": "actor_age_seconds",
+      "scale": 3600
+    },
+    {
+      "name": "previous_latency_ms",
+      "scale": 10000
+    },
+    {
+      "name": "path_depth",
+      "scale": 20
+    },
+    {
+      "name": "has_query",
+      "scale": 1
+    },
+    {
+      "name": "scan_bytes",
+      "scale": 65536
+    },
+    {
+      "name": "non_ascii_ratio",
+      "scale": 1
+    },
+    {
+      "name": "control_ratio",
+      "scale": 1
+    },
+    {
+      "name": "digit_ratio",
+      "scale": 1
+    },
+    {
+      "name": "punctuation_ratio",
+      "scale": 1
+    },
+    {
+      "name": "percent_count",
+      "scale": 64
+    },
+    {
+      "name": "quote_count",
+      "scale": 64
+    },
+    {
+      "name": "delimiter_count",
+      "scale": 64
+    },
+    {
+      "name": "sql_tokens",
+      "scale": 16
+    },
+    {
+      "name": "script_tokens",
+      "scale": 16
+    },
+    {
+      "name": "shell_tokens",
+      "scale": 16
+    },
+    {
+      "name": "traversal_tokens",
+      "scale": 16
+    },
+    {
+      "name": "template_tokens",
+      "scale": 16
+    },
+    {
+      "name": "encoding_tokens",
+      "scale": 16
+    },
+    {
+      "name": "scan_truncated",
+      "scale": 1
+    },
+    {
+      "name": "content_present",
+      "scale": 1
+    },
+    {
+      "name": "status_code",
+      "scale": 599
+    },
+    {
+      "name": "elapsed_ms",
+      "scale": 10000
+    },
+    {
+      "name": "request_bytes",
+      "scale": 1048576
+    },
+    {
+      "name": "response_bytes",
+      "scale": 1048576
+    },
+    {
+      "name": "attempts",
+      "scale": 3
+    },
+    {
+      "name": "failed",
+      "scale": 1
+    },
+    {
+      "name": "context_present",
+      "scale": 1
+    },
+    {
+      "name": "outcome_present",
+      "scale": 1
+    },
+    {
+      "name": "byte_2gram_000",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_001",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_002",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_003",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_004",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_005",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_006",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_007",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_008",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_009",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_010",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_011",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_012",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_013",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_014",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_015",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_016",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_017",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_018",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_019",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_020",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_021",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_022",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_023",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_024",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_025",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_026",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_027",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_028",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_029",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_030",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_031",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_032",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_033",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_034",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_035",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_036",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_037",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_038",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_039",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_040",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_041",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_042",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_043",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_044",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_045",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_046",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_047",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_048",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_049",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_050",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_051",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_052",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_053",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_054",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_055",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_056",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_057",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_058",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_059",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_060",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_061",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_062",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_063",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_064",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_065",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_066",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_067",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_068",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_069",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_070",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_071",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_072",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_073",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_074",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_075",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_076",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_077",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_078",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_079",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_080",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_081",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_082",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_083",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_084",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_085",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_086",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_087",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_088",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_089",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_090",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_091",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_092",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_093",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_094",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_095",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_096",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_097",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_098",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_099",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_100",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_101",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_102",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_103",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_104",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_105",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_106",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_107",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_108",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_109",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_110",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_111",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_112",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_113",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_114",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_115",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_116",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_117",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_118",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_119",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_120",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_121",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_122",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_123",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_124",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_125",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_126",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_2gram_127",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_000",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_001",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_002",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_003",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_004",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_005",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_006",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_007",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_008",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_009",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_010",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_011",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_012",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_013",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_014",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_015",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_016",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_017",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_018",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_019",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_020",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_021",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_022",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_023",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_024",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_025",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_026",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_027",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_028",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_029",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_030",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_031",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_032",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_033",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_034",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_035",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_036",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_037",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_038",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_039",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_040",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_041",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_042",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_043",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_044",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_045",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_046",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_047",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_048",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_049",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_050",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_051",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_052",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_053",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_054",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_055",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_056",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_057",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_058",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_059",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_060",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_061",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_062",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_063",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_064",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_065",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_066",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_067",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_068",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_069",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_070",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_071",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_072",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_073",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_074",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_075",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_076",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_077",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_078",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_079",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_080",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_081",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_082",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_083",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_084",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_085",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_086",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_087",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_088",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_089",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_090",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_091",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_092",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_093",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_094",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_095",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_096",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_097",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_098",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_099",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_100",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_101",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_102",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_103",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_104",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_105",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_106",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_107",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_108",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_109",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_110",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_111",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_112",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_113",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_114",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_115",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_116",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_117",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_118",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_119",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_120",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_121",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_122",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_123",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_124",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_125",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_126",
+      "scale": 0.1
+    },
+    {
+      "name": "byte_3gram_127",
+      "scale": 0.1
+    }
+  ],
+  "content_patterns": [
+    [
+      "select",
+      "union",
+      "sleep(",
+      "benchmark(",
+      " or ",
+      " and ",
+      "information_schema",
+      "drop ",
+      "--",
+      "/*"
+    ],
+    [
+      "<script",
+      "javascript:",
+      "onerror",
+      "onload",
+      "<iframe",
+      "<svg",
+      "document.",
+      "alert(",
+      "eval("
+    ],
+    [
+      ";",
+      "|",
+      "&&",
+      "$(",
+      "`",
+      "/bin/",
+      "cmd.exe",
+      "powershell",
+      "wget ",
+      "curl "
+    ],
+    [
+      "../",
+      "..\\",
+      "/etc/",
+      "/proc/",
+      "win.ini",
+      "web.config",
+      ".htaccess"
+    ],
+    [
+      "{{",
+      "${",
+      "<%",
+      "%>",
+      "__class__",
+      "__globals__",
+      "jndi:"
+    ],
+    [
+      "%",
+      "&#",
+      "\\x",
+      "\\u",
+      "base64",
+      "char(",
+      "concat("
+    ]
+  ],
+  "lexical": {
+    "widths": [
+      2,
+      3
+    ],
+    "buckets_per_width": 128,
+    "hash": "FNV-1a-32 xor high16, low7",
+    "value": "count / max(1, decoded_length - width + 1)"
+  }
+}

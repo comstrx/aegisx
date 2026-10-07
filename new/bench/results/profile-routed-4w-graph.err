@@ -1,0 +1,2 @@
+/home/codingmaster/.claude/shell-snapshots/snapshot-bash-1790945429785-2h41pr.sh: line 107: 2318076 Killed                  ./backend/backend 3900 2 > /dev/null 2>&1
+/home/codingmaster/.claude/shell-snapshots/snapshot-bash-1790945429785-2h41pr.sh: line 107: 2318077 Killed                  ../server/target/profiling/aegisx --listen 127.0.0.1:3901 --upstream 127.0.0.1:3900 --workers 4 --log warn > /dev/null 2>&1

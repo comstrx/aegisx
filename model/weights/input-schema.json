@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "name": "byte-journey-v1",
+  "text_bytes": 1024,
+  "text_streams": 2,
+  "event_count": 32,
+  "event_bytes": 64,
+  "event_values": 8,
+  "coverage": 4,
+  "feature_count": 296,
+  "architecture": "dilated byte CNN + ordered event CNN + compact numeric fusion",
+  "fusion": [
+    876,
+    512,
+    256,
+    64,
+    1
+  ],
+  "parameter_count": 895178,
+  "compatible_architectures": [
+    {
+      "model_version": "lifecycle-v8",
+      "parameter_count": 10901802
+    },
+    {
+      "model_version": "lifecycle-v9",
+      "parameter_count": 895178
+    }
+  ]
+}

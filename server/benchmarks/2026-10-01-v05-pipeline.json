@@ -1,0 +1,345 @@
+{
+  "scope": "WSL loopback; 8 clients, 3000 requests each trial, fresh downstream connections, shared Python client/backend host. Cold uses distinct trusted test actors. Model disabled in cache trials. Background captures summary with a 64-job queue.",
+  "binary_sha256": "ea102ab40b84ef03b5c146397af10304775b803af5d3f279f71714531d5ac3bd",
+  "trials": [
+    {
+      "mode": "warm",
+      "requests": 3000,
+      "attempts_per_second": 3141.81672457337,
+      "forwarded_requests_per_second": 3141.81672457337,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.1462730180937797,
+      "p95_ms": 1.5665320097468793,
+      "decisions": {
+        "cached_keys": 1,
+        "generation": 0,
+        "hits": 2992,
+        "misses": 8,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 0,
+        "committed_events": 0,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "warm",
+      "requests": 3000,
+      "attempts_per_second": 3475.7451473905903,
+      "forwarded_requests_per_second": 3475.7451473905903,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.0214610083494335,
+      "p95_ms": 1.8420209817122668,
+      "decisions": {
+        "cached_keys": 1,
+        "generation": 0,
+        "hits": 2992,
+        "misses": 8,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 0,
+        "committed_events": 0,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "warm",
+      "requests": 3000,
+      "attempts_per_second": 3884.049385686882,
+      "forwarded_requests_per_second": 3884.049385686882,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 0.9650610008975491,
+      "p95_ms": 1.3428149977698922,
+      "decisions": {
+        "cached_keys": 1,
+        "generation": 0,
+        "hits": 2992,
+        "misses": 8,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 0,
+        "committed_events": 0,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "cold",
+      "requests": 3000,
+      "attempts_per_second": 3738.8339677726412,
+      "forwarded_requests_per_second": 3738.8339677726412,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.0803620098158717,
+      "p95_ms": 1.6366179916076362,
+      "decisions": {
+        "cached_keys": 2940,
+        "generation": 0,
+        "hits": 0,
+        "misses": 3000,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 0,
+        "committed_events": 0,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "cold",
+      "requests": 3000,
+      "attempts_per_second": 3826.5908127891,
+      "forwarded_requests_per_second": 3826.5908127891,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.0479790071258321,
+      "p95_ms": 1.4786410029046237,
+      "decisions": {
+        "cached_keys": 2941,
+        "generation": 0,
+        "hits": 0,
+        "misses": 3000,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 0,
+        "committed_events": 0,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "cold",
+      "requests": 3000,
+      "attempts_per_second": 2405.111080389148,
+      "forwarded_requests_per_second": 2405.111080389148,
+      "statuses": {
+        "200": 3000
+      },
+      "p50_ms": 1.2011645158054307,
+      "p95_ms": 4.1811499977484345,
+      "decisions": {
+        "cached_keys": 2939,
+        "generation": 0,
+        "hits": 0,
+        "misses": 3000,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": null,
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 0,
+        "committed_events": 0,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 0,
+        "used_slots": 0,
+        "write_retries": 0
+      }
+    },
+    {
+      "mode": "background",
+      "requests": 3000,
+      "attempts_per_second": 4024.915433961721,
+      "forwarded_requests_per_second": 197.22085626412434,
+      "statuses": {
+        "200": 147,
+        "503": 2853
+      },
+      "p50_ms": 0.6182575016282499,
+      "p95_ms": 1.1043130070902407,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 147,
+        "journal_enabled": true,
+        "journal_failures": 2,
+        "journal_healthy": true,
+        "journal_us": 474018,
+        "last_us": 107,
+        "pressure_rejections": 1956,
+        "queued": 0,
+        "recovered": 0,
+        "submitted": 147,
+        "total_us": 20387
+      },
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 2103,
+        "committed_events": 6309,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 897,
+        "used_slots": 0,
+        "write_retries": 3
+      }
+    },
+    {
+      "mode": "background",
+      "requests": 3000,
+      "attempts_per_second": 3986.4574566206416,
+      "forwarded_requests_per_second": 183.3770430045495,
+      "statuses": {
+        "200": 138,
+        "503": 2862
+      },
+      "p50_ms": 0.6189075065776706,
+      "p95_ms": 1.1210140073671937,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 138,
+        "journal_enabled": true,
+        "journal_failures": 1,
+        "journal_healthy": true,
+        "journal_us": 495331,
+        "last_us": 92,
+        "pressure_rejections": 2591,
+        "queued": 0,
+        "recovered": 0,
+        "submitted": 138,
+        "total_us": 19399
+      },
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 2729,
+        "committed_events": 8187,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 271,
+        "used_slots": 0,
+        "write_retries": 1
+      }
+    },
+    {
+      "mode": "background",
+      "requests": 3000,
+      "attempts_per_second": 3490.2320986022587,
+      "forwarded_requests_per_second": 187.30912262498788,
+      "statuses": {
+        "200": 161,
+        "503": 2839
+      },
+      "p50_ms": 0.6922080065123737,
+      "p95_ms": 1.352515973849222,
+      "decisions": {
+        "cached_keys": 0,
+        "generation": 0,
+        "hits": 0,
+        "misses": 0,
+        "queued": 0,
+        "write_failures": 0
+      },
+      "analysis": {
+        "capacity": 64,
+        "dropped": 0,
+        "expired": 0,
+        "failed": 0,
+        "finished": 161,
+        "journal_enabled": true,
+        "journal_failures": 0,
+        "journal_healthy": true,
+        "journal_us": 415712,
+        "last_us": 89,
+        "pressure_rejections": 2665,
+        "queued": 0,
+        "recovered": 0,
+        "submitted": 161,
+        "total_us": 23431
+      },
+      "dropped_events": 0,
+      "storage": {
+        "capacity": 65536,
+        "committed_batches": 2826,
+        "committed_events": 8478,
+        "dropped_batches": 0,
+        "enabled": true,
+        "healthy": true,
+        "pressure_rejections": 174,
+        "used_slots": 0,
+        "write_retries": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+"use client";
+import type {Cancellation,State,Verdict} from "../lib/client";
+import {Empty,Icon,Panel,format} from "./ui";
+export function Upstreams({state}:{state:State}){
+ const all=state.upstreams.flatMap(pool=>pool.backends),healthy=all.filter(item=>item.healthy).length;
+ return <Panel title="Upstream health" description="Live availability, active load and observed latency." action={<span className={"badge "+(healthy===all.length?"success":"danger")}><i/>{healthy} / {all.length} healthy</span>}>
+ <div className="upstream-grid">{state.upstreams.map(pool=><div className="pool" key={pool.name}><div className="pool-title"><span><Icon name="upstream" size={17}/><strong>{pool.name}</strong></span><span className="tag">{pool.policy.replace(/([a-z])([A-Z])/g,"$1 $2")}</span></div>
+ {pool.backends.map(backend=><div className="backend" key={backend.address}><span className={"health-dot "+(backend.healthy?"":"down")}/><div className="backend-address"><b className="mono">{backend.address}</b><small>{backend.healthy?"Healthy":"Unavailable"} · Weight {backend.weight} · {backend.active} active</small></div><div className="backend-latency">{(backend.latency_us/1000).toFixed(1)}<small>ms EWMA</small></div></div>)}</div>)}</div>
+ {!all.length&&<Empty icon="upstream" title="No upstreams configured">Add an upstream pool in your Lua configuration.</Empty>}</Panel>;
+}
+export function Decisions({state,verdicts,cancellations,revoke,select,busy}:{state:State;verdicts:Verdict[];cancellations:Cancellation[];revoke:(item:Verdict)=>void;select:(id:string)=>void;busy:boolean}){
+ return <><Panel title="Active decisions" description="Stored in SQLite and applied to future admissions." action={<span className="tag">{state.policies.decision_cache?"ENABLED":"DISABLED"}</span>}>
+ <div className="table-scroll" tabIndex={0}><table><thead><tr><th>Source / actor</th><th>Route</th><th>Reason</th><th>Expires</th><th><span className="sr-only">Actions</span></th></tr></thead><tbody>{verdicts.map(item=><tr key={item.key}><td><span className="badge violet">{item.source}</span> <span className="mono">{item.actor.slice(0,10)}…</span></td><td>{item.route}</td><td className="reason-cell">{item.reason}</td><td className="mono">{new Date(item.expires_ms).toLocaleTimeString()}</td><td><button className="button secondary small" disabled={busy} onClick={()=>revoke(item)}>Revoke</button></td></tr>)}</tbody></table>
+ {!verdicts.length&&<Empty icon="shield" title="No active restrictions">Future requests follow your configured policies. Expired decisions stop applying automatically.</Empty>}</div></Panel>
+ <Panel title="Cooperative cancellation" description="The backend acknowledges the intent and reports the final outcome.">
+ <div className="table-scroll" tabIndex={0}><table><thead><tr><th>Request</th><th>Route</th><th>State</th><th>Reason</th></tr></thead><tbody>{cancellations.map(item=><tr key={item.action_id}><td><button className="row-button mono" onClick={()=>select(item.request_id)}>{item.request_id.slice(0,8)}…</button></td><td>{item.route}</td><td><span className="badge violet">{item.state.replaceAll("_"," ")}</span></td><td className="reason-cell">{item.reason}</td></tr>)}</tbody></table>
+ {!cancellations.length&&<Empty icon="clock" title="No cancellation intents">Enable the cancellation contract for a supported route to coordinate with its backend.</Empty>}</div></Panel></>;
+}
+export function Diagnostics({state}:{state:State}){
+ const analysis=state.analysis;
+ return <><Panel title="Background analysis" description="Completed journeys become context for future decisions." action={<span className="badge violet">{state.policies.model}</span>}>
+ <div className="model-banner"><span className="model-icon"><Icon name="analysis" size={28}/></span><div><h3>{state.model?.model_version??"Model disabled"}</h3><p>{state.model?format(state.model.parameter_count)+" parameters · "+state.configuration.feature_count+" numeric features"+(state.model.input_schema?" · request / response text · ordered events":""):"Independent proxy operation"}</p></div><span className="tag">{state.model?.precision??"FP32"}</span></div>
+ {state.model&&!state.model.deployment_ready&&<div className="callout info"><Icon name="analysis"/><div><strong>Observation before enforcement</strong><p>{state.model.evaluation_notice||"This research model has not been validated for your production traffic."} Late results never interrupt an active request.</p></div></div>}
+ {state.model?.input_schema&&<div className="footnote"><Icon name="database" size={14}/>Text stays in volatile memory. Interrupted text analysis cannot be reconstructed from the numeric journal.</div>}
+ <div className="diagnostic-grid">
+ <Meter label="Analysis reservations" value={analysis?.queued??0} max={analysis?.capacity??0} caption="Active + queued; worker batch is counted separately"/>
+ <div><Stat label="Finished / expired" value={format(analysis?.finished??0)+" / "+format(analysis?.expired??0)}/><Stat label="Worker batch" value={(analysis?.processing??0)+" / 32"}/><Stat label="Last extraction + inference" value={((analysis?.last_us??0)/1000).toFixed(3)+" ms"}/></div>
+ <div><Stat label="Numeric journal" value={analysis?.journal_enabled?"Enabled":"Disabled"}/><Stat label={state.model?.input_schema?"Interrupted jobs reconciled":"Recovered · observe only"} value={format(analysis?.recovered??0)}/><Stat label="Analysis errors / skipped" value={format(analysis?.failed??0)+" / "+format(analysis?.dropped??0)}/></div></div></Panel>
+ <Panel title="Capture & durability" description="Each reserved journey commits as a unit." action={<span className={"badge "+(!state.storage.healthy?"danger":"success")}><i/>{state.storage.enabled?state.storage.healthy?"Healthy":"Retrying":"Disabled"}</span>}>
+ <div className="diagnostic-grid"><Meter label="Capture reservations" value={state.storage.used_slots} max={state.storage.capacity} caption="Reserved + queued completed journeys"/>
+ <div><Stat label="Committed journeys" value={format(state.storage.committed_batches)}/><Stat label="Committed events" value={format(state.storage.committed_events)}/><Stat label="Write retries" value={format(state.storage.write_retries)}/></div>
+ <div><Stat label="Admission" value={state.policies.persistence_admission}/><Stat label="Synchronization" value={state.policies.persistence_synchronous}/><Stat label="Omitted batches" value={format(state.storage.dropped_batches)}/></div></div>
+ <div className="footnote"><Icon name="database" size={14}/>Durability starts at database commit. Active and uncommitted work remains in memory.</div></Panel>
+ <Panel title="Engine resources" description="Measurements from this proxy process."><div className="diagnostic-grid">
+ <div><Stat label="Resident memory" value={state.resources.rss_bytes==null?"Unavailable":format(state.resources.rss_bytes/1048576)+" MiB"}/><Stat label="CPU · 100% = one core" value={state.resources.process_cpu_percent==null?"Unavailable":format(state.resources.process_cpu_percent)+"%"}/></div>
+ <div><Stat label="Threads / open descriptors" value={(state.resources.threads??"—")+" / "+(state.resources.open_fds??"—")}/><Stat label="Decision hits / SQL reads" value={format(state.decisions?.hits??0)+" / "+format(state.decisions?.misses??0)}/></div>
+ <div><Stat label="Response cache hits" value={format(state.cache.response_hits)}/><Stat label="Webhook deliveries / failures" value={state.webhooks.delivered+" / "+state.webhooks.failed}/></div></div></Panel></>;
+}
+export function Stat({label,value}:{label:string;value:string|number}){return <div className="stat-row"><span>{label}</span><b className="mono">{value}</b></div>}
+function Meter({label,value,max,caption}:{label:string;value:number;max:number;caption:string}){return <div className="meter-block"><div><span>{label}</span><b className="mono">{format(value)} <small>/ {format(max)}</small></b></div><div className="queue-meter" role="meter" aria-label={label} aria-valuenow={value} aria-valuemin={0} aria-valuemax={Math.max(1,max)}><i style={{width:Math.min(100,max?value/max*100:0)+"%"}}/></div><p>{caption}</p></div>}

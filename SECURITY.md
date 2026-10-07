@@ -2,7 +2,7 @@
 
 We take security seriously.
 
-AegisX processes external knowledge, agent-generated content, metadata, and reusable instructions. Treat every unverified source as untrusted input.
+aegisX processes external knowledge, agent-generated content, metadata, and reusable instructions. Treat every unverified source as untrusted input.
 
 - Please report vulnerabilities privately.
 - Do not open public Issues for security reports.
@@ -27,7 +27,7 @@ If that is unavailable, email the maintainer privately: <comstrx@gmail.com>
 - provenance, signature, integrity, or validation bypasses
 - data exposure, secret leakage, or privilege escalation
 - supply-chain attacks or dependency compromise with clear impact
-- unsafe defaults that affect real AegisX deployments or consumers
+- unsafe defaults that affect real aegisX deployments or consumers
 
 ❌ Not security reports:
 
@@ -40,7 +40,7 @@ Use [Issues](https://github.com/comstrx/aegisx/issues) or [Discussions](https://
 
 ## Include this
 
-- affected AegisX version, commit, or tag
+- affected aegisX version, commit, or tag
 - affected component, pipeline stage, adapter, validator, or skill when known
 - source/trust context involved
 - impact and threat model

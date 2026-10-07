@@ -1,0 +1,206 @@
+# profile v4-1w: binary=aegisx-prof workers=1 connections=128 seconds=10 args=
+
+    Latency     1.50ms  151.43us   3.32ms   71.35%
+  Latency Distribution
+     99%    1.94ms
+Requests/sec:  84628.51
+
+## allocator calls per request
+probe_alloc:mi_malloc_aligned 2.98
+probe_alloc:mi_zalloc_aligned 0.21
+probe_alloc:mi_realloc_aligned 0.00
+probe_alloc:mi_free          3.19
+
+## by dso
+    44.66%  [kernel.kallsyms]
+    42.52%  aegisx-prof      
+     7.86%  libc.so.6        
+     3.76%  [ena]            
+                                                        0x70fac529cb84
+                                                        0x70fac5329ecc
+     1.15%  [vdso]           
+     0.04%  [sch_fq_codel]   
+
+## top symbols (self)
+     6.23%  [kernel.kallsyms]  [k] __raw_callee_save___pv_queued_spin_unlock                                                                                                                            
+     3.13%  aegisx-prof        [.] <aegisx::http::upstream::arch::Client>::exchange::<<aegisx::http::proxy::arch::Proxy>::forward::{closure#0}::{closure#0}>::{closure#0}                               
+     2.48%  aegisx-prof        [.] <aegisx::app::gateway::arch::Handler>::serve::{closure#0}                                                                                                            
+     2.32%  [kernel.kallsyms]  [k] _raw_spin_unlock_irqrestore                                                                                                                                          
+     2.06%  aegisx-prof        [.] bytes::bytes_mut::shared_v_drop                                                                                                                                      
+     1.89%  [kernel.kallsyms]  [k] do_syscall_64                                                                                                                                                        
+     1.59%  libc.so.6          [.] 0x00000000001a1653                                                                                                                                                   
+     1.57%  [kernel.kallsyms]  [k] rep_movs_alternative                                                                                                                                                 
+     1.41%  [kernel.kallsyms]  [k] handle_softirqs                                                                                                                                                      
+     1.34%  [kernel.kallsyms]  [k] __fget_files                                                                                                                                                         
+     1.32%  aegisx-prof        [.] <tokio::runtime::io::registration::Registration>::poll_ready                                                                                                         
+     1.24%  aegisx-prof        [.] <aegisx::http::server::arch::Server>::serve::<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0}::{closure#9}, <aegisx::app::bo
+     1.17%  [ena]              [k] ena_start_xmit                                                                                                                                                       
+     1.17%  libc.so.6          [.] 0x00000000000986e1                                                                                                                                                   
+     1.05%  [kernel.kallsyms]  [k] __tcp_transmit_skb                                                                                                                                                   
+     1.04%  libc.so.6          [.] __send                                                                                                                                                               
+     0.95%  [kernel.kallsyms]  [k] aa_inet_msg_perm                                                                                                                                                     
+     0.94%  aegisx-prof        [.] _mi_page_malloc_zero                                                                                                                                                 
+     0.93%  aegisx-prof        [.] <aegisx::http::proxy::arch::Proxy>::forward::{closure#0}                                                                                                             
+     0.88%  aegisx-prof        [.] http::header::map::hash_elem_using::<http::header::name::HeaderName>                                                                                                 
+     0.86%  [vdso]             [.] 0x000000000000099a                                                                                                                                                   
+     0.85%  libc.so.6          [.] recv                                                                                                                                                                 
+     0.83%  aegisx-prof        [.] <hyper::proto::h1::role::Client as hyper::proto::h1::Http1Transaction>::parse                                                                                        
+     0.82%  aegisx-prof        [.] core::ptr::drop_glue::<hyper::body::incoming::Incoming>                                                                                                              
+     0.78%  [kernel.kallsyms]  [k] __inet_lookup_established                                                                                                                                            
+     0.76%  [kernel.kallsyms]  [k] read_tsc                                                                                                                                                             
+     0.74%  aegisx-prof        [.] bytes::bytes_mut::shared_v_clone                                                                                                                                     
+     0.73%  aegisx-prof        [.] <tokio::runtime::scheduler::current_thread::Context>::run_task                                                                                                       
+     0.69%  aegisx-prof        [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::To
+     0.68%  [kernel.kallsyms]  [k] __sys_sendto                                                                                                                                                         
+     0.64%  aegisx-prof        [.] core::ptr::drop_glue::<hyper::body::incoming::Sender>                                                                                                                
+     0.63%  aegisx-prof        [.] <hyper::proto::h1::role::Server as hyper::proto::h1::Http1Transaction>::parse                                                                                        
+     0.60%  [kernel.kallsyms]  [k] memset_orig                                                                                                                                                          
+     0.59%  aegisx-prof        [.] tokio::runtime::task::waker::clone_waker                                                                                                                             
+     0.58%  [kernel.kallsyms]  [k] _raw_spin_lock_bh                                                                                                                                                    
+     0.58%  aegisx-prof        [.] tokio::runtime::task::raw::poll::<<aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thre
+     0.58%  aegisx-prof        [.] <futures_channel::mpsc::BoundedSenderInner<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::try_send                                                
+     0.55%  aegisx-prof        [.] mi_free                                                                                                                                                              
+     0.54%  aegisx-prof        [.] core::ptr::drop_glue::<aegisx::app::gateway::arch::Ticket>                                                                                                           
+     0.53%  [kernel.kallsyms]  [k] tcp_sendmsg_locked                                                                                                                                                   
+     0.53%  aegisx-prof        [.] <aegisx::http::proxy::arch::Proxy>::prepare                                                                                                                          
+     0.52%  [kernel.kallsyms]  [k] apparmor_socket_sendmsg                                                                                                                                              
+     0.52%  aegisx-prof        [.] <hyper::body::incoming::Incoming>::new_channel                                                                                                                       
+     0.51%  aegisx-prof        [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<<aegisx::http::server::arch::Server>::serve<aegisx::app::g
+     0.50%  [kernel.kallsyms]  [k] __ip_queue_xmit                                                                                                                                                      
+     0.50%  aegisx-prof        [.] tokio::runtime::task::raw::poll::<<aegisx::http::server::arch::Server>::serve<aegisx::app::gateway::arch::Context, <aegisx::app::boot::arch::Worker>::run::{closure#0
+     0.50%  aegisx-prof        [.] bytes::bytes::shared_drop                                                                                                                                            
+     0.49%  [kernel.kallsyms]  [k] _raw_spin_lock                                                                                                                                                       
+     0.48%  libc.so.6          [.] 0x00000000001a175d                                                                                                                                                   
+     0.47%  [kernel.kallsyms]  [k] memcpy_orig                                                                                                                                                          
+     0.47%  aegisx-prof        [.] <aegisx::http::upstream::arch::Client>::connect::{closure#0}::{closure#2}                                                                                            
+     0.45%  [kernel.kallsyms]  [k] tcp_rcv_space_adjust                                                                                                                                                 
+     0.44%  aegisx-prof        [.] <tokio::sync::mpsc::list::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming
+     0.44%  aegisx-prof        [.] httparse::parse_headers_iter_uninit                                                                                                                                  
+     0.44%  [kernel.kallsyms]  [k] tcp_tso_segs                                                                                                                                                         
+     0.44%  aegisx-prof        [.] <tokio::sync::mpsc::chan::Rx<hyper::client::dispatch::Envelope<http::request::Request<aegisx::http::body::arch::Body>, http::response::Response<hyper::body::incoming
+     0.42%  aegisx-prof        [.] tokio::runtime::task::waker::wake_by_val                                                                                                                             
+     0.42%  aegisx-prof        [.] mi_page_queue_remove                                                                                                                                                 
+     0.41%  aegisx-prof        [.] <hyper::proto::h1::role::Server as hyper::proto::h1::Http1Transaction>::encode                                                                                       
+     0.40%  [kernel.kallsyms]  [k] fput                                                                                                                                                                 
+     0.40%  [kernel.kallsyms]  [k] tcp_clean_rtx_queue                                                                                                                                                  
+     0.39%  [ena]              [k] ena_clean_rx_irq                                                                                                                                                     
+     0.39%  [kernel.kallsyms]  [k] __sys_recvfrom                                                                                                                                                       
+     0.38%  aegisx-prof        [.] <hyper::proto::h1::dispatch::Dispatcher<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::To
+     0.37%  aegisx-prof        [.] <futures_channel::mpsc::Receiver<core::result::Result<bytes::bytes::Bytes, hyper::error::Error>>>::next_message                                                      
+     0.35%  [kernel.kallsyms]  [k] ep_send_events                                                                                                                                                       
+     0.35%  aegisx-prof        [.] <bytes::bytes_mut::BytesMut>::split_to                                                                                                                               
+     0.35%  [ena]              [k] ena_rx_skb                                                                                                                                                           
+     0.35%  [kernel.kallsyms]  [k] kmem_cache_alloc_node_noprof                                                                                                                                         
+     0.35%  aegisx-prof        [.] <http::header::map::HeaderMap>::try_append2::<http::header::name::HeaderName>                                                                                        
+     0.34%  [kernel.kallsyms]  [k] tcp_ack                                                                                                                                                              
+     0.33%  [kernel.kallsyms]  [k] skb_clone                                                                                                                                                            
+     0.33%  [kernel.kallsyms]  [k] __dev_xmit_skb                                                                                                                                                       
+     0.32%  [kernel.kallsyms]  [k] ip_finish_output2                                                                                                                                                    
+     0.32%  [kernel.kallsyms]  [k] tcp_recvmsg_locked                                                                                                                                                   
+     0.32%  aegisx-prof        [.] <hyper::proto::h1::conn::Conn<hyper_util::common::rewind::Rewind<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>>, bytes::bytes::Bytes, hyper::pro
+     0.32%  aegisx-prof        [.] <http::header::name::HeaderName>::from_bytes                                                                                                                         
+     0.31%  [kernel.kallsyms]  [k] fib_table_lookup                                                                                                                                                     
+     0.31%  libc.so.6          [.] 0x0000000000098659                                                                                                                                                   
+     0.31%  libc.so.6          [.] 0x00000000001a1640                                                                                                                                                   
+     0.30%  aegisx-prof        [.] tokio::runtime::task::waker::drop_waker                                                                                                                              
+     0.30%  [kernel.kallsyms]  [k] __alloc_skb                                                                                                                                                          
+     0.29%  aegisx-prof        [.] bytes::bytes::promotable_even_clone                                                                                                                                  
+     0.29%  aegisx-prof        [.] mi_page_queue_find_free_ex                                                                                                                                           
+     0.29%  [kernel.kallsyms]  [k] __tcp_cleanup_rbuf                                                                                                                                                   
+     0.29%  aegisx-prof        [.] <http::header::map::HeaderMap>::get_all::<http::header::name::HeaderName>                                                                                            
+     0.28%  [kernel.kallsyms]  [k] __mod_timer                                                                                                                                                          
+     0.28%  [kernel.kallsyms]  [k] fdget                                                                                                                                                                
+     0.28%  [kernel.kallsyms]  [k] mod_memcg_state                                                                                                                                                      
+     0.28%  aegisx-prof        [.] <hyper::proto::h1::io::Buffered<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::encode::EncodedBuf<bytes::bytes::Bytes>>>::poll_f
+
+## inclusive (children), user space
+    42.52%     0.00%  [.] call_once<(), (dyn core::ops::function::FnOnce<(), Output=()> + core::marker::Send), alloc::alloc::Global> (inlined)                                                                              
+    42.52%     0.00%  [.] call_once<std::thread::lifecycle::spawn_unchecked::{closure_env#1}<aegisx::core::rt::worker::{impl#0}::workers::{closure_env#0}<aegisx::app::boot::base::{impl#0}::start::{closure_env#0}, aegisx:
+    42.52%     0.00%  [.] catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<std::thread::lifecycle::spawn_unchecked::{closure#1}::{closure_env#0}<aegisx::core::rt::worker::{impl#0}::workers::{closure_env#0}<aegisx:
+    42.52%     0.00%  [.] catch_unwind<core::result::Result<(), aegisx::core::error::arch::AppError>, core::panic::unwind_safe::AssertUnwindSafe<std::thread::lifecycle::spawn_unchecked::{closure#1}::{closure_env#0}<aegis
+    42.52%     0.00%  [.] do_call<core::panic::unwind_safe::AssertUnwindSafe<std::thread::lifecycle::spawn_unchecked::{closure#1}::{closure_env#0}<aegisx::core::rt::worker::{impl#0}::workers::{closure_env#0}<aegisx::app:
+    42.52%     0.00%  [.] drop<(dyn core::ops::function::FnOnce<(), Output=()> + core::marker::Send), alloc::alloc::Global> (inlined)                                                                                       
+    42.52%     0.00%  [.] thread_start (inlined)                                                                                                                                                                            
+    42.52%     0.00%  [.] {closure#1}<aegisx::core::rt::worker::{impl#0}::workers::{closure_env#0}<aegisx::app::boot::base::{impl#0}::start::{closure_env#0}, aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}>, c
+    42.52%     0.00%  [.] 0x000070fac529cb84                                                                                                                                                                                
+    42.52%     0.00%  [.] 0x000070fac5329ecc                                                                                                                                                                                
+    42.49%     0.00%  [.] block_on<aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}> (inlined)                                                                                                                    
+    42.49%     0.00%  [.] block_on<core::pin::Pin<&mut aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}>> (inlined)                                                                                               
+    42.49%     0.00%  [.] block_on_inner<aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}> (inlined)                                                                                                              
+    42.49%     0.00%  [.] enter<tokio::runtime::scheduler::current_thread::{impl#9}::block_on::{closure_env#0}<core::pin::Pin<&mut aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}>>, core::option::Option<core::
+    42.49%     0.00%  [.] enter_runtime<tokio::runtime::scheduler::current_thread::{impl#0}::block_on::{closure_env#0}<aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}>, core::result::Result<(), aegisx::core::e
+    42.49%     0.00%  [.] set<tokio::runtime::scheduler::Context, tokio::runtime::scheduler::current_thread::{impl#9}::enter::{closure_env#0}<tokio::runtime::scheduler::current_thread::{impl#9}::block_on::{closure_env#0}
+    42.49%     0.00%  [.] set_scheduler<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), aegisx::core::error::arch::AppError>>), tok
+    42.49%     0.00%  [.] try_with<tokio::runtime::context::Context, tokio::runtime::context::set_scheduler::{closure_env#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core
+    42.49%     0.00%  [.] with<tokio::runtime::context::Context, tokio::runtime::context::set_scheduler::{closure_env#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::op
+    42.49%     0.00%  [.] {closure#0}<(alloc::boxed::Box<tokio::runtime::scheduler::current_thread::Core, alloc::alloc::Global>, core::option::Option<core::result::Result<(), aegisx::core::error::arch::AppError>>), tokio
+    42.49%     0.00%  [.] {closure#0}<aegisx::app::boot::base::{impl#0}::start::{closure_env#0}, aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}> (inlined)                                                      
+    42.49%     0.00%  [.] {closure#0}<aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}> (inlined)                                                                                                                 
+    42.49%     0.00%  [.] {closure#0}<core::pin::Pin<&mut aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}>> (inlined)                                                                                            
+    42.49%     0.00%  [.] {closure#0}<tokio::runtime::scheduler::current_thread::{impl#9}::block_on::{closure_env#0}<core::pin::Pin<&mut aegisx::app::boot::worker::{impl#0}::run::{async_fn_env#0}>>, core::option::Option<
+    42.31%     0.00%  [.] __rust_begin_short_backtrace<aegisx::core::rt::worker::{impl#0}::workers::{closure_env#0}<aegisx::app::boot::base::{impl#0}::start::{closure_env#0}, aegisx::app::boot::worker::{impl#0}::run::{as
+    41.29%     0.00%  [.] run_task (inlined)                                                                                                                                                                                
+    41.27%     0.00%  [.] enter<(), tokio::runtime::scheduler::current_thread::{impl#3}::run_task::{closure_env#0}> (inlined)                                                                                               
+    41.22%     0.00%  [.] budget<(), tokio::runtime::scheduler::current_thread::{impl#3}::run_task::{closure#0}::{closure_env#0}> (inlined)                                                                                 
+    41.22%     0.00%  [.] with_budget<(), tokio::runtime::scheduler::current_thread::{impl#3}::run_task::{closure#0}::{closure_env#0}> (inlined)                                                                            
+    41.22%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    40.67%     0.00%  [.] drop_glue<core::result::Result<tokio::task::coop::with_budget::ResetGuard, std::thread::local::AccessError>> (inlined)                                                                            
+    26.88%     0.00%  [.] poll<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_env#9}, 
+    26.78%     0.00%  [.] poll_inner<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_en
+    26.47%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    26.45%     0.00%  [.] call_once<core::task::poll::Poll<()>, tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegisx::app::gate
+    26.45%     0.00%  [.] catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}
+    26.45%     0.00%  [.] catch_unwind<core::task::poll::Poll<()>, core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::server::base::{impl#0}::serve::{asyn
+    26.45%     0.00%  [.] do_call<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegi
+    26.45%     0.00%  [.] poll_future<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_e
+    26.45%     0.00%  [.] {closure#0}<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_e
+    26.45%     0.00%  [.] with_mut<tokio::runtime::task::core::Stage<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block_env#1}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}
+    26.44%     0.00%  [.] set_current_task_id (inlined)                                                                                                                                                                     
+    26.44%     0.00%  [.] try_with<tokio::runtime::context::Context, tokio::runtime::context::set_current_task_id::{closure_env#0}, core::option::Option<tokio::runtime::task::id::Id>> (inlined)                           
+    26.44%     0.00%  [.] call_once<tokio::runtime::context::CONTEXT::{constant#0}::{closure_env#0}, (core::option::Option<&mut core::option::Option<tokio::runtime::context::Context>>)> (inlined)                         
+    26.44%     0.00%  [.] drop (inlined)                                                                                                                                                                                    
+    26.44%     0.00%  [.] drop_glue<tokio::runtime::task::core::TaskIdGuard> (inlined)                                                                                                                                      
+    26.43%     0.00%  [.] get<std::sys::thread_local::native::eager::State> (inlined)                                                                                                                                       
+    26.43%     0.00%  [.] get<tokio::runtime::context::Context> (inlined)                                                                                                                                                   
+    26.35%     0.00%  [.] {async_block#1}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_env#9}, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_env
+    26.04%     0.00%  [.] poll<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::arch::Co
+    26.04%     0.00%  [.] poll<hyper_util::common::rewind::Rewind<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>>, aegisx::http::body::arch::Body, hyper::service::util::ServiceFn<aegisx::http::server:
+    26.04%     0.00%  [.] poll<hyper_util::rt::tokio::TokioIo<aegisx::http::server::arch::Stream>, hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#
+    26.04%     0.00%  [.] poll_catch<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::ar
+    26.04%     0.00%  [.] poll_inner<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::ar
+    25.94%     0.00%  [.] poll_loop<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::arc
+    20.50%     0.00%  [.] poll_write<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::ar
+    17.88%     0.00%  [.] poll_msg<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worke
+    17.81%     0.00%  [.] branch<http::response::Response<aegisx::http::body::arch::Body>, core::convert::Infallible> (inlined)                                                                                             
+    17.67%     0.00%  [.] {async_block#0}<aegisx::app::gateway::arch::Context, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_env#9}, aegisx::app::boot::worker::{impl#0}::run::{async_fn#0}::{closure_env
+    17.52%     0.00%  [.] {async_block#0} (inlined)                                                                                                                                                                         
+    17.43%     0.00%  [.] {async_fn#0} (inlined)                                                                                                                                                                            
+    17.11%     0.00%  [.] {async_fn#0} (inlined)                                                                                                                                                                            
+    13.85%     0.00%  [.] poll<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined)     
+    13.72%     0.00%  [.] poll_inner<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inlined
+    13.37%     0.00%  [.] {closure#0} (inlined)                                                                                                                                                                             
+    13.36%     0.00%  [.] call_once<core::task::poll::Poll<()>, tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2}, alloc::sync:
+    13.36%     0.00%  [.] catch_unwind<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_en
+    13.36%     0.00%  [.] catch_unwind<core::task::poll::Poll<()>, core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::upstream::base::{impl#2}::connect::{
+    13.36%     0.00%  [.] do_call<core::panic::unwind_safe::AssertUnwindSafe<tokio::runtime::task::harness::poll_future::{closure_env#0}<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2},
+    13.36%     0.00%  [.] poll_future<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inline
+    13.36%     0.00%  [.] with_mut<tokio::runtime::task::core::Stage<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2}>, core::task::poll::Poll<()>, tokio::runtime::task::core::{impl#6}::
+    13.36%     0.00%  [.] {closure#0}<aegisx::http::upstream::base::{impl#2}::connect::{async_fn#0}::{async_block_env#2}, alloc::sync::Arc<tokio::runtime::scheduler::current_thread::Handle, alloc::alloc::Global>> (inline
+    13.35%     0.00%  [.] drop (inlined)                                                                                                                                                                                    
+    13.35%     0.00%  [.] drop_glue<tokio::runtime::task::core::TaskIdGuard> (inlined)                                                                                                                                      
+    13.35%     0.00%  [.] set_current_task_id (inlined)                                                                                                                                                                     
+    13.35%     0.00%  [.] try_with<tokio::runtime::context::Context, tokio::runtime::context::set_current_task_id::{closure_env#0}, core::option::Option<tokio::runtime::task::id::Id>> (inlined)                           
+    13.34%     0.00%  [.] call_once<tokio::runtime::context::CONTEXT::{constant#0}::{closure_env#0}, (core::option::Option<&mut core::option::Option<tokio::runtime::context::Context>>)> (inlined)                         
+    13.34%     0.00%  [.] get<std::sys::thread_local::native::eager::State> (inlined)                                                                                                                                       
+    13.34%     0.00%  [.] get<tokio::runtime::context::Context> (inlined)                                                                                                                                                   
+    13.27%     0.00%  [.] {async_block#2} (inlined)                                                                                                                                                                         
+    13.00%     0.00%  [.] poll<hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, aegisx::http::body::arch::Body> (inlined)                                                                                  
+    12.74%     0.00%  [.] poll<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::role:
+    12.72%     0.00%  [.] poll_catch<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1:
+    12.70%     0.00%  [.] poll_inner<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1:
+    12.68%     0.00%  [.] poll_loop<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::
+    11.48%     0.00%  [.] {async_fn#0} (inlined)                                                                                                                                                                            
+     9.41%     0.00%  [.] {async_fn#0}<aegisx::http::proxy::base::{impl#0}::forward::{async_fn#0}::{closure_env#0}> (inlined)                                                                                               
+     9.07%     0.00%  [.] poll_read<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto::h1::
+     5.05%     0.00%  [.] poll_read<hyper::proto::h1::dispatch::Server<hyper::service::util::ServiceFn<aegisx::http::server::base::{impl#0}::serve::{async_fn#0}::{async_block#1}::{closure_env#0}<aegisx::app::gateway::arc
+     4.73%     0.00%  [.] poll_read_head<hyper::proto::h1::dispatch::Client<aegisx::http::body::arch::Body>, aegisx::http::body::arch::Body, hyper_util::rt::tokio::TokioIo<aegisx::http::upstream::arch::Io>, hyper::proto:

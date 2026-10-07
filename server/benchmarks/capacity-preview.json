@@ -1,0 +1,133 @@
+{
+  "scope": "Shared WSL loopback, native epoll backend, 128-byte body, HTTP/1.1 keepalive. No TLS, capture, ML, response caching or security policy. Nginx buffering disabled. AegisX retains its correlation header and HTTP admission machinery. Not feature parity or isolated capacity.",
+  "host": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "logical_cpus": 8,
+  "settings": {
+    "binary": "tmp/aegisx-capacity-v1",
+    "write_buffer": 4096,
+    "baseline": "tmp/aegisx-v09-release",
+    "nginx": "/usr/sbin/nginx",
+    "workers": 8,
+    "connections": [
+      128
+    ],
+    "seconds": 10,
+    "trials": 3,
+    "output": "server/benchmarks/capacity-preview.json"
+  },
+  "nginx_build": "nginx version: nginx/1.24.0 (Ubuntu)\nbuilt with OpenSSL 3.0.13 30 Jan 2024\nTLS SNI support enabled\nconfigure arguments: --with-cc-opt='-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/nginx-PgwIQM/nginx-1.24.0=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/nginx-PgwIQM/nginx-1.24.0=/usr/src/nginx-1.24.0-2ubuntu7.18 -fPIC -Wdate-time -D_FORTIFY_SOURCE=3' --with-ld-opt='-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -fPIC' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=stderr --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-compat --with-debug --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --with-http_addition_module --with-http_flv_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_mp4_module --with-http_random_index_module --with-http_secure_link_module --with-http_sub_module --with-mail_ssl_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-stream_realip_module --with-http_geoip_module=dynamic --with-http_image_filter_module=dynamic --with-http_perl_module=dynamic --with-http_xslt_module=dynamic --with-mail=dynamic --with-stream=dynamic --with-stream_geoip_module=dynamic\n",
+  "aegisx_sha256": "354e86fdd053c286b2dd5789fe5fa03e0e4cf4f19aa131a043c48812324e3e85",
+  "trials": [
+    {
+      "target": "direct",
+      "connections": 128,
+      "trial": 1,
+      "requests_per_second": 166939.29,
+      "requests": 1669663,
+      "raw": "Running 10s test @ http://127.0.0.1:55627/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   522.91us  626.53us  20.32ms   97.04%\n    Req/Sec    84.73k    13.52k  112.71k    70.20%\n  Latency Distribution\n     50%  431.00us\n     75%  582.00us\n     90%  804.00us\n     99%    2.05ms\n  1669663 requests in 10.00s, 347.12MB read\nRequests/sec: 166939.29\nTransfer/sec:     34.71MB\n"
+    },
+    {
+      "target": "nginx",
+      "connections": 128,
+      "trial": 1,
+      "requests_per_second": 65954.7,
+      "requests": 664946,
+      "raw": "Running 10s test @ http://127.0.0.1:58935/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.15ms    2.70ms  36.48ms   91.30%\n    Req/Sec    33.52k     7.79k   55.54k    71.36%\n  Latency Distribution\n     50%    1.34ms\n     75%    2.45ms\n     90%    4.40ms\n     99%   14.51ms\n  664946 requests in 10.08s, 181.36MB read\nRequests/sec:  65954.70\nTransfer/sec:     17.99MB\n"
+    },
+    {
+      "target": "aegisx",
+      "connections": 128,
+      "trial": 1,
+      "requests_per_second": 29483.89,
+      "requests": 296699,
+      "raw": "Running 10s test @ http://127.0.0.1:36029/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.09ms    5.13ms 133.56ms   88.67%\n    Req/Sec    15.02k     2.50k   22.50k    72.22%\n  Latency Distribution\n     50%    3.58ms\n     75%    6.48ms\n     90%   10.91ms\n     99%   23.61ms\n  296699 requests in 10.06s, 86.87MB read\nRequests/sec:  29483.89\nTransfer/sec:      8.63MB\n"
+    },
+    {
+      "target": "baseline",
+      "connections": 128,
+      "trial": 1,
+      "requests_per_second": 27044.95,
+      "requests": 273096,
+      "raw": "Running 10s test @ http://127.0.0.1:51919/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.23ms    4.57ms  45.81ms   75.54%\n    Req/Sec    13.79k     2.20k   19.72k    66.67%\n  Latency Distribution\n     50%    4.06ms\n     75%    6.96ms\n     90%   11.21ms\n     99%   21.38ms\n  273096 requests in 10.10s, 79.96MB read\nRequests/sec:  27044.95\nTransfer/sec:      7.92MB\n"
+    },
+    {
+      "target": "nginx",
+      "connections": 128,
+      "trial": 2,
+      "requests_per_second": 80284.29,
+      "requests": 805302,
+      "raw": "Running 10s test @ http://127.0.0.1:58935/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.85ms    2.54ms  71.03ms   92.55%\n    Req/Sec    40.85k     8.23k   64.60k    69.19%\n  Latency Distribution\n     50%    1.12ms\n     75%    2.08ms\n     90%    3.63ms\n     99%   12.71ms\n  805302 requests in 10.03s, 219.65MB read\nRequests/sec:  80284.29\nTransfer/sec:     21.90MB\n"
+    },
+    {
+      "target": "aegisx",
+      "connections": 128,
+      "trial": 2,
+      "requests_per_second": 35176.83,
+      "requests": 353940,
+      "raw": "Running 10s test @ http://127.0.0.1:36029/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     4.06ms    3.52ms  39.62ms   86.57%\n    Req/Sec    17.91k     2.33k   23.74k    70.71%\n  Latency Distribution\n     50%    3.17ms\n     75%    4.94ms\n     90%    8.19ms\n     99%   17.91ms\n  353940 requests in 10.06s, 103.63MB read\nRequests/sec:  35176.83\nTransfer/sec:     10.30MB\n"
+    },
+    {
+      "target": "baseline",
+      "connections": 128,
+      "trial": 2,
+      "requests_per_second": 32727.36,
+      "requests": 329698,
+      "raw": "Running 10s test @ http://127.0.0.1:51919/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     4.36ms    3.99ms  44.16ms   87.85%\n    Req/Sec    16.66k     2.18k   24.47k    66.16%\n  Latency Distribution\n     50%    3.29ms\n     75%    5.45ms\n     90%    9.12ms\n     99%   19.99ms\n  329698 requests in 10.07s, 96.53MB read\nRequests/sec:  32727.36\nTransfer/sec:      9.58MB\n"
+    },
+    {
+      "target": "direct",
+      "connections": 128,
+      "trial": 2,
+      "requests_per_second": 158617.56,
+      "requests": 1596383,
+      "raw": "Running 10s test @ http://127.0.0.1:55627/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   711.11us    1.46ms  28.62ms   96.16%\n    Req/Sec    80.94k    22.20k  136.35k    66.67%\n  Latency Distribution\n     50%  438.00us\n     75%  607.00us\n     90%    0.94ms\n     99%    7.59ms\n  1596383 requests in 10.06s, 331.89MB read\nRequests/sec: 158617.56\nTransfer/sec:     32.98MB\n"
+    },
+    {
+      "target": "aegisx",
+      "connections": 128,
+      "trial": 3,
+      "requests_per_second": 21892.58,
+      "requests": 220100,
+      "raw": "Running 10s test @ http://127.0.0.1:36029/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     7.02ms    7.01ms  81.96ms   86.72%\n    Req/Sec    11.19k     2.67k   17.47k    63.96%\n  Latency Distribution\n     50%    5.26ms\n     75%    9.66ms\n     90%   15.97ms\n     99%   32.23ms\n  220100 requests in 10.05s, 64.44MB read\nRequests/sec:  21892.58\nTransfer/sec:      6.41MB\n"
+    },
+    {
+      "target": "baseline",
+      "connections": 128,
+      "trial": 3,
+      "requests_per_second": 28649.13,
+      "requests": 287315,
+      "raw": "Running 10s test @ http://127.0.0.1:51919/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.01ms    4.58ms  48.03ms   83.12%\n    Req/Sec    14.54k     2.78k   21.19k    67.01%\n  Latency Distribution\n     50%    3.77ms\n     75%    6.75ms\n     90%   10.92ms\n     99%   21.57ms\n  287315 requests in 10.03s, 84.12MB read\nRequests/sec:  28649.13\nTransfer/sec:      8.39MB\n"
+    },
+    {
+      "target": "direct",
+      "connections": 128,
+      "trial": 3,
+      "requests_per_second": 188003.54,
+      "requests": 1888363,
+      "raw": "Running 10s test @ http://127.0.0.1:55627/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   448.73us  457.31us  18.41ms   96.78%\n    Req/Sec    95.84k    14.56k  126.68k    69.19%\n  Latency Distribution\n     50%  396.00us\n     75%  539.00us\n     90%  678.00us\n     99%    1.23ms\n  1888363 requests in 10.04s, 392.59MB read\nRequests/sec: 188003.54\nTransfer/sec:     39.09MB\n"
+    },
+    {
+      "target": "nginx",
+      "connections": 128,
+      "trial": 3,
+      "requests_per_second": 55031.4,
+      "requests": 555280,
+      "raw": "Running 10s test @ http://127.0.0.1:58935/benchmark\n  2 threads and 128 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     3.12ms    5.07ms  82.86ms   91.89%\n    Req/Sec    28.11k    12.33k   63.48k    60.10%\n  Latency Distribution\n     50%    1.56ms\n     75%    3.22ms\n     90%    7.00ms\n     99%   25.33ms\n  555280 requests in 10.09s, 151.45MB read\nRequests/sec:  55031.40\nTransfer/sec:     15.01MB\n"
+    }
+  ],
+  "nginx_config": "\ndaemon off;\nmaster_process on;\nworker_processes 8;\npid /tmp/aegisx-nginx-l9rt4657/nginx.pid;\nerror_log /tmp/aegisx-nginx-l9rt4657/nginx-error.log crit;\nevents { worker_connections 16384; multi_accept on; }\nhttp {\n    access_log off;\n    client_body_temp_path /tmp/aegisx-nginx-l9rt4657/body;\n    proxy_temp_path /tmp/aegisx-nginx-l9rt4657/proxy;\n    keepalive_timeout 60s;\n    keepalive_requests 100000;\n    upstream origin { server 127.0.0.1:55627; keepalive 256; }\n    server {\n        listen 127.0.0.1:58935 reuseport;\n        location / {\n            proxy_http_version 1.1;\n            proxy_set_header Connection \"\";\n            proxy_set_header Host 127.0.0.1:55627;\n            proxy_request_buffering off;\n            proxy_buffering off;\n            proxy_pass http://origin;\n        }\n    }\n}\n",
+  "aegisx_config": "\nset_listen(\"127.0.0.1:36029\")\nset_upstream(\"127.0.0.1:55627\")\nset_store(false)\nset_model {mode=\"off\"}\nset_runtime {threads=8,max_in_flight=16384,write_buffer_bytes=4096,upstream_keepalive_capacity=256}\nset_cache {decisions=false,responses=false}\nset_limits {rate_limit_10s=0}\n",
+  "nofile": [
+    1024,
+    1048576
+  ],
+  "baseline_sha256": "bcc62dc6e43e7560d0d305f3690e8ba2b8e4140596d9195c13e741d5bbbb6c94",
+  "summary": {
+    "128": {
+      "direct": 166939.29,
+      "nginx": 65954.7,
+      "aegisx": 29483.89,
+      "baseline": 28649.13
+    }
+  }
+}

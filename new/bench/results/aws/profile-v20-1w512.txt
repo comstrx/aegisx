@@ -1,0 +1,14 @@
+# profile v20-1w512: binary=aegisx-prof workers=1 connections=512 seconds=10 args=--config=/home/ubuntu/results/ka.lua
+
+    Latency     6.47ms  680.41us  15.62ms   83.65%
+  Latency Distribution
+     99%    9.12ms
+Requests/sec:  78900.23
+
+## allocator calls per request
+probe_alloc:mi_malloc_aligned 2.95
+probe_alloc:mi_zalloc_aligned 0.21
+probe_alloc:mi_realloc_aligned 0.00
+probe_alloc:mi_free          3.16
+
+## by dso

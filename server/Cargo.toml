@@ -1,0 +1,56 @@
+[package]
+name         = "aegisx"
+version      = "0.10.0"
+edition      = "2024"
+rust-version = "1.98"
+license      = "MIT OR Apache-2.0"
+description  = "Local reverse proxy with observable request lifecycles and optional inference"
+
+[features]
+default = ["mimalloc"]
+mimalloc = ["dep:mimalloc"]
+
+[dependencies]
+mimalloc = { version = "0.1.52", optional = true, features = ["secure"] }
+http = "1.5.0"
+memchr = "2.8.3"
+httpdate           = "1.0.3"
+actix-web          = { version = "4.15.0", default-features = false, features = ["macros"] }
+moka               = { version = "0.12.16", features = ["sync"] }
+reqwest            = { version = "0.13.5", default-features = false, features = ["json", "native-tls"] }
+ipnet              = { version = "2.12.2", features = ["serde"] }
+arc-swap           = "1.9.2"
+sha2               = "0.11.0"
+openssl            = { version = "0.10.81", features = ["vendored"] }
+async-trait        = "0.1.92"
+bytes              = "1.12.1"
+clap               = { version = "4.6.7", features = ["derive"] }
+mlua               = { version = "0.12.1", features = ["lua55", "vendored", "error-send", "serde"] }
+ort                = { version = "=2.0.0-rc.13", default-features = false, features = ["std", "ndarray", "download-binaries", "tls-rustls", "api-28"] }
+pingora            = { version = "0.9.0", features = ["proxy", "openssl"] }
+rusqlite           = { version = "0.40.2", features = ["bundled"] }
+serde              = { version = "1.0.229", features = ["derive"] }
+serde_json         = "1.0.151"
+thiserror          = "2.0.21"
+tokio              = { version = "1.53.1", features = ["rt-multi-thread", "sync", "time", "signal", "net"] }
+tracing            = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "json"] }
+uuid               = { version = "1.26.1", features = ["v4", "fast-rng"] }
+
+[build-dependencies]
+serde_json = "1.0.151"
+
+[profile.release]
+opt-level     = 3
+lto           = "thin"
+codegen-units = 1
+strip         = "symbols"
+
+[workspace]
+members = ["vendor/pingora-core", "vendor/pingora-timeout"]
+default-members = ["."]
+resolver = "3"
+
+[patch.crates-io]
+pingora-core = { path = "vendor/pingora-core" }
+pingora-timeout = { path = "vendor/pingora-timeout" }

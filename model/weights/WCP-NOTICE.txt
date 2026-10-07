@@ -1,0 +1,9 @@
+AegisX uses a selected subset of publisher-labeled legitimate HTTP requests from:
+OpenAppSec WAF Comparison Project
+https://github.com/openappsec/waf-comparison-project
+Pinned repository revision: 8ec8263eebba76816601f7c7052f8ffb83e31312
+The publisher licenses the legitimate-request dataset under Apache License 2.0.
+See WCP-LICENSE.txt and model/sources.json for the verified license and per-capture hashes.
+Only URI/body-derived numeric features enter training. Raw captures are not shipped.
+64 bounded captures selected by filename hash: 48 source captures, 16 external captures.
+This is not the full dataset and carries no endorsement or production accuracy guarantee.
